@@ -2,6 +2,10 @@
 
 ![Project Banner](images/banner.jpg)
 
+🔗 **GitHub:** [Project Github Link](https://github.com/ardatetikbey/Standalone-Ruby)
+🔗 **RubyGems:** [Project RubyGems Link](https://rubygems.org/gems/standalone-ruby)
+
+
 Contact: ardatetikruby@gmail.com
 
 ---
@@ -28,6 +32,12 @@ Contact: ardatetikruby@gmail.com
 ---
 
 ## Kullanım / Use / Verwenden / 使用するには
+
+## Install:
+
+```bash
+gem install standalone-ruby
+```
 
 ## Example Command:
 
@@ -149,5 +159,3 @@ standalone-ruby -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Rub
 - <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> This project is licensed under the MIT License.
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Dieses Projekt ist unter der MIT-Lizenz lizenziert.
 - <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> このプロジェクトはMITライセンスの下でライセンスされています。
-
-🔗 **GitHub:** [Project Standalone-Ruby](https://github.com/ardatetikbey/Standalone-Ruby)
