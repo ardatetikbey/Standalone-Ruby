@@ -75,16 +75,29 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
 
 ## Notlar / Notes / Anmerkungen / ノート
 
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Yardım mesajını görüntüler.
-  
-- <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/>
-- Make sure that the provided paths are valid and accessible from your system.
-- The launcher file type must be either `.vbs` or `.bat` for Windows systems.
-- The `threads` option can significantly impact the performance during the copying process, so use it wisely based on your system’s capabilities.
-- For more details, refer to the official [GitHub Repository](https://github.com/ardatetikbey/Standalone-Ruby).
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> **Yardım mesajını görüntüler.**  
+  - Sağlanan yolların geçerli ve sisteminizden erişilebilir olduğundan emin olun.  
+  - Başlatıcı dosya türü Windows sistemleri için `.vbs` veya `.bat` olmalıdır.  
+  - `threads` seçeneği kopyalama sürecinde performansı önemli ölçüde etkileyebilir, bu nedenle sisteminizin kapasitesine göre dikkatli kullanın.  
+  - Daha fazla ayrıntı için resmi [GitHub Deposu](https://github.com/ardatetikbey/Standalone-Ruby)'na bakın.  
 
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Zeigt die Hilfemeldung an.
-- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> ヘルプメッセージを表示します。
+- <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> **Displays the help message.**  
+  - Make sure that the provided paths are valid and accessible from your system.  
+  - The launcher file type must be either `.vbs` or `.bat` for Windows systems.  
+  - The `threads` option can significantly impact performance during the copying process, so use it wisely based on your system’s capabilities.  
+  - For more details, refer to the official [GitHub Repository](https://github.com/ardatetikbey/Standalone-Ruby).  
+
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> **Zeigt die Hilfemeldung an.**  
+  - Stellen Sie sicher, dass die angegebenen Pfade gültig und von Ihrem System zugänglich sind.  
+  - Der Typ der Startdatei muss entweder `.vbs` oder `.bat` für Windows-Systeme sein.  
+  - Die Option `threads` kann die Leistung während des Kopiervorgangs erheblich beeinflussen. Verwenden Sie sie daher entsprechend den Fähigkeiten Ihres Systems.  
+  - Weitere Details finden Sie im offiziellen [GitHub-Repository](https://github.com/ardatetikbey/Standalone-Ruby).  
+
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> **ヘルプメッセージを表示します。**  
+  - 指定されたパスが有効であり、システムからアクセス可能であることを確認してください。  
+  - ランチャーファイルの種類は、Windows システムでは `.vbs` または `.bat` である必要があります。  
+  - `threads` オプションはコピー処理中のパフォーマンスに大きな影響を与える可能性があるため、システムの能力に応じて適切に使用してください。  
+  - 詳細については、公式の [GitHub リポジトリ](https://github.com/ardatetikbey/Standalone-Ruby) を参照してください。  
 
 ---
 
