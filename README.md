@@ -2,6 +2,8 @@
 
 ![Project Banner](images/banner.jpg)
 
+Contact: ardatetikruby@gmail.com
+
 ---
 
 ## Özellikler / Features / Funktionen / 機能
