@@ -33,7 +33,7 @@
 ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher1.vbs -c 10
 ```
 
-## Parameters
+## Parametreler / Parameters / Parameter / パラメータ
 
 #### 1. `-p, --project PROJECT_PATH`
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Hedef Ruby projesinin yolunu belirtir. Verilen proje yolunun varlığını kontrol eder.
@@ -117,12 +117,20 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
   - Cross-Platform Support - Support for running on Linux and macOS with similar functionality will be added.
   - Custom Execution File Formats - Alternative execution file formats will be introduced beyond .vbs and .bat.
 
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> **Aufgabenliste**  
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> **Aufgabenliste**
+  - Logger-Unterstützung - Ein Logging-Mechanismus wird hinzugefügt, um die Programmausführung und das Debuggen zu erleichtern.
+  - GUI-Oberfläche - Eine einfache grafische Benutzeroberfläche wird entwickelt, um den Benutzern die Durchführung von Aufgaben zu erleichtern.
+  - Verschlüsselte Ruby-Ausführung - Ruby-Skripte werden zum Schutz verschlüsselt, und eine Entschlüsselungs- und Ausführungsfunktion wird hinzugefügt.
+  - Cross-Platform-Unterstützung - Es wird Unterstützung hinzugefügt, um ähnliche Funktionen auf Linux- und macOS-Systemen bereitzustellen.
+  - Benutzerdefinierte Launcher-Dateiformate - Es werden alternative Launcher-Dateiformate hinzugefügt, außer .vbs und .bat.
   
-
-- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> **やることリスト**  
-  
-
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> **やることリスト**
+  - ロガーサポート - プログラムの実行とデバッグを容易にするためにロギングメカニズムが追加されます。
+  - GUIインターフェース - ユーザーがより簡単に作業を行えるようにシンプルなグラフィカルインターフェースが開発されます。
+  - 暗号化されたRuby実行 - Rubyスクリプトが保護のために暗号化され、復号化して実行する機能が追加されます。
+  - クロスプラットフォームサポート - LinuxおよびmacOSシステムで同様の機能が提供されるサポートが追加されます。
+  - カスタムランチャーファイル形式 - .vbsおよび.bat以外の代替ランチャーファイル形式が追加されます。
+    
 ---
 
 ## Lisans / License / Lizenz / ライセンス
