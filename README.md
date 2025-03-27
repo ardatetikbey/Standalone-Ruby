@@ -54,7 +54,7 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
 - <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> プロジェクトのメイン Ruby ファイルのパスを指定します。指定された Ruby ファイルの存在を確認します。
 
 #### 4. `-l, --launcher LAUNCHER`
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Çalıştırıcı dosyasının adını belirtir, bu dosya `.vbs` veya `.bat` olabilir. Çalıştırıcı dosyasının varlığını ve doğru türde olduğunu kontrol eder.
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Çalıştırıcı dosyasının adını belirtir, bu dosya `.vbs` veya `.bat` formatlarında olabilir. Çalıştırıcı dosyasının varlığını ve uygun türde olduğunu kontrol eder.
 - <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> Specifies the launcher file name, which can either be `.vbs` or `.bat`. It checks whether the launcher file exists and is of the correct type.
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Gibt den Namen der ausführbaren Datei an. Diese Datei kann „.vbs“ oder „.bat“ sein. Überprüft, ob die ausführbare Datei vorhanden ist und vom richtigen Typ ist.
 - <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> 実行可能ファイルの名前を指定します。このファイルは `.vbs` または `.bat` にすることができます。実行可能ファイルが存在し、正しいタイプであることを確認します。
@@ -99,6 +99,30 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
   - `threads` オプションはコピー処理中のパフォーマンスに大きな影響を与える可能性があるため、システムの能力に応じて適切に使用してください。  
   - 詳細については、公式の [GitHub リポジトリ](https://github.com/ardatetikbey/Standalone-Ruby) を参照してください。
     
+---
+
+## Yapılacaklar / To Do List / やるべきこと
+
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> **Yapılacaklar**  
+  - Logger Desteği - Programın çalışmasını ve hata ayıklamayı kolaylaştırmak için loglama mekanizması eklenecek.
+  - GUI Arayüzü - Kullanıcıların daha kolay işlem yapabilmesi için basit bir grafik arayüz geliştirilecek.
+  - Şifrelenmiş Ruby Çalıştırma - Ruby betiklerini şifreleyerek koruma sağlanacak ve çözüp çalıştırma özelliği eklenecek.
+  - Çapraz Platform Desteği - Linux ve macOS sistemlerinde benzer bir çalışma mantığı sunacak destek eklenmesi.
+  - Özel Çalıştırıcı Dosya Biçimleri - .vbs ve .bat dışında alternatif çalıştırıcı dosya formatları eklenmesi.
+
+- <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> **To-Do List** 
+  - Logger Support - A logging mechanism will be added to facilitate debugging and monitoring the program’s operation.
+  - GUI Interface - A simple graphical user interface will be developed to make it easier for users to operate.
+  - Encrypted Ruby Execution - Ruby scripts will be encrypted for protection and will have an option to be decrypted and executed.
+  - Cross-Platform Support - Support for running on Linux and macOS with similar functionality will be added.
+  - Custom Execution File Formats - Alternative execution file formats will be introduced beyond .vbs and .bat.
+
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> **Aufgabenliste**  
+  
+
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> **やることリスト**  
+  
+
 ---
 
 ## Lisans / License / Lizenz / ライセンス
