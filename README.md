@@ -54,22 +54,22 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
 - <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> プロジェクトのメイン Ruby ファイルへのパスを指定します。指定された Ruby ファイルの存在を確認します。
 
 #### 4. `-l, --launcher LAUNCHER`
-- **English**: Specifies the launcher file name, which can either be `.vbs` or `.bat`. It ensures the launcher file exists and is of the correct type.
-- **Turkish**: Çalıştırıcı dosyasının adını belirtir, bu dosya `.vbs` veya `.bat` olabilir. Çalıştırıcı dosyasının varlığını ve doğru türde olduğunu kontrol eder.
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>
-- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/>
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Çalıştırıcı dosyasının adını belirtir, bu dosya `.vbs` veya `.bat` olabilir. Çalıştırıcı dosyasının varlığını ve doğru türde olduğunu kontrol eder.
+- <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> Specifies the launcher file name, which can either be `.vbs` or `.bat`. It ensures the launcher file exists and is of the correct type.
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Gibt den Namen der ausführbaren Datei an. Diese Datei kann „.vbs“ oder „.bat“ sein. Überprüft, ob die ausführbare Datei vorhanden ist und vom richtigen Typ ist.
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> 実行可能ファイルの名前を指定します。このファイルは `.vbs` または `.bat` にすることができます。実行可能ファイルが存在し、正しいタイプであることを確認します。
 
 #### 5. `-c, --threads THREADS`
-- **English**: Defines the number of threads to use. The default is 5. This parameter controls the number of threads used during the Ruby interpreter copy process and Rubocopy operations.
-- **Turkish**: Kullanılacak thread sayısını belirtir. Varsayılan değer 5'tir. Bu parametre, Ruby yorumlayıcısının kopyalanma işlemi ve Rubocopy işlemleri sırasında kullanılacak thread sayısını kontrol eder.
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>
-- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/>
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Kullanılacak thread sayısını belirtir. Varsayılan değer 5'tir. Bu parametre, Ruby yorumlayıcısının kopyalanma işlemi sırasında kullanılacak thread sayısını belirtir.
+- <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> Specifies the number of threads to use. The default value is 5. This parameter specifies the number of threads to use during the copy operation of the Ruby interpreter.
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Gibt die Anzahl der zu verwendenden Threads an. Der Standardwert ist 5. Dieser Parameter gibt die Anzahl der Threads an, die während des Kopiervorgangs des Ruby-Interpreters verwendet werden sollen.
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> 使用するスレッドの数を指定します。デフォルト値は 5 です。このパラメータは、Ruby インタープリタのコピー プロセス中に使用されるスレッドの数を指定します。
 
 #### 6. `-h, --help`
-- **English**: Displays the help message.
-- **Turkish**: Yardım mesajını görüntüler.
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>
-- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/>
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Yardım mesajını görüntüler.
+- <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> Displays the help message.
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Zeigt die Hilfemeldung an.
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> ヘルプメッセージを表示します。
 
 ---
 
