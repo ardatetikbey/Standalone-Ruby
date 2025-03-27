@@ -36,36 +36,36 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
 ## Parameters
 
 #### 1. `-p, --project PROJECT_PATH`
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Hedef Ruby proje yolunu belirtir. Verilen proje yolunun varlığını kontrol eder.
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Hedef Ruby projesinin yolunu belirtir. Verilen proje yolunun varlığını kontrol eder.
 - <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> Specifies the target Ruby project path. It checks that the given project path exists.
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>
-- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/>
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Gibt den Pfad zum Ziel-Ruby-Projekt an. Überprüft, ob der angegebene Projektpfad existiert.
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> ターゲット Ruby プロジェクトへのパスを指定します。指定されたプロジェクト パスが存在するかどうかを確認します。
 
-### 2. `-r, --ruby RUBY_PATH`
+#### 2. `-r, --ruby RUBY_PATH`
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Ruby yorumlayıcısının yolunu tanımlar. Verilen Ruby yolunun varlığını ve içinde 'bin' dizini olup olmadığını kontrol eder.
 - <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> Defines the path to the Ruby interpreter. It checks that the given Ruby path exists and contains a 'bin' directory.
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>
-- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/>
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Definiert den Pfad zum Ruby-Interpreter. Überprüft, ob der angegebene Ruby-Pfad existiert und ob er das Verzeichnis „bin“ enthält.
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> Ruby インタープリターへのパスを定義します。指定された Ruby パスが存在するかどうか、またそこに 'bin' ディレクトリが含まれているかどうかを確認します。
 
-### 3. `-m, --main MAIN_FILE`
+#### 3. `-m, --main MAIN_FILE`
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Projenin ana Ruby dosyasının yolunu belirtir. Verilen Ruby dosyasının varlığını kontrol eder.
 - <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> Provides the path to the main Ruby file of the project. It ensures that the specified Ruby file exists.
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>
-- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/>
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Gibt den Pfad zur Ruby-Hauptdatei des Projekts an. Überprüft, ob die angegebene Ruby-Datei vorhanden ist.
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> プロジェクトのメイン Ruby ファイルへのパスを指定します。指定された Ruby ファイルの存在を確認します。
 
-### 4. `-l, --launcher LAUNCHER`
+#### 4. `-l, --launcher LAUNCHER`
 - **English**: Specifies the launcher file name, which can either be `.vbs` or `.bat`. It ensures the launcher file exists and is of the correct type.
 - **Turkish**: Çalıştırıcı dosyasının adını belirtir, bu dosya `.vbs` veya `.bat` olabilir. Çalıştırıcı dosyasının varlığını ve doğru türde olduğunu kontrol eder.
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>
 - <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/>
 
-### 5. `-c, --threads THREADS`
+#### 5. `-c, --threads THREADS`
 - **English**: Defines the number of threads to use. The default is 5. This parameter controls the number of threads used during the Ruby interpreter copy process and Rubocopy operations.
 - **Turkish**: Kullanılacak thread sayısını belirtir. Varsayılan değer 5'tir. Bu parametre, Ruby yorumlayıcısının kopyalanma işlemi ve Rubocopy işlemleri sırasında kullanılacak thread sayısını kontrol eder.
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>
 - <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/>
 
-### 6. `-h, --help`
+#### 6. `-h, --help`
 - **English**: Displays the help message.
 - **Turkish**: Yardım mesajını görüntüler.
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>
