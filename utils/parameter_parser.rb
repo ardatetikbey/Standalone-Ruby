@@ -3,8 +3,47 @@ require 'optparse'
 
 class ParameterParser
   def initialize
-    @params = {}
+    @params = {
+      threads: 5
+    }
   end
+
+  def display_help
+    help_text = <<~EOT
+    Standalone-Ruby - Make your projects installation independent!
+
+    Usage: ruby #{$0} [options]
+
+    Options:
+      -p, --project PROJECT_PATH  Target Ruby project path.
+          Ensures that the given project path exists. If not, an error is displayed.
+
+      -r, --ruby RUBY_PATH        Path to the Ruby interpreter.
+          Ensures that the given Ruby path exists and contains a 'bin' directory.
+
+      -m, --main MAIN_FILE        Path to the main Ruby file of the project.
+          Ensures that the specified Ruby file exists.
+
+      -l, --launcher LAUNCHER     Launcher file name (either .vbs or .bat).
+          Ensure the launcher file exists and is of the correct type (either .vbs or .bat).
+
+      -t, --template TEMPLATE     Template file for launcher.
+          Ensures that the specified template file exists.
+
+      -c, --threads THREADS       Number of threads to use (default is 5).
+          Determines the number of threads used during the Ruby interpreter copy process and for Rubocopy operations.
+          A higher number of threads can speed up the process, but requires more system resources.
+
+      -h, --help                  Show this help message
+
+    For more details, please visit the documentation at:
+      https://github.com/ardatetikbey/Standalone-Ruby
+
+    EOT
+
+    puts help_text
+  end
+
 
   def parse
     begin
@@ -44,6 +83,15 @@ class ParameterParser
           end
         end
 
+        opts.on("-c", "--threads THREADS", Integer, "Number of threads to use (default is 5)") do |threads|
+          if threads.is_a?(Integer)
+            @params[:threads] = threads
+          else
+            print("Parser Error: ".red); puts("Invalid value for threads. Please provide an integer.")
+            exit!
+          end
+        end
+
         opts.on("-l", "--launcher LAUNCHER", String, "Launcher file name.type (vbs or bat)") do |launcher|
           launcher.strip!
           if launcher.include?(".vbs")
@@ -69,10 +117,15 @@ class ParameterParser
             exit!
           end
         end
+
+        opts.on("-h", "--help", "Show this help message") do
+          display_help
+          exit!
+        end
       end.parse!
 
-      if @params.empty?
-        print("Error: ".red); puts("No parameters provided. Please provide the necessary parameters.")
+      if @params[:project_path].nil? || @params[:ruby_path].nil? || @params[:main_file].nil?
+        print("Error: ".red); puts("Missing required parameters. Please provide the necessary parameters:\n  -p, -r, -m.\nYou can use the -h parameter for the help menu.")
         exit!
       end
     rescue Exception => e
