@@ -109,6 +109,7 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
   - Şifrelenmiş Ruby Çalıştırma - Ruby betiklerini şifreleyerek koruma sağlanacak ve çözüp çalıştırma özelliği eklenecek.
   - Çapraz Platform Desteği - Linux ve macOS sistemlerinde benzer bir çalışma mantığı sunacak destek eklenmesi.
   - Özel Çalıştırıcı Dosya Biçimleri - .vbs ve .bat dışında alternatif çalıştırıcı dosya formatları eklenmesi.
+  - Inno Setup EXE Desteği - Proje çıktısında oluşan başlatıcı dosyanın proje dosyalarıyla beraber bir setup haline getirilmesi.  
 
 - <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> **To-Do List** 
   - Logger Support - A logging mechanism will be added to facilitate debugging and monitoring the program’s operation.
@@ -116,6 +117,7 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
   - Encrypted Ruby Execution - Ruby scripts will be encrypted for protection and will have an option to be decrypted and executed.
   - Cross-Platform Support - Support for running on Linux and macOS with similar functionality will be added.
   - Custom Execution File Formats - Alternative execution file formats will be introduced beyond .vbs and .bat.
+  - Inno Setup EXE Support - Converting the launcher file created in the project output into a setup along with the project files.
 
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> **Aufgabenliste**
   - Logger-Unterstützung - Ein Logging-Mechanismus wird hinzugefügt, um die Programmausführung und das Debuggen zu erleichtern.
@@ -123,6 +125,7 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
   - Verschlüsselte Ruby-Ausführung - Ruby-Skripte werden zum Schutz verschlüsselt, und eine Entschlüsselungs- und Ausführungsfunktion wird hinzugefügt.
   - Cross-Platform-Unterstützung - Es wird Unterstützung hinzugefügt, um ähnliche Funktionen auf Linux- und macOS-Systemen bereitzustellen.
   - Benutzerdefinierte Launcher-Dateiformate - Es werden alternative Launcher-Dateiformate hinzugefügt, außer .vbs und .bat.
+  - Konvertieren der in der Projektausgabe erstellten Launcher-Datei zusammen mit den Projektdateien in ein Setup.
   
 - <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> **やることリスト**
   - ロガーサポート - プログラムの実行とデバッグを容易にするためにロギングメカニズムが追加されます。
@@ -130,6 +133,7 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
   - 暗号化されたRuby実行 - Rubyスクリプトが保護のために暗号化され、復号化して実行する機能が追加されます。
   - クロスプラットフォームサポート - LinuxおよびmacOSシステムで同様の機能が提供されるサポートが追加されます。
   - カスタムランチャーファイル形式 - .vbsおよび.bat以外の代替ランチャーファイル形式が追加されます。
+  - プロジェクト出力で作成されたランチャー ファイルをプロジェクト ファイルとともにセットアップに変換します。
     
 ---
 
