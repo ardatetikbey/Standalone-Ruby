@@ -8,6 +8,12 @@ class ParameterParser
     }
   end
 
+  def normalize_paths!
+    @params.each do |key, value|
+      @params[key] = value.gsub('\\', '/') if value.is_a?(String)
+    end
+  end
+
   def display_help
     help_text = <<~EOT
     Standalone-Ruby - Make your projects installation independent!
@@ -128,6 +134,8 @@ class ParameterParser
         print("Error: ".red); puts("Missing required parameters. Please provide the necessary parameters:\n  -p, -r, -m.\nYou can use the -h parameter for the help menu.")
         exit!
       end
+
+      normalize_paths!
     rescue Exception => e
       print("Parser Error: ".red); puts("#{e.message}".red)
     end
