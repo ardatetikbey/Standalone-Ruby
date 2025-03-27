@@ -73,12 +73,18 @@ ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby
 
 ---
 
-## Notes
+## Notlar / Notes / Anmerkungen / ノート
 
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> Yardım mesajını görüntüler.
+  
+- <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/>
 - Make sure that the provided paths are valid and accessible from your system.
 - The launcher file type must be either `.vbs` or `.bat` for Windows systems.
 - The `threads` option can significantly impact the performance during the copying process, so use it wisely based on your system’s capabilities.
 - For more details, refer to the official [GitHub Repository](https://github.com/ardatetikbey/Standalone-Ruby).
+
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/> Zeigt die Hilfemeldung an.
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> ヘルプメッセージを表示します。
 
 ---
 
