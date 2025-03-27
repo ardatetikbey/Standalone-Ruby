@@ -32,7 +32,7 @@ Contact: ardatetikruby@gmail.com
 ## Example Command:
 
 ```bash
-ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher1.vbs -c 10
+standalone-ruby -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher1.vbs -c 10
 ```
 
 ## Parametreler / Parameters / Parameter / パラメータ
