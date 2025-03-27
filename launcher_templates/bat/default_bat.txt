@@ -1,9 +1,0 @@
-@echo off
-setlocal
-
-set "RUBY_PATH=%~dp0STANDALONE_RUBY_PATH"
-set "SCRIPT_PATH=%~dp0STANDALONE_MAIN_FILE"
-
-start "" /B "%RUBY_PATH%" "%SCRIPT_PATH%"
-
-exit
