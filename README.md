@@ -27,7 +27,74 @@
 
 ## Kullanım / Use / Verwenden / 使用するには
 
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/>
+
+# Standalone-Ruby Usage Guide
+
+This is a tool to make Ruby projects installation-independent. It allows you to package and run Ruby projects without needing to install Ruby separately on the target machine.
+
+## Example Command:
+
+```bash
+ruby .\main.rb -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher1.vbs -c 10
+```
+
+## Parameters
+
+### 1. `-p, --project PROJECT_PATH`
+- **English**: Specifies the target Ruby project path. It checks that the given project path exists.
+- **Turkish**: Hedef Ruby proje yolunu belirtir. Verilen proje yolunun varlığını kontrol eder.
+
+### 2. `-r, --ruby RUBY_PATH`
+- **English**: Defines the path to the Ruby interpreter. It checks that the given Ruby path exists and contains a 'bin' directory.
+- **Turkish**: Ruby yorumlayıcısının yolunu tanımlar. Verilen Ruby yolunun varlığını ve içinde 'bin' dizini olup olmadığını kontrol eder.
+
+### 3. `-m, --main MAIN_FILE`
+- **English**: Provides the path to the main Ruby file of the project. It ensures that the specified Ruby file exists.
+- **Turkish**: Projenin ana Ruby dosyasının yolunu belirtir. Verilen Ruby dosyasının varlığını kontrol eder.
+
+### 4. `-l, --launcher LAUNCHER`
+- **English**: Specifies the launcher file name, which can either be `.vbs` or `.bat`. It ensures the launcher file exists and is of the correct type.
+- **Turkish**: Çalıştırıcı dosyasının adını belirtir, bu dosya `.vbs` veya `.bat` olabilir. Çalıştırıcı dosyasının varlığını ve doğru türde olduğunu kontrol eder.
+
+### 5. `-c, --threads THREADS`
+- **English**: Defines the number of threads to use. The default is 5. This parameter controls the number of threads used during the Ruby interpreter copy process and Rubocopy operations.
+- **Turkish**: Kullanılacak thread sayısını belirtir. Varsayılan değer 5'tir. Bu parametre, Ruby yorumlayıcısının kopyalanma işlemi ve Rubocopy işlemleri sırasında kullanılacak thread sayısını kontrol eder.
+
+### 6. `-h, --help`
+- **English**: Displays the help message.
+- **Turkish**: Yardım mesajını görüntüler.
+
+## Detailed Explanation
+
+### What Happens with Each Option?
+
+1. **Project Path (`-p`)**:
+   - Specifies the location of the project you want to work with. This is important for identifying where the Ruby project files are located.
+  
+2. **Ruby Path (`-r`)**:
+   - This option tells the tool where the Ruby interpreter is located on your machine. It's necessary for making sure the right Ruby environment is used.
+
+3. **Main File (`-m`)**:
+   - Points to the main Ruby file in your project. This is the entry point for the Ruby script you want to run.
+
+4. **Launcher (`-l`)**:
+   - Specifies a launcher file, which can either be a `.vbs` or `.bat` file. This launcher will execute the Ruby project and is crucial for creating a Windows-compatible executable.
+
+5. **Threads (`-c`)**:
+   - Determines how many threads will be used when copying the Ruby interpreter and project files. Using multiple threads can speed up the process but may require more system resources.
+
+6. **Help (`-h`)**:
+   - If you are unsure about how to use the tool, this option will show you the usage instructions and available parameters.
+
+## Notes
+
+- Make sure that the provided paths are valid and accessible from your system.
+- The launcher file type must be either `.vbs` or `.bat` for Windows systems.
+- The `threads` option can significantly impact the performance during the copying process, so use it wisely based on your system’s capabilities.
+- For more details, refer to the official [GitHub Repository](https://github.com/ardatetikbey/Standalone-Ruby).
+
+
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> 
 
 - <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/>
 
