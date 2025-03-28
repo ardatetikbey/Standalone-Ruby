@@ -39,6 +39,8 @@ class ParameterParser
       -c, --threads THREADS       Number of threads to use (default is 5).
           Determines the number of threads used during the Ruby interpreter copy process and for Rubocopy operations.
           A higher number of threads can speed up the process, but requires more system resources.
+      
+      -g, --gui                   This option allows the rubyw.exe file in the bin folder to be used.
 
       -h, --help                  Show this help message
 
@@ -122,6 +124,10 @@ class ParameterParser
             print("Parser Error: ".red); puts("The specified template file #{template} could not be found!")
             exit!
           end
+        end
+
+        opts.on("-g", "--gui", "Project mode with visual interface") do
+          @params[:gui] = true
         end
 
         opts.on("-h", "--help", "Show this help message") do

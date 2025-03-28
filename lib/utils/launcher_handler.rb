@@ -10,10 +10,16 @@ class LauncherHandler
       puts("\nThe template creation process has been started.")
 
       if @params[:template]
+        if @params[:gui] == true
+          ruby_file = "rubyw.exe"
+        else
+          ruby_file = "ruby.exe"
+        end
+
         user_template = @params[:template].to_s
         content = File.read(user_template)
 
-        content.gsub!("STANDALONE_RUBY_PATH", "#{File.join(File.basename(@params[:ruby_path].to_s), "bin", "ruby.exe")}")
+        content.gsub!("STANDALONE_RUBY_PATH", "#{File.join(File.basename(@params[:ruby_path].to_s), "bin", "#{ruby_file}")}")
         content.gsub!("STANDALONE_MAIN_FILE", "#{File.basename(@params[:main_file].to_s)}")
 
         new_launcher_path = File.join(@params[:project_path].to_s, @params[:launcher_name].to_s)
@@ -23,13 +29,20 @@ class LauncherHandler
         end
       else
         if @params[:launcher_type] == "vbs"
-          vbs_template = File.join(File.expand_path("../data/vbs", __dir__), "default_vbs.txt")
+          if @params[:gui] == true
+            vbs_template = File.join(File.expand_path("../data/vbs", __dir__), "vbs_gui.txt")
+            ruby_file = "rubyw.exe"
+          else
+            vbs_template = File.join(File.expand_path("../data/vbs", __dir__), "default_vbs.txt")
+            ruby_file = "ruby.exe"
+          end
+
           puts "Using: #{vbs_template}"
 
           if File.exist?(vbs_template)
             content = File.read(vbs_template)
 
-            content.gsub!("STANDALONE_RUBY_PATH", "#{File.join(File.basename(@params[:ruby_path].to_s), "bin", "ruby.exe")}")
+            content.gsub!("STANDALONE_RUBY_PATH", "#{File.join(File.basename(@params[:ruby_path].to_s), "bin", "#{ruby_file}")}")
             content.gsub!("STANDALONE_MAIN_FILE", "#{File.basename(@params[:main_file].to_s)}")
 
             new_launcher_path = File.join(@params[:project_path].to_s, @params[:launcher_name].to_s)
@@ -42,13 +55,19 @@ class LauncherHandler
             exit!
           end
         else
+          if @params[:gui] == true
+            ruby_file = "rubyw.exe"
+          else
+            ruby_file = "ruby.exe"
+          end
+
           bat_template = File.join(File.expand_path("../data/bat", __dir__), "default_bat.txt")
           puts "Using: #{bat_template}"
 
           if File.exist?(bat_template)
             content = File.read(bat_template)
 
-            content.gsub!("STANDALONE_RUBY_PATH", "#{File.join(File.basename(@params[:ruby_path].to_s), "bin", "ruby.exe")}")
+            content.gsub!("STANDALONE_RUBY_PATH", "#{File.join(File.basename(@params[:ruby_path].to_s), "bin", "#{ruby_file}")}")
             content.gsub!("STANDALONE_MAIN_FILE", "#{File.basename(@params[:main_file].to_s)}")
 
             new_launcher_path = File.join(@params[:project_path].to_s, @params[:launcher_name].to_s)
