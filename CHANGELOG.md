@@ -12,5 +12,5 @@
 - Project text outputs corrected
 - Added launcher to lib folder
 
-## [1.2.1] - 2025-04-02
+## [1.2.1] - 2025-04-03
 - Project text outputs corrected again
