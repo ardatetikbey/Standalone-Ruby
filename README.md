@@ -2,8 +2,6 @@
 
 ![Project Banner](images/banner.jpg)
 
-[![Gem Version](https://badge.fury.io/rb/standalone-ruby@2x.png?icon=si%3Arubygems)](https://badge.fury.io/rb/standalone-ruby)
-
 - 🔗 **GitHub:** [Project Github Link](https://github.com/ardatetikbey/Standalone-Ruby)
 - 🔗 **RubyGems:** [Project RubyGems Link](https://rubygems.org/gems/standalone-ruby)
 - 🔗 **Contact:** ardatetikruby@gmail.com
