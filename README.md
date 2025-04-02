@@ -28,7 +28,9 @@ Project owner: Arda Tetik
 
 - This program takes the Ruby interpreter directory, the project folder, and the path to the project's main file. It places these values ​​appropriately in a starter file, optionally with a VBS or BAT extension, and copies the specified Ruby interpreter to the project directory. When the starter file is run, it opens the project's main file using the corresponding Ruby interpreter.
 
-![Sample](/images/sample_output.png)
+<p align="center">
+  <img src="/images/sample_output.png" width="600"/>
+</p>
 
 ---
 
