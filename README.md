@@ -6,7 +6,7 @@
 - 🔗 **RubyGems:** [Project RubyGems Link](https://rubygems.org/gems/standalone-ruby)
 - 🔗 **Contact:** ardatetikruby@gmail.com
 
-  ![Version](https://img.shields.io/badge/version-1.1-red)
+![Version](https://img.shields.io/badge/version-1.1-red) ![Supported Platforms](https://img.shields.io/badge/platform-windows-blue)
 
 ---
 
