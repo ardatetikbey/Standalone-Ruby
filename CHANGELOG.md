@@ -11,3 +11,6 @@
 - Added options for new supports
 - Project text outputs corrected
 - Added launcher to lib folder
+
+## [1.2.1] - 2025-04-02
+- Project text outputs corrected again
