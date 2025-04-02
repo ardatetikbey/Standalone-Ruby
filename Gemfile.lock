@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    standalone-ruby (1.0)
+    standalone-ruby (1.2)
 
 GEM
   remote: https://rubygems.org/

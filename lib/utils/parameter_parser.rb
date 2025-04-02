@@ -18,7 +18,13 @@ class ParameterParser
     help_text = <<~EOT
     Standalone-Ruby - Make your projects installation independent!
 
-    Usage: ruby #{$0} [options]
+    Usage: standalone-ruby [subcommand] [options]
+
+    Subcommands:
+      archive   - archived default output
+      exe       - Compressed output to exe file (will be added soon)
+      setup     - Output converted to setup file (will be added soon)
+      zip       - Reduced size archive output (will be added soon)
 
     Options:
       -p, --project PROJECT_PATH  Target Ruby project path.
@@ -30,8 +36,8 @@ class ParameterParser
       -m, --main MAIN_FILE        Path to the main Ruby file of the project.
           Ensures that the specified Ruby file exists.
 
-      -l, --launcher LAUNCHER     Launcher file name (either .vbs or .bat).
-          Ensure the launcher file exists and is of the correct type (either .vbs or .bat).
+      -l, --launcher LAUNCHER     Launcher file name (either .vbs or .bat-cmd).
+          Ensure the launcher file exists and is of the correct type (either .vbs or .bat-cmd).
 
       -t, --template TEMPLATE     Template file for launcher.
           Ensures that the specified template file exists.
@@ -41,8 +47,11 @@ class ParameterParser
           A higher number of threads can speed up the process, but requires more system resources.
       
       -g, --gui                   This option allows the rubyw.exe file in the bin folder to be used.
+          You can choose it for projects that include GUI.
 
-      -h, --help                  Show this help message
+      -h, --help                  Show this help message.
+
+      --version                   Show program version.
 
     For more details, please visit the documentation at:
       https://github.com/ardatetikbey/Standalone-Ruby
@@ -100,7 +109,7 @@ class ParameterParser
           end
         end
 
-        opts.on("-l", "--launcher LAUNCHER", String, "Launcher file name.type (vbs or bat)") do |launcher|
+        opts.on("-l", "--launcher LAUNCHER", String, "Launcher file name.type (vbs or bat-cmd)") do |launcher|
           launcher.strip!
           if launcher.include?(".vbs")
             @params[:launcher] = launcher
@@ -109,6 +118,10 @@ class ParameterParser
           elsif launcher.include?(".bat")
             @params[:launcher] = launcher
             @params[:launcher_type] = "bat"
+            @params[:launcher_name] = File.basename(launcher)
+          elsif launcher.include?(".cmd")
+            @params[:launcher] = launcher
+            @params[:launcher_type] = "cmd"
             @params[:launcher_name] = File.basename(launcher)
           else
             print("Parser Error: ".red); puts("The supported launcher #{launcher} could not be found!")
@@ -128,6 +141,11 @@ class ParameterParser
 
         opts.on("-g", "--gui", "Project mode with visual interface") do
           @params[:gui] = true
+        end
+
+        opts.on("--version") do
+          puts "Standalone Ruby Gem Version 1.2"
+          exit!
         end
 
         opts.on("-h", "--help", "Show this help message") do

@@ -61,7 +61,7 @@ class LauncherHandler
             ruby_file = "ruby.exe"
           end
 
-          bat_template = File.join(File.expand_path("../data/bat", __dir__), "default_bat.txt")
+          bat_template = File.join(File.expand_path("../data/bat-cmd", __dir__), "default_bat_cmd.txt")
           puts "Using: #{bat_template}"
 
           if File.exist?(bat_template)
