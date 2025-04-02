@@ -1,6 +1,6 @@
 # Project: Standalone Ruby
 
-![Project Banner](images/banner.jpg)
+![Project Banner](../images/banner.jpg)
 
 - 🔗 **GitHub:** [Project Github Link](https://github.com/ardatetikbey/Standalone-Ruby)
 - 🔗 **RubyGems:** [Project RubyGems Link](https://rubygems.org/gems/standalone-ruby)
