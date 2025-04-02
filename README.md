@@ -2,6 +2,8 @@
 
 ![Project Banner](images/banner.jpg)
 
+Project owner: Arda Tetik
+
 - 🔗 **GitHub:** [Project Github Link](https://github.com/ardatetikbey/Standalone-Ruby)
 - 🔗 **RubyGems:** [Project RubyGems Link](https://rubygems.org/gems/standalone-ruby)
 - 🔗 **Contact:** ardatetikruby@gmail.com
