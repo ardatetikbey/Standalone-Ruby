@@ -8,7 +8,13 @@ Project owner: Arda Tetik
 - 🔗 **RubyGems:** [Project RubyGems Link](https://rubygems.org/gems/standalone-ruby)
 - 🔗 **Contact:** ardatetikruby@gmail.com
 
-![Language](https://img.shields.io/badge/language-Ruby-red) ![Version](https://img.shields.io/badge/version-1.1-red) ![Supported Platforms](https://img.shields.io/badge/platform-windows-blue) ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+![Language](https://img.shields.io/badge/language-Ruby-red) ![Version](https://img.shields.io/badge/version-1.2-red) ![Supported Platforms](https://img.shields.io/badge/platform-windows-blue) ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+
+---
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> [Türkçe döküman](documents/turkish.md)
+- <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> [English document](documents/english.md)
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>  [Deutsches Dokument](documents/deutsch.md)
+- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> [日本語文書](documents/japanese.md)
 
 ---
 
@@ -21,6 +27,10 @@ Project owner: Arda Tetik
 ## Logic
 
 - This program takes the Ruby interpreter directory, the project folder, and the path to the project's main file. It places these values ​​appropriately in a starter file, optionally with a VBS or BAT extension, and copies the specified Ruby interpreter to the project directory. When the starter file is run, it opens the project's main file using the corresponding Ruby interpreter.
+
+<p align="center">
+  <img src="/images/sample_output.png" width="150"/>
+</p>
 
 ---
 

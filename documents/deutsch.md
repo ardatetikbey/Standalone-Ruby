@@ -1,12 +1,10 @@
 # Project: Standalone Ruby
 
-![Project Banner](images/banner.jpg)
+![Project Banner](../images/banner.jpg)
 
 - 🔗 **GitHub:** [Project Github Link](https://github.com/ardatetikbey/Standalone-Ruby)
 - 🔗 **RubyGems:** [Project RubyGems Link](https://rubygems.org/gems/standalone-ruby)
 - 🔗 **Contact:** ardatetikruby@gmail.com
-
-![Language](https://img.shields.io/badge/language-Ruby-red) ![Version](https://img.shields.io/badge/version-1.1-red) ![Supported Platforms](https://img.shields.io/badge/platform-windows-blue) ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 
 ---
 
