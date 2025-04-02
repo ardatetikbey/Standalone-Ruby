@@ -88,7 +88,7 @@ standalone-ruby -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Rub
 
 ---
 
-## Translator
+## Document Translator
 - TrueHalo aka Ahmet Bahadır Bakır 
 - Email: truesthalo@gmail.com
 - Github: https://github.com/TrueHalo
