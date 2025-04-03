@@ -71,12 +71,11 @@ standalone-ruby -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Rub
 ---
 
 ## Yapılacaklar Listesi
- 
+  - Exe Paketleme Desteği: Projelerinizi tek bir exe dosyasında paketlemenizi sağlayacak.
   - Logger Desteği - Programın çalışmasını ve hata ayıklamayı kolaylaştırmak için loglama mekanizması eklenecek.
   - GUI Arayüzü - Kullanıcıların daha kolay işlem yapabilmesi için basit bir grafik arayüz geliştirilecek.
   - Şifrelenmiş Ruby Çalıştırma - Ruby betiklerini şifreleyerek koruma sağlanacak ve çözüp çalıştırma özelliği eklenecek.
   - Çapraz Platform Desteği - Linux ve macOS sistemlerinde benzer bir çalışma mantığı sunacak destek eklenmesi.
-  - Özel Çalıştırıcı Dosya Biçimleri - .vbs ve .bat dışında alternatif çalıştırıcı dosya formatları eklenmesi.
   - Inno Setup EXE Desteği - Proje çıktısında oluşan başlatıcı dosyanın proje dosyalarıyla beraber bir setup haline getirilmesi.  
 
 

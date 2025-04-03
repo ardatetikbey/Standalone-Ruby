@@ -144,7 +144,7 @@ class ParameterParser
         end
 
         opts.on("--version") do
-          puts "Standalone Ruby Gem Version 1.2"
+          puts "Standalone Ruby Gem Version 1.3"
           exit!
         end
 

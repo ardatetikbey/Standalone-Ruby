@@ -14,3 +14,6 @@
 
 ## [1.2.1] - 2025-04-03
 - Project text outputs corrected again
+
+## [1.3] - 2025-04-04
+- Logger support has been added for testing purposes and will be adjusted later.

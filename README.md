@@ -82,12 +82,11 @@ standalone-ruby -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Rub
 ---
 
 ## To Do List
-
+  - Exe Packaging Support: It will allow you to package your projects in a single exe file.
   - Logger Support - A logging mechanism will be added to make debugging and monitoring the program’s operation easier.
   - GUI Interface - A simple graphical user interface will be added to make it easier for users to operate.
   - Encrypted Ruby Execution - Ruby scripts will be encrypted for protection and will have an option to be decrypted and executed.
   - Cross-Platform Support - Support for running on Linux and macOS with similar functionality will be added.
-  - Custom Execution File Formats - Alternative execution file formats will be added other than .vbs and .bat.
   - Inno Setup EXE Support - Converting the launcher file created in the project output into a setup with the project files.
 
 ---

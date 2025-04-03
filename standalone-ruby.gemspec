@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "standalone-ruby"
-  spec.version       = "1.2"
+  spec.version       = "1.3"
   spec.authors       = ["Arda Tetik"]
   spec.email         = ["ardatetikruby@gmail.com"]
 
