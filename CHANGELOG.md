@@ -16,4 +16,4 @@
 - Project text outputs corrected again
 
 ## [1.3] - 2025-04-04
-- Logger support has been added for testing purposes and will be adjusted later.
+- Added Logger support for testing purposes and will be set in version 1.3.1
