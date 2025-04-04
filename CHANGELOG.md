@@ -17,3 +17,7 @@
 
 ## [1.3] - 2025-04-04
 - Logger support has been added for testing purposes and will be adjusted later.
+
+## [1.3.1] - 2025-04-04
+- Added platform analysis function
+- Logger support fixed

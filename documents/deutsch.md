@@ -71,7 +71,6 @@ standalone-ruby -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Rub
 
 ## Aufgabenliste
   - Unterstützung für EXE-Paketierung: Sie können Ihre Projekte in einer einzigen EXE-Datei packen.
-  - Logger-Unterstützung - Ein Logging-Mechanismus wird hinzugefügt, um die Programmausführung und das Debuggen zu erleichtern.
   - GUI-Oberfläche - Eine einfache grafische Benutzeroberfläche wird entwickelt, um den Benutzern die Durchführung von Aufgaben zu erleichtern.
   - Verschlüsselte Ruby-Ausführung - Ruby-Skripte werden zum Schutz verschlüsselt, und eine Entschlüsselungs- und Ausführungsfunktion wird hinzugefügt.
   - Cross-Platform-Unterstützung - Es wird Unterstützung hinzugefügt, um ähnliche Funktionen auf Linux- und macOS-Systemen bereitzustellen.

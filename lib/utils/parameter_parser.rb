@@ -1,11 +1,15 @@
 require 'fileutils'
 require 'optparse'
 
+require_relative 'logger_helper'
+
 class ParameterParser
   def initialize
     @params = {
       threads: 5
     }
+
+    @logger = LoggerHelper.instance
   end
 
   def normalize_paths!
@@ -16,51 +20,50 @@ class ParameterParser
 
   def display_help
     help_text = <<~EOT
-    Standalone-Ruby - Make your projects installation independent!
+      Standalone-Ruby - Make your projects installation independent!
 
-    Usage: standalone-ruby [subcommand] [options]
+      Usage: standalone-ruby [subcommand] [options]
 
-    Subcommands:
-      archive   - archived default output
-      exe       - Compressed output to exe file (will be added soon)
-      setup     - Output converted to setup file (will be added soon)
-      zip       - Reduced size archive output (will be added soon)
+      Subcommands:
+        archive   - archived default output
+        exe       - Compressed output to exe file (will be added soon)
+        setup     - Output converted to setup file (will be added soon)
+        zip       - Reduced size archive output (will be added soon)
 
-    Options:
-      -p, --project PROJECT_PATH  Target Ruby project path.
-          Ensures that the given project path exists. If not, an error is displayed.
+      Options:
+        -p, --project PROJECT_PATH  Target Ruby project path.
+            Ensures that the given project path exists. If not, an error is displayed.
 
-      -r, --ruby RUBY_PATH        Path to the Ruby interpreter.
-          Ensures that the given Ruby path exists and contains a 'bin' directory.
+        -r, --ruby RUBY_PATH        Path to the Ruby interpreter.
+            Ensures that the given Ruby path exists and contains a 'bin' directory.
 
-      -m, --main MAIN_FILE        Path to the main Ruby file of the project.
-          Ensures that the specified Ruby file exists.
+        -m, --main MAIN_FILE        Path to the main Ruby file of the project.
+            Ensures that the specified Ruby file exists.
 
-      -l, --launcher LAUNCHER     Launcher file name (either .vbs or .bat-cmd).
-          Ensure the launcher file exists and is of the correct type (either .vbs or .bat-cmd).
+        -l, --launcher LAUNCHER     Launcher file name (either .vbs or .bat-cmd).
+            Ensure the launcher file exists and is of the correct type (either .vbs or .bat-cmd).
 
-      -t, --template TEMPLATE     Template file for launcher.
-          Ensures that the specified template file exists.
+        -t, --template TEMPLATE     Template file for launcher.
+            Ensures that the specified template file exists.
 
-      -c, --threads THREADS       Number of threads to use (default is 5).
-          Determines the number of threads used during the Ruby interpreter copy process and for Rubocopy operations.
-          A higher number of threads can speed up the process, but requires more system resources.
-      
-      -g, --gui                   This option allows the rubyw.exe file in the bin folder to be used.
-          You can choose it for projects that include GUI.
+        -c, --threads THREADS       Number of threads to use (default is 5).
+            Determines the number of threads used during the Ruby interpreter copy process and for Rubocopy operations.
+            A higher number of threads can speed up the process, but requires more system resources.
+        
+        -g, --gui                   This option allows the rubyw.exe file in the bin folder to be used.
+            You can choose it for projects that include GUI.
 
-      -h, --help                  Show this help message.
+        -h, --help                  Show this help message.
 
-      --version                   Show program version.
+        --version                   Show program version.
 
-    For more details, please visit the documentation at:
-      https://github.com/ardatetikbey/Standalone-Ruby
+      For more details, please visit the documentation at:
+        https://github.com/ardatetikbey/Standalone-Ruby
 
     EOT
 
     puts help_text
   end
-
 
   def parse
     begin
@@ -74,6 +77,7 @@ class ParameterParser
             @params[:project_path] = project_path
           else
             print("Parser Error: ".red); puts("The specified project path #{project_path} could not be found!")
+            @logger.error("Parser Error: The project path #{project_path} could not be found!")
             exit!
           end
         end
@@ -86,6 +90,7 @@ class ParameterParser
             end
           else
             print("Parser Error: ".red); puts("The specified Ruby path #{ruby_path} could not be found!")
+            @logger.error("Parser Error: The specified Ruby path #{ruby_path} could not be found!")
             exit!
           end
         end
@@ -96,6 +101,7 @@ class ParameterParser
             @params[:main_file] = main_file
           else
             print("Parser Error: ".red); puts("The specified file #{main_file} could not be found!")
+            @logger.error("Parser Error: The specified file #{main_file} could not be found!")
             exit!
           end
         end
@@ -105,6 +111,7 @@ class ParameterParser
             @params[:threads] = threads
           else
             print("Parser Error: ".red); puts("Invalid value for threads. Please provide an integer.")
+            @logger.error("Parser Error: Invalid value for threads.")
             exit!
           end
         end
@@ -125,6 +132,7 @@ class ParameterParser
             @params[:launcher_name] = File.basename(launcher)
           else
             print("Parser Error: ".red); puts("The supported launcher #{launcher} could not be found!")
+            @logger.error("Parser Error: The supported launcher path #{launcher} could not be found!")
             exit!
           end
         end
@@ -135,6 +143,7 @@ class ParameterParser
             @params[:template] = template
           else
             print("Parser Error: ".red); puts("The specified template file #{template} could not be found!")
+            @logger.error("Parser Error: The specified template file #{template} could not be found!")
             exit!
           end
         end
@@ -144,7 +153,7 @@ class ParameterParser
         end
 
         opts.on("--version") do
-          puts "Standalone Ruby Gem Version 1.3"
+          puts "Standalone Ruby Gem Version 1.3.1"
           exit!
         end
 
@@ -156,12 +165,15 @@ class ParameterParser
 
       if @params[:project_path].nil? || @params[:ruby_path].nil? || @params[:main_file].nil?
         print("Error: ".red); puts("Missing required parameters. Please provide the necessary parameters:\n  -p, -r, -m.\nYou can use the -h parameter for the help menu.")
+        @logger.error("Parser Error: Missing required parameters.")
         exit!
       end
 
       normalize_paths!
     rescue Exception => e
       print("Parser Error: ".red); puts("#{e.message}".red)
+      @logger.error("Parser Error: #{e.message}")
+      exit!
     end
   end
 
