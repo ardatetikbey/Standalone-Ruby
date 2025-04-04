@@ -12,7 +12,6 @@ Project owner: Arda Tetik
 
 ---
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> [Türkçe döküman](documents/turkish.md)
-- <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" width="20"/> [English document](documents/english.md)
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>  [Deutsches Dokument](documents/deutsch.md)
 - <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> [日本語文書](documents/japanese.md)
 
