@@ -20,15 +20,9 @@ class ParameterParser
 
   def display_help
     help_text = <<~EOT
-      Standalone-Ruby - Make your projects installation independent!
+      Standalone-Ruby v1.4 - Package your Ruby projects as exe!
 
-      Usage: standalone-ruby [subcommand] [options]
-
-      Subcommands:
-        archive   - archived default output
-        exe       - Compressed output to exe file (will be added soon)
-        setup     - Output converted to setup file (will be added soon)
-        zip       - Reduced size archive output (will be added soon)
+      Usage: standalone-ruby [-h] [-p PROJECT_PATH] [-r RUBY_PATH] [-m MAIN_FILE] [-l LAUNCHER] [-t TEMPLATE] [-e EXE_FILE] [-c THREADS] [-g] [-v]
 
       Options:
         -p, --project PROJECT_PATH  Target Ruby project path.
@@ -46,6 +40,8 @@ class ParameterParser
         -t, --template TEMPLATE     Template file for launcher.
             Ensures that the specified template file exists.
 
+        -e, --exe EXE_FILE           Name of the exe file to be used for output
+
         -c, --threads THREADS       Number of threads to use (default is 5).
             Determines the number of threads used during the Ruby interpreter copy process and for Rubocopy operations.
             A higher number of threads can speed up the process, but requires more system resources.
@@ -55,7 +51,7 @@ class ParameterParser
 
         -h, --help                  Show this help message.
 
-        --version                   Show program version.
+        -v, --version               Show program version.
 
       For more details, please visit the documentation at:
         https://github.com/ardatetikbey/Standalone-Ruby
@@ -82,6 +78,10 @@ class ParameterParser
           end
         end
 
+        opts.on("-e", "--exe EXE", "Exe file name") do |exe|
+          @params[:exe] = exe
+        end
+
         opts.on("-r", "--ruby RUBY_PATH", String, "Ruby interpreter path") do |ruby_path|
           ruby_path.strip!
           if Dir.exist?("#{ruby_path}")
@@ -93,6 +93,10 @@ class ParameterParser
             @logger.error("Parser Error: The specified Ruby path #{ruby_path} could not be found!")
             exit!
           end
+        end
+
+        opts.on("--gcc") do
+          @params[:use_gcc] = true
         end
 
         opts.on("-m", "--main MAIN_FILE", String, "Path to the main ruby file of the project") do |main_file|
@@ -152,8 +156,8 @@ class ParameterParser
           @params[:gui] = true
         end
 
-        opts.on("--version") do
-          puts "Standalone Ruby Gem Version 1.3.1"
+        opts.on("-v", "--version") do
+          puts "Standalone Ruby Gem Version 1.4"
           exit!
         end
 
@@ -161,6 +165,8 @@ class ParameterParser
           display_help
           exit!
         end
+
+        normalize_paths!
       end.parse!
 
       if @params[:project_path].nil? || @params[:ruby_path].nil? || @params[:main_file].nil?
@@ -169,7 +175,6 @@ class ParameterParser
         exit!
       end
 
-      normalize_paths!
     rescue Exception => e
       print("Parser Error: ".red); puts("#{e.message}".red)
       @logger.error("Parser Error: #{e.message}")

@@ -8,16 +8,10 @@
 
 ---
 
-## Özellikler
-
-- Windows sistemlerde Ruby kurulumuna ihtiyaç duymadan Ruby ile yazdığınız projelerinizi çalıştırabilmenize olanak sağlar.
-
----
-
 ## Program Mantığı
 
-- Bu program, Ruby yorumlayıcısının dizinini, proje klasörünü ve projenin ana dosyasının yolunu alır. Bu değerleri, seçime bağlı olarak VBS veya BAT uzantılı başlatıcı dosyanın içine uygun şekilde yerleştirir ve belirtilen Ruby yorumlayıcısını proje dizinine kopyalar. Başlatıcı dosya çalıştırıldığında, ilgili Ruby yorumlayıcısını kullanarak projenin ana dosyasını açar.
-  
+- Bu program, Ruby yorumlayıcısının dizinini, proje klasörünü ve projenin ana dosyasının yolunu alır. Proje içerisine bu Ruby yorumlayıcısını kullanarak ana proje dosyasını açan bir exe dosyası oluşturur.
+- Örnek program çıktısı için sample klasöründe bulunan ekran resimlerine bakabilirsiniz.
 ---
 
 ## Kullanım
@@ -31,7 +25,11 @@ gem install standalone-ruby
 ## Örnek Kullanım:
 
 ```bash
-standalone-ruby -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher1.vbs -c 10
+standalone-ruby -p "C:/Users/User/Desktop/project" -e "launcher.exe" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher.exe -c 5
+```
+
+```bash
+standalone-ruby -p "C:/Users/User/Desktop/project" -e "launcher.exe" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher.exe -c 5 --gui
 ```
 
 ## Parametreler
@@ -45,37 +43,37 @@ standalone-ruby -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Rub
 #### 3. `-m, --main MAIN_FILE`
 - Projenin ana Ruby dosyasının yolunu belirtir. Verilen Ruby dosyasının varlığını kontrol eder.
 
-#### 4. `-l, --launcher LAUNCHER`
-- Çalıştırıcı dosyasının adını belirtir, bu dosya `.vbs` veya `.bat` formatlarında olabilir. Çalıştırıcı dosyasının varlığını ve uygun türde olduğunu kontrol eder.
+#### 4. `-e, --exe EXE_FILE`
+-  Oluşturulacak exe dosyasının ismini belirler.
 
-#### 5. `-c, --threads THREADS`
+#### 4. `-l, --launcher LAUNCHER`
+-  Exe dosyasının projeyi başlatmak için kullanacağı başlatıcı dosyayı tanımlar. VBS kullanılması önerilir.
+
+#### 6. `-c, --threads THREADS`
 - Kullanılacak thread sayısını belirtir. Varsayılan değer 5'tir. Bu parametre, Ruby yorumlayıcısının kopyalanma işlemi sırasında kullanılacak thread sayısını belirtir.
 
-#### 6. `-g, --gui`
+#### 7. `-g, --gui`
 - Görsel arayüz içeren projelerde kullanılmalıdır.
 
-#### 7. `-h, --help`
+#### 8. `-h, --help`
 - Yardım mesajını görüntüler.
 
 ---
 
 ## Notlar
-
   - Sağlanan yolların geçerli ve sisteminizden erişilebilir olduğundan emin olun.  
-  - Başlatıcı dosya türü Windows sistemleri için `.vbs` veya `.bat` olmalıdır.  
   - `threads` seçeneği kopyalama sürecinde performansı önemli ölçüde etkileyebilir, bu nedenle sisteminizin kapasitesine göre dikkatli kullanın.
   - Kullandığınız Ruby yorumlayıcısının çalıştıracağınız proje için bütün gem dosyalarını içerdiğinden emin olun.
-  - Daha fazla ayrıntı için resmi [GitHub Deposu](https://github.com/ardatetikbey/Standalone-Ruby)'na bakın.  
-
+  - Daha fazla ayrıntı için resmi [GitHub Deposu](https://github.com/ardatetikbey/Standalone-Ruby)'na bakın.
+  - Proje dizininde yapılacak konum değişiklikleri programın çalışmasını etkileyebilir.
 
 ---
 
 ## Yapılacaklar Listesi
-  - Exe Paketleme Desteği: Projelerinizi tek bir exe dosyasında paketlemenizi sağlayacak.
-  - GUI Arayüzü - Kullanıcıların daha kolay işlem yapabilmesi için basit bir grafik arayüz geliştirilecek.
+  - Tek Exe Dosyası - Çıktı olarak alınan exe dosyası tek bir dosya olarak kullanılabilecek.
+  - CLI Desteği - Konut satırı üzerinden parametre alan programlar için destek eklenecek.
+  - Zip Paketleme - Çıktı boyutunun azaltılması için dosya sıkıştırma desteği eklenecek.
   - Şifrelenmiş Ruby Çalıştırma - Ruby betiklerini şifreleyerek koruma sağlanacak ve çözüp çalıştırma özelliği eklenecek.
-  - Çapraz Platform Desteği - Linux ve macOS sistemlerinde benzer bir çalışma mantığı sunacak destek eklenmesi.
-  - Inno Setup EXE Desteği - Proje çıktısında oluşan başlatıcı dosyanın proje dosyalarıyla beraber bir setup haline getirilmesi.  
 
 
 ---
@@ -83,4 +81,3 @@ standalone-ruby -p "C:/Users/User/Desktop/PRJCT" -r "C:/Users/User/Documents/Rub
 ## Lisans
 
 - Bu proje MIT Lisansı altında lisanslanmıştır.
-

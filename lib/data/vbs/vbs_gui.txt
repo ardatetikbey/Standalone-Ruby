@@ -1,7 +1,7 @@
 Set objShell = CreateObject("WScript.Shell")
 
 rubyPath = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\STANDALONE_RUBY_PATH"
-scriptPath = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\main.rb"
+scriptPath = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName) & "\STANDALONE_MAIN_FILE"
 
 command = """" & rubyPath & """ """ & scriptPath & """"
 

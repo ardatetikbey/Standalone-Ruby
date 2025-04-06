@@ -4,8 +4,10 @@ class Launcher
   require_relative 'displayer'
   require_relative 'parameter_parser'
   require_relative 'ruby_copy'
-  require_relative 'launcher_handler'
   require_relative 'logger_helper'
+  require_relative 'exe_packer'
+  require_relative 'launcher_handler'
+  # require_relative 'config_generator'
 
   def initialize
     @parser = ParameterParser.new
@@ -14,8 +16,9 @@ class Launcher
 
     @displayer = Displayer.new(@params)
     @ruby_copy = RubyCopy.new(@params)
-    @launcher_handler = LauncherHandler.new(@params)
     @logger = LoggerHelper.instance
+    @exe_packer = ExePacker.new(@params)
+    @launcher_handler = LauncherHandler.new(@params)
   end
 
   def platform_analysis
@@ -23,16 +26,10 @@ class Launcher
     when /win32|mingw|cygwin/
       @params[:platform] = 'Windows'
       @logger.info("Working on windows platform.")
-    when /darwin/
-      print("Error: ".red); puts("Mac OS platform is not supported at the moment! Exiting...")
-      @logger.error("Mac OS platform is not supported at the moment! Exiting...")
-      exit!
-    when /linux/
-      print("Error: ".red); puts("Linux platform is not supported at the moment! Exiting...")
-      @logger.error("Linux platform is not supported at the moment! Exiting...")
-      exit!
     else
-      "#{RUBY_PLATFORM}"
+      print("Error: ".red); puts("This platform is not supported! Exiting...")
+      @logger.error("This platform is not supported! Exiting...")
+      exit!
     end
   end
 
@@ -51,14 +48,16 @@ class Launcher
       @logger.info("Banner display was made.")
       @displayer.display_params
       @logger.info("The parameters entered by the user are reflected on the screen.")
-      @logger.info("The initiator file creator function has started processing.")
-      @launcher_handler.handle
-      @logger.info("The launcher file creator has finished its function.")
       @ruby_copy.robocopy_interpreter
       @logger.info("Ruby interpreter copy function completed.")
+      @launcher_handler.handle
+      @logger.info("Launcher handler finished.")
+      @exe_packer.pack
+      @logger.info("Exe pack finished.")
 
-      puts "Program Output Path: #{@params[:project_path]}"
-      puts "Thanks for using Standalone-Ruby!"
+      puts "\nThanks for using Standalone-Ruby!"
+
+      print("\nWARNING: ".yellow); puts("Instead of changing the path of the created exe file, create a shortcut. The same applies here as in every application.")
       @logger.info("Program finished.")
     rescue Exception => e
       @logger.error("Launcher Error: #{e.message}")

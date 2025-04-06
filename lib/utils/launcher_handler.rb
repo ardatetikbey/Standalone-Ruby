@@ -12,6 +12,8 @@ class LauncherHandler
     begin
       puts("\nThe template creation process has been started.")
 
+      # FileUtils.mkdir(File.join(@params[:project_path], "sRb_files"))
+
       if @params[:template]
         if @params[:gui] == true
           ruby_file = "rubyw.exe"

@@ -21,3 +21,7 @@
 ## [1.3.1] - 2025-04-04
 - Added platform analysis function
 - Logger support fixed
+
+## [1.4] - 2025-04-06
+- Added exe support!
+- Improvements have been made for non-GUI programs.
