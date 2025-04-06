@@ -20,7 +20,7 @@ class ParameterParser
 
   def display_help
     help_text = <<~EOT
-      Standalone-Ruby v1.4 - Package your Ruby projects as exe!
+      Standalone-Ruby v1.4.1 - Package your Ruby projects as exe!
 
       Usage: standalone-ruby [-h] [-p PROJECT_PATH] [-r RUBY_PATH] [-m MAIN_FILE] [-l LAUNCHER] [-t TEMPLATE] [-e EXE_FILE] [-c THREADS] [-g] [-v]
 
@@ -157,7 +157,7 @@ class ParameterParser
         end
 
         opts.on("-v", "--version") do
-          puts "Standalone Ruby Gem Version 1.4"
+          puts "Standalone Ruby Gem Version 1.4.1"
           exit!
         end
 

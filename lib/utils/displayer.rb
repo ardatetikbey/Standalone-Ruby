@@ -14,7 +14,6 @@ class Displayer
       display_text << "Project Path: #{@params[:project_path]}" if @params[:project_path]
       display_text << "Exe File: #{@params[:exe]}" if @params[:exe]
       display_text << "Ruby Path: #{@params[:ruby_path]}" if @params[:ruby_path]
-      display_text << "Compiler: TCC (Thanks! Credit: https://bellard.org/tcc/)"
       display_text << "Ruby Folder: #{File.basename(@params[:ruby_path])}" if @params[:ruby_path]
       display_text << "Main File: #{@params[:main_file]}" if @params[:main_file]
       display_text << "Launcher: #{@params[:launcher]}" if @params[:launcher]
@@ -33,7 +32,7 @@ class Displayer
 
   def banner
     banner = -<<'BANNER'
-Standalone-Ruby v1.4 - Package your Ruby projects as exe!
+Standalone-Ruby v1.4.1 - Package your Ruby projects as exe!
   # Github: https://github.com/ardatetikbey/Standalone-Ruby
   # RubyGems: https://rubygems.org/gems/standalone-ruby
 
