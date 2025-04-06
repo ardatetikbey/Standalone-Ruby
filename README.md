@@ -8,7 +8,7 @@ Project owner: Arda Tetik
 - 🔗 **RubyGems:** [Project RubyGems Link](https://rubygems.org/gems/standalone-ruby)
 - 🔗 **Contact:** ardatetikruby@gmail.com
 
-![Language](https://img.shields.io/badge/language-Ruby-red) ![Version](https://img.shields.io/badge/version-1.3-red) ![Supported Platforms](https://img.shields.io/badge/platform-windows-blue) ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+![Language](https://img.shields.io/badge/language-Ruby-red) ![Version](https://img.shields.io/badge/version-1.4.1-red) ![Supported Platforms](https://img.shields.io/badge/platform-windows-blue) ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 
 ---
 - <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> [Türkçe döküman](documents/turkish.md)
@@ -17,17 +17,10 @@ Project owner: Arda Tetik
 
 ---
 
-## Features
-
-- It allows you to run your projects written with Ruby on Windows systems without the need for a Ruby installation.
-
----
-
 ## Logic
 
-- This program takes the Ruby interpreter directory, the project folder, and the path to the project's main file. It places these values ​​appropriately in a starter file, optionally with a VBS or BAT extension, and copies the specified Ruby interpreter to the project directory. When the starter file is run, it opens the project's main file using the corresponding Ruby interpreter.
-
-- You can look at sample folder.
+- This program takes the Ruby interpreter directory, the project folder, and the path to the project's main file. The project uses the Ruby interpreter to create an exe file that opens the main project file.
+- For a program output example you can take a look at the screenshots in the sample folder.
   
 ---
 
@@ -41,8 +34,16 @@ gem install standalone-ruby
 
 ## Example Command:
 
+Console Projects:
+
 ```bash
-standalone-ruby -p "C:\Users\arda\Desktop\project" -e launcher.exe -r "C:\Ruby34-x64" -m "C:\Users\User\Desktop\project\main.rb" -l launcher.vbs -c 10
+standalone-ruby -p "C:/Users/User/Desktop/project" -e "launcher.exe" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher.exe -c 5
+```
+
+GUI Projects:
+
+```bash
+standalone-ruby -p "C:/Users/User/Desktop/project" -e "launcher.exe" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher.exe -c 5 --gui
 ```
 
 ## Parameters
@@ -56,36 +57,41 @@ standalone-ruby -p "C:\Users\arda\Desktop\project" -e launcher.exe -r "C:\Ruby34
 #### 3. `-m, --main MAIN_FILE`
 - Designates the path of the projects main Ruby file. It checks if the specified Ruby file exists.
 
-#### 4. `-l, --launcher LAUNCHER`
-- Specifies the launcher file name, which can either be `.vbs` or `.bat`. It checks whether the launcher file exists and is of the correct type.
+#### 4. `-e, --exe EXE`
+- Specifies the name of the exe file thats going to be created.
 
-#### 5. `-c, --threads THREADS`
+#### 5. `-l, --launcher LAUNCHER`
+- Denfines the launcher file that the exe file will use to start the project. Using VBS is recommended.
+
+#### 6. `-c, --threads THREADS`
 - Specifies the number of threads to use. The default value is 5. This parameter specifies the number of threads to use during the copying process of the Ruby interpreter.
 
-#### 6. `-g, --gui`
+#### 7. `-g, --gui`
 - It should be used in projects that include visual interfaces.
 
-#### 7. `-h, --help`
+#### 8. `-h, --help`
 - Displays the help message.
 
+#### 9. `--gcc`
+- It uses GCC when creating an exe file. Make sure that GCC is installed on your computer. If GCC is not installed, it uses the TCC that is built into it.
 ---
 
 ## Notes
 
   - Make sure that the provided paths are valid and accessible from your system.  
-  - The launcher file type must be either `.vbs` or `.bat` for Windows systems.  
   - The `threads` option can significantly impact performance during the copying process, so use it wisely based on your system’s capabilities.
   - Make sure that the Ruby interpreter you are using includes all the gem files for the project you will be running.
   - For more details, refer to the official [GitHub Repository](https://github.com/ardatetikbey/Standalone-Ruby).  
+  - The location changes of the project directories might prevent the program from working.
 
 ---
 
 ## To Do List
-  - Exe Packaging Support: It will allow you to package your projects in a single exe file.
-  - GUI Interface - A simple graphical user interface will be added to make it easier for users to operate.
+
+  - Packaged One-File Exe Support - The output of the exe file will be able to used as a single file.
+  - CLI Support - Support will be added for the programs that take parametres from the command line.
+  - Zip Packaging - Zip packaging support will be added to decrease the size of the output.
   - Encrypted Ruby Execution - Ruby scripts will be encrypted for protection and will have an option to be decrypted and executed.
-  - Cross-Platform Support - Support for running on Linux and macOS with similar functionality will be added.
-  - Inno Setup EXE Support - Converting the launcher file created in the project output into a setup with the project files.
 
 ---
 
@@ -96,6 +102,6 @@ standalone-ruby -p "C:\Users\arda\Desktop\project" -e launcher.exe -r "C:\Ruby34
 ---
 
 ## Document Translator
-- TrueHalo aka Ahmet Bahadır Bakır 
+- TrueHalo aka Ahmet Bahadır Bakır
 - Email: truesthalo@gmail.com
 - Github: https://github.com/TrueHalo
