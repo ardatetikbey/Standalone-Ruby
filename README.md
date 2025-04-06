@@ -72,7 +72,7 @@ standalone-ruby -p "C:/Users/User/Desktop/project" -e "launcher.exe" -r "C:/User
 #### 8. `-h, --help`
 - Displays the help message.
 
-### 9. `--gcc`
+#### 9. `--gcc`
 - It uses GCC when creating an exe file. Make sure that GCC is installed on your computer. If GCC is not installed, it uses the TCC that is built into it.
 ---
 
