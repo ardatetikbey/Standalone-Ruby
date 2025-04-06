@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity type="win32" name="ruby_builtin_dlls" version="1.0.0.0"></assemblyIdentity>
+
+  <file name="libgmp-10.dll"/><file name="libgcc_s_seh-1.dll"/><file name="libwinpthread-1.dll"/>
+</assembly>
