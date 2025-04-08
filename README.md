@@ -6,6 +6,8 @@
 
 - This program takes the Ruby interpreter directory, the project folder, and the path to the project's main file. The project uses the Ruby interpreter to create an exe file that opens the main project file.
 - For a program output example you can take a look at in the example folder.
+
+![Example](images/usage.gif)
   
 ---
 
