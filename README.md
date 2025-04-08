@@ -1,79 +1,78 @@
 # Project: Standalone Ruby
 
-![Project Banner](images/banner.jpg)
-
-Project owner: Arda Tetik
-
-- 🔗 **GitHub:** [Project Github Link](https://github.com/ardatetikbey/Standalone-Ruby)
-- 🔗 **RubyGems:** [Project RubyGems Link](https://rubygems.org/gems/standalone-ruby)
-- 🔗 **Contact:** ardatetikruby@gmail.com
-
-![Language](https://img.shields.io/badge/language-Ruby-red) ![Version](https://img.shields.io/badge/version-1.4.1-red) ![Supported Platforms](https://img.shields.io/badge/platform-windows-blue) ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
-
----
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg" width="20"/> [Türkçe döküman](documents/turkish.md)
-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg" width="20"/>  [Deutsches Dokument](documents/deutsch.md)
-- <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg" width="20"/> [日本語文書](documents/japanese.md)
-
 ---
 
-## Logic
+## Overview
 
 - This program takes the Ruby interpreter directory, the project folder, and the path to the project's main file. The project uses the Ruby interpreter to create an exe file that opens the main project file.
-- For a program output example you can take a look at the screenshots in the sample folder.
+- For a program output example you can take a look at in the example folder.
   
 ---
 
-## Use
-
-## Install:
+## Installation
 
 ```bash
 gem install standalone-ruby
 ```
 
-## Example Command:
-
-Console Projects:
-
-```bash
-standalone-ruby -p "C:/Users/User/Desktop/project" -e "launcher.exe" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher.exe -c 5
-```
-
-GUI Projects:
-
-```bash
-standalone-ruby -p "C:/Users/User/Desktop/project" -e "launcher.exe" -r "C:/Users/User/Documents/Ruby34-x64" -m "C:/Users/User/Desktop/myproject/main.rb" -l launcher.exe -c 5 --gui
-```
+---
 
 ## Parameters
 
-#### 1. `-p, --project PROJECT_PATH`
-- Specifies the target Ruby project path. It checks if the given project path exists.
+```
+C:\Users\ardat>standalone-ruby -h
+Standalone-Ruby v1.4.2 - Package your Ruby projects as exe!
 
-#### 2. `-r, --ruby RUBY_PATH`
-- Designates the path to the Ruby interpreter. It checks if the given Ruby path exists and contains a 'bin' directory.
+Usage: standalone-ruby [-h] [-p PROJECT_PATH] [-r RUBY_PATH] [-m MAIN_FILE] [-l LAUNCHER] [-t TEMPLATE] [-e EXE_FILE] [-c THREADS] [-g] [-v]
 
-#### 3. `-m, --main MAIN_FILE`
-- Designates the path of the projects main Ruby file. It checks if the specified Ruby file exists.
+Options:
+  -p, --project PROJECT_PATH  Target Ruby project path.
+      Ensures that the given project path exists. If not, an error is displayed.
 
-#### 4. `-e, --exe EXE`
-- Specifies the name of the exe file thats going to be created.
+  -r, --ruby RUBY_PATH        Path to the Ruby interpreter.
+      Ensures that the given Ruby path exists and contains a 'bin' directory.
 
-#### 5. `-l, --launcher LAUNCHER`
-- Denfines the launcher file that the exe file will use to start the project. Using VBS is recommended.
+  -m, --main MAIN_FILE        Path to the main Ruby file of the project.
+      Ensures that the specified Ruby file exists.
 
-#### 6. `-c, --threads THREADS`
-- Specifies the number of threads to use. The default value is 5. This parameter specifies the number of threads to use during the copying process of the Ruby interpreter.
+  -l, --launcher LAUNCHER     Launcher file name (either .vbs or .bat-cmd).
+      Ensure the launcher file exists and is of the correct type (either .vbs or .bat-cmd).
 
-#### 7. `-g, --gui`
-- It should be used in projects that include visual interfaces.
+  -t, --template TEMPLATE     Template file for launcher.
+      Ensures that the specified template file exists.
 
-#### 8. `-h, --help`
-- Displays the help message.
+  -e, --exe EXE_FILE           Name of the exe file to be used for output
 
-#### 9. `--gcc`
-- It uses GCC when creating an exe file. Make sure that GCC is installed on your computer. If GCC is not installed, it uses the TCC that is built into it.
+  -c, --threads THREADS       Number of threads to use (default is 5).
+      Determines the number of threads used during the Ruby interpreter copy process and for Rubocopy operations.
+      A higher number of threads can speed up the process, but requires more system resources.
+
+  -g, --gui                   This option allows the rubyw.exe file in the bin folder to be used.
+      You can choose it for projects that include GUI.
+
+  -h, --help                  Show this help message.
+
+  -v, --version               Show program version.
+
+Notes:
+  - Make sure that the Ruby interpreter you are using includes all the gems required for the target project.
+  - The Ruby interpreter uses Robocopy for copying, and the number of threads given affects the speed of this operation.
+
+For more details, please visit the documentation at:
+  https://github.com/ardatetikbey/Standalone-Ruby
+
+
+```
+
+---
+
+## Examples
+
+```bash
+standalone-ruby -p "C:/Users/ardatetik/Desktop/project" -e "launcher.exe" -r "C:/Users/ardatetik/Documents/Ruby34-x64" -m "C:/Users/ardatetik/Desktop/myproject/main.rb" -l launcher1.exe -c 7 --gcc
+standalone-ruby -p "C:/Users/ardatetik/Desktop/project" -e "launcher.exe" -r "C:/Users/ardatetik/Documents/Ruby34-x64" -m "C:/Users/ardatetik/Desktop/myproject/main.rb" -l launcher2.exe -c 8 --gui
+```
+  
 ---
 
 ## Notes
