@@ -1,0 +1,251 @@
+append_cflags: checking for whether -fstack-protector-strong -D_FORTIFY_SOURCE=2 is accepted as CFLAGS... -------------------- yes
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest.exe -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong conftest.c -L. -LC:/Ruby34-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed     -lx64-ucrt-ruby340  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return !!argv[argc];
+8: }
+/* end */
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong  -fstack-protector-strong -D_FORTIFY_SOURCE=2 -Werror -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return !!argv[argc];
+8: }
+/* end */
+
+--------------------
+
+append_ldflags: checking for whether -fstack-protector-strong -l:libssp.a is accepted as LDFLAGS... -------------------- yes
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest.exe -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong -fstack-protector-strong -D_FORTIFY_SOURCE=2 conftest.c -L. -LC:/Ruby34-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed -fstack-protector-strong -l:libssp.a    -lx64-ucrt-ruby340  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return !!argv[argc];
+8: }
+/* end */
+
+--------------------
+
+have_library: checking for -lssp... -------------------- yes
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest.exe -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong -fstack-protector-strong -D_FORTIFY_SOURCE=2 conftest.c -L. -LC:/Ruby34-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed -fstack-protector-strong -l:libssp.a     -lx64-ucrt-ruby340 -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: 
+18: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+pkg_config: checking for pkg-config for openssl... -------------------- not found
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 x86_64-w64-mingw32-pkg-config --exists openssl
+package configuration for openssl is not found
+--------------------
+
+have_library: checking for BIO_read() in -llibcrypto... -------------------- no
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest.exe -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong -fstack-protector-strong -D_FORTIFY_SOURCE=2 conftest.c -L. -LC:/Ruby34-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed -fstack-protector-strong -l:libssp.a    -lssp  -lx64-ucrt-ruby340 -llibcrypto -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+conftest.c: In function 't':
+conftest.c:17:57: error: 'BIO_read' undeclared (first use in this function); did you mean '_read'?
+   17 | int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+      |                                                         ^~~~~~~~
+      |                                                         _read
+conftest.c:17:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest.exe -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong -fstack-protector-strong -D_FORTIFY_SOURCE=2 conftest.c -L. -LC:/Ruby34-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed -fstack-protector-strong -l:libssp.a    -lssp  -lx64-ucrt-ruby340 -llibcrypto -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -llibcrypto: No such file or directory
+collect2.exe: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: extern void BIO_read();
+18: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for BIO_read() in -lcrypto... -------------------- no
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest.exe -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong -fstack-protector-strong -D_FORTIFY_SOURCE=2 conftest.c -L. -LC:/Ruby34-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed -fstack-protector-strong -l:libssp.a    -lssp  -lx64-ucrt-ruby340 -lcrypto -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+conftest.c: In function 't':
+conftest.c:17:57: error: 'BIO_read' undeclared (first use in this function); did you mean '_read'?
+   17 | int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+      |                                                         ^~~~~~~~
+      |                                                         _read
+conftest.c:17:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest.exe -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong -fstack-protector-strong -D_FORTIFY_SOURCE=2 conftest.c -L. -LC:/Ruby34-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed -fstack-protector-strong -l:libssp.a    -lssp  -lx64-ucrt-ruby340 -lcrypto -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lcrypto: No such file or directory
+collect2.exe: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: extern void BIO_read();
+18: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for BIO_read() in -llibeay32... -------------------- no
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest.exe -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong -fstack-protector-strong -D_FORTIFY_SOURCE=2 conftest.c -L. -LC:/Ruby34-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed -fstack-protector-strong -l:libssp.a    -lssp  -lx64-ucrt-ruby340 -llibeay32 -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+conftest.c: In function 't':
+conftest.c:17:57: error: 'BIO_read' undeclared (first use in this function); did you mean '_read'?
+   17 | int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+      |                                                         ^~~~~~~~
+      |                                                         _read
+conftest.c:17:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+PATH=".;C:/Ruby34-x64/lib;C:\Ruby34-x64\bin;C:\msys64\ucrt64\bin;C:\msys64\usr\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Ruby34-x64\bin;C:\Ruby33-x64;C:\Users\ardat\AppData\Local\Microsoft\WindowsApps;C:\Users\ardat\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin" ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest.exe -IC:/Ruby34-x64/include/ruby-3.4.0/x64-mingw-ucrt -IC:/Ruby34-x64/include/ruby-3.4.0/ruby/backward -IC:/Ruby34-x64/include/ruby-3.4.0 -I. -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fstack-protector-strong -fstack-protector-strong -D_FORTIFY_SOURCE=2 conftest.c -L. -LC:/Ruby34-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed -fstack-protector-strong -l:libssp.a    -lssp  -lx64-ucrt-ruby340 -llibeay32 -lssp  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/14.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -llibeay32: No such file or directory
+collect2.exe: error: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: extern void BIO_read();
+18: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+

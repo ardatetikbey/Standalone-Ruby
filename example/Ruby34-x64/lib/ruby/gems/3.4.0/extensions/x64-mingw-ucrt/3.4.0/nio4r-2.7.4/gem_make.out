@@ -1,0 +1,18 @@
+current directory: C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/nio4r-2.7.4/ext/nio4r
+C:/Ruby34-x64/bin/ruby.exe extconf.rb
+
+current directory: C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/nio4r-2.7.4/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20250406-28612-xgbr6s sitelibdir\=./.gem.20250406-28612-xgbr6s clean
+make: *** No rule to make target 'clean'. Durdu.
+
+current directory: C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/nio4r-2.7.4/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20250406-28612-xgbr6s sitelibdir\=./.gem.20250406-28612-xgbr6s
+make: Nothing to be done for 'all'.
+
+current directory: C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/nio4r-2.7.4/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20250406-28612-xgbr6s sitelibdir\=./.gem.20250406-28612-xgbr6s install
+make: Nothing to be done for 'install'.
+
+current directory: C:/Ruby34-x64/lib/ruby/gems/3.4.0/gems/nio4r-2.7.4/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20250406-28612-xgbr6s sitelibdir\=./.gem.20250406-28612-xgbr6s clean
+make: *** No rule to make target 'clean'. Durdu.

@@ -55,7 +55,7 @@ class Launcher
       @exe_packer.pack
       @logger.info("Exe pack finished.")
 
-      puts "\nThanks for using Standalone-Ruby!"
+      puts "Thanks for using Standalone-Ruby! Don't forget to star the project on Github."
 
       print("\nWARNING: ".yellow); puts("Instead of changing the path of the created exe file, create a shortcut. The same applies here as in every application.")
       @logger.info("Program finished.")

@@ -48,7 +48,7 @@ class ExePacker
       File.delete(stub_output)
       @logger.info("Stub file deleted successfully")
 
-      puts("\nExe file has been generated!")
+      puts("\nExe file has been generated!".green_bold_dark)
       @logger.info("Exe file generated successfully at: #{exe_path}")
     rescue Exception => err
       @logger.error("Error occurred: #{err.message}")
@@ -64,5 +64,9 @@ class String
 
   def yellow
     "\e[33m#{self}\e[0m"
+  end
+
+  def green_bold_dark
+    "\e[1m\e[38;5;28m#{self}\e[0m"
   end
 end

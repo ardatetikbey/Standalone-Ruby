@@ -2,6 +2,7 @@ require 'fileutils'
 require 'optparse'
 
 require_relative 'logger_helper'
+require_relative '../version/version'
 
 class ParameterParser
   def initialize
@@ -20,7 +21,7 @@ class ParameterParser
 
   def display_help
     help_text = <<~EOT
-      Standalone-Ruby v1.4.1 - Package your Ruby projects as exe!
+      Standalone-Ruby v#{StandaloneRuby::VERSION} - Package your Ruby projects as exe!
 
       Usage: standalone-ruby [-h] [-p PROJECT_PATH] [-r RUBY_PATH] [-m MAIN_FILE] [-l LAUNCHER] [-t TEMPLATE] [-e EXE_FILE] [-c THREADS] [-g] [-v]
 
@@ -52,6 +53,10 @@ class ParameterParser
         -h, --help                  Show this help message.
 
         -v, --version               Show program version.
+      
+      Notes:
+        - Make sure that the Ruby interpreter you are using includes all the gems required for the target project.
+        - The Ruby interpreter uses Robocopy for copying, and the number of threads given affects the speed of this operation.
 
       For more details, please visit the documentation at:
         https://github.com/ardatetikbey/Standalone-Ruby
@@ -157,7 +162,7 @@ class ParameterParser
         end
 
         opts.on("-v", "--version") do
-          puts "Standalone Ruby Gem Version 1.4.1"
+          puts "Standalone Ruby Gem Version #{StandaloneRuby::VERSION}"
           exit!
         end
 

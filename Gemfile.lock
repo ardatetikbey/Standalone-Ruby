@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    standalone-ruby (1.4.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  x64-mingw-ucrt
+
+DEPENDENCIES
+  standalone-ruby!
+
+BUNDLED WITH
+   2.6.2

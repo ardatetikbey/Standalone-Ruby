@@ -25,3 +25,10 @@
 ## [1.4] - 2025-04-06
 - Added exe support!
 - Improvements have been made for non-GUI programs.
+
+## [1.4.1] - 2025-04-06
+- Displayer outputs changed.
+
+## [1.4.2] - 2025-04-08
+- The text output of the Robocopy operation is removed from the screen
+- Help message edited

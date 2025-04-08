@@ -1,8 +1,10 @@
+require_relative 'lib/version/version'
+
 Gem::Specification.new do |spec|
   spec.name          = "standalone-ruby"
-  spec.version       = "1.4.1"
+  spec.version       = StandaloneRuby::VERSION
   spec.authors       = ["Arda Tetik"]
-  spec.email         = ["ardatetikruby@gmail.com"]
+  spec.email         = ["ardatetik1881@gmail.com"]
 
   spec.summary       = "Standalone Ruby application packager"
   spec.description   = "Make your projects installation independent!"
@@ -10,7 +12,6 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 
-  # Metadata
   spec.metadata["homepage_uri"]   = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/ardatetikbey/Standalone-Ruby"
   spec.metadata["changelog_uri"]  = "https://github.com/ardatetikbey/Standalone-Ruby/blob/main/CHANGELOG.md"

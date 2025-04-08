@@ -1,4 +1,5 @@
 require_relative 'logger_helper'
+require_relative '../version/version'
 
 class Displayer
   def initialize(params)
@@ -8,31 +9,33 @@ class Displayer
 
   def display_params
     begin
-      display_text = []
+      display_map = {
+        "Platform"       => @params[:platform],
+        "Project Path"   => @params[:project_path],
+        "Exe File"       => @params[:exe],
+        "Ruby Path"      => @params[:ruby_path],
+        "Ruby Folder"    => @params[:ruby_path] ? File.basename(@params[:ruby_path]) : nil,
+        "Main File"      => @params[:main_file],
+        "Launcher"       => @params[:launcher],
+        "Launcher Type"  => @params[:launcher_type],
+        "Template"       => @params[:template] || "Default Template",
+        "Log Path"       => "Users Documents Directory"
+      }
 
-      display_text << "Platform: #{@params[:platform]}" if @params[:platform]
-      display_text << "Project Path: #{@params[:project_path]}" if @params[:project_path]
-      display_text << "Exe File: #{@params[:exe]}" if @params[:exe]
-      display_text << "Ruby Path: #{@params[:ruby_path]}" if @params[:ruby_path]
-      display_text << "Ruby Folder: #{File.basename(@params[:ruby_path])}" if @params[:ruby_path]
-      display_text << "Main File: #{@params[:main_file]}" if @params[:main_file]
-      display_text << "Launcher: #{@params[:launcher]}" if @params[:launcher]
-      display_text << "Launcher Type: #{@params[:launcher_type]}" if @params[:launcher_type]
-      display_text << "Template: #{@params[:template]}" if @params[:template]
-      display_text << "Template: Default Template" unless @params[:template]
-      display_text << "Log Path: Users Documents Directory"
+      display_text = display_map.map { |key, value| "#{key}: #{value}" if value }.compact
 
       puts display_text.join("\n") unless display_text.empty?
 
-    rescue Exception => e
-      print("Display Error: ".red); puts("#{e.message}".red)
+    rescue => e
+      print("Display Error: ".red); puts(e.message.red)
       @logger.error("Display Error: #{e.message}")
     end
   end
 
+
   def banner
-    banner = -<<'BANNER'
-Standalone-Ruby v1.4.1 - Package your Ruby projects as exe!
+    banner = -<<"BANNER"
+Standalone-Ruby v#{StandaloneRuby::VERSION} - Package your Ruby projects as exe!
   # Github: https://github.com/ardatetikbey/Standalone-Ruby
   # RubyGems: https://rubygems.org/gems/standalone-ruby
 
