@@ -86,6 +86,7 @@ standalone-ruby -p "C:/Users/ardatetik/Desktop/project" -e "launcher.exe" -r "C:
 ## To Do List
 
   - Packaged One-File Exe Support - The output of the exe file will be able to used as a single file.
+  - Exe Icon Support - Support for using icons in created exe files.
   - CLI Support - Support will be added for the programs that take parametres from the command line.
   - Zip Packaging - Zip packaging support will be added to decrease the size of the output.
   - Encrypted Ruby Execution - Ruby scripts will be encrypted for protection and will have an option to be decrypted and executed.
