@@ -60,8 +60,6 @@ Notes:
 
 For more details, please visit the documentation at:
   https://github.com/ardatetikbey/Standalone-Ruby
-
-
 ```
 
 ---
