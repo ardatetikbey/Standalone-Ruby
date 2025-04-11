@@ -91,7 +91,7 @@ module Nokogiri
       # Get the parser's quirks mode value. See HTML5::QuirksMode.
       #
       # This method returns `nil` if the parser was not invoked (e.g.,
-      # `Nokogiri::HTML5::DocumentFragment.new(doc)`).
+      # `Nokogiri::HTML5::DocumentFragment.new(docs)`).
       #
       # Since v1.14.0
       attr_reader :quirks_mode

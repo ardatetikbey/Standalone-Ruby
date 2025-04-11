@@ -88,7 +88,7 @@ module REXML
     # this object is ignored by the XML writer.  Otherwise, instantiate your
     # own XMLDecl and add it to the document.
     #
-    # Note that XML 1.1 documents *must* include an XML declaration
+    # Note that XML 1.1 docs *must* include an XML declaration
     def XMLDecl.default
       rv = XMLDecl.new( "1.0" )
       rv.nowrite

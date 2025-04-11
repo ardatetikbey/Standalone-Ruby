@@ -5,7 +5,7 @@ require "pathname"
 
 module Nokogiri
   module XML
-    # Nokogiri::XML::Document is the main entry point for dealing with \XML documents. The Document
+    # Nokogiri::XML::Document is the main entry point for dealing with \XML docs. The Document
     # is created by parsing \XML content from a String or an IO object. See
     # Nokogiri::XML::Document.parse for more information on parsing.
     #
@@ -30,7 +30,7 @@ module Nokogiri
         #
         # Parse \XML input from a String or IO object, and return a new XML::Document.
         #
-        # 🛡 By default, Nokogiri treats documents as untrusted, and so does not attempt to load DTDs
+        # 🛡 By default, Nokogiri treats docs as untrusted, and so does not attempt to load DTDs
         # or access the network. See Nokogiri::XML::ParseOptions for a complete list of options; and
         # that module's DEFAULT_XML constant for what's set (and not set) by default.
         #
@@ -153,10 +153,10 @@ module Nokogiri
       #             </foo:parent>
       #           </root>
       #         EOF
-      #   doc = Nokogiri::XML(xml)
-      #   parent = doc.at_xpath("//foo:parent", "foo" => "http://nokogiri.org/default_ns/test/foo")
+      #   docs = Nokogiri::XML(xml)
+      #   parent = docs.at_xpath("//foo:parent", "foo" => "http://nokogiri.org/default_ns/test/foo")
       #   parent.add_child("<child></child>")
-      #   doc.to_xml
+      #   docs.to_xml
       #   # => <?xml version="1.0"?>
       #   #    <root xmlns:foo="http://nokogiri.org/default_ns/test/foo">
       #   #      <foo:parent>
@@ -172,11 +172,11 @@ module Nokogiri
       #             </foo:parent>
       #           </root>
       #         EOF
-      #   doc = Nokogiri::XML(xml)
-      #   doc.namespace_inheritance = true
-      #   parent = doc.at_xpath("//foo:parent", "foo" => "http://nokogiri.org/default_ns/test/foo")
+      #   docs = Nokogiri::XML(xml)
+      #   docs.namespace_inheritance = true
+      #   parent = docs.at_xpath("//foo:parent", "foo" => "http://nokogiri.org/default_ns/test/foo")
       #   parent.add_child("<child></child>")
-      #   doc.to_xml
+      #   docs.to_xml
       #   # => <?xml version="1.0"?>
       #   #    <root xmlns:foo="http://nokogiri.org/default_ns/test/foo">
       #   #      <foo:parent>
@@ -251,27 +251,27 @@ module Nokogiri
       #
       # *Example:* An empty element without attributes
       #
-      #   doc.create_element("div")
+      #   docs.create_element("div")
       #   # => <div></div>
       #
       # *Example:* An element with contents
       #
-      #   doc.create_element("div", "contents")
+      #   docs.create_element("div", "contents")
       #   # => <div>contents</div>
       #
       # *Example:* An element with attributes
       #
-      #   doc.create_element("div", {"class" => "container"})
+      #   docs.create_element("div", {"class" => "container"})
       #   # => <div class='container'></div>
       #
       # *Example:* An element with contents and attributes
       #
-      #   doc.create_element("div", "contents", {"class" => "container"})
+      #   docs.create_element("div", "contents", {"class" => "container"})
       #   # => <div class='container'>contents</div>
       #
       # *Example:* Passing a block to mutate the element
       #
-      #   doc.create_element("div") { |node| node["class"] = "blue" if before_noon? }
+      #   docs.create_element("div") { |node| node["class"] = "blue" if before_noon? }
       #
       def create_element(name, *contents_or_attrs, &block)
         elm = Nokogiri::XML::Element.new(name, self, &block)
@@ -386,13 +386,13 @@ module Nokogiri
       # is called will not be decorated with sloppy behavior. So, if you're in
       # irb, the preferred idiom is:
       #
-      #   irb> doc = Nokogiri::Slop my_markup
+      #   irb> docs = Nokogiri::Slop my_markup
       #
       # and not
       #
-      #   irb> doc = Nokogiri::HTML my_markup
+      #   irb> docs = Nokogiri::HTML my_markup
       #   ... followed by irb's implicit inspect (and therefore instantiation of every node) ...
-      #   irb> doc.slop!
+      #   irb> docs.slop!
       #   ... which does absolutely nothing.
       #
       def slop!
@@ -472,14 +472,14 @@ module Nokogiri
       #
       #  *Example*
       #
-      #    doc = Nokogiri::XML.parse(<<~XML)
+      #    docs = Nokogiri::XML.parse(<<~XML)
       #      <?xml version="1.0"?>
       #      <root>
       #        <child>
       #      </root>
       #    XML
       #
-      #    doc.deconstruct_keys([:root])
+      #    docs.deconstruct_keys([:root])
       #    # => {:root=>
       #    #      #(Element:0x35c {
       #    #        name = "root",
@@ -491,9 +491,9 @@ module Nokogiri
       #
       #  *Example* of an empty document
       #
-      #    doc = Nokogiri::XML::Document.new
+      #    docs = Nokogiri::XML::Document.new
       #
-      #    doc.deconstruct_keys([:root])
+      #    docs.deconstruct_keys([:root])
       #    # => {:root=>nil}
       #
       #  Since v1.14.0

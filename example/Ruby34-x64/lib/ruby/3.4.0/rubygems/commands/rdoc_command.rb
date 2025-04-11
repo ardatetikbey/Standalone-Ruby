@@ -30,7 +30,7 @@ class Gem::Commands::RdocCommand < Gem::Command
     end
 
     add_option("--[no-]overwrite",
-               "Overwrite installed documents") do |value, options|
+               "Overwrite installed docs") do |value, options|
       options[:overwrite] = value
     end
 

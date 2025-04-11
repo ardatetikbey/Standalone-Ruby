@@ -244,12 +244,12 @@ module Nokogiri
       #
       # Note: This joins the text of all Node objects in the NodeSet:
       #
-      #    doc = Nokogiri::XML('<xml><a><d>foo</d><d>bar</d></a></xml>')
-      #    doc.css('d').text # => "foobar"
+      #    docs = Nokogiri::XML('<xml><a><d>foo</d><d>bar</d></a></xml>')
+      #    docs.css('d').text # => "foobar"
       #
       # Instead, if you want to return the text of all nodes in the NodeSet:
       #
-      #    doc.css('d').map(&:text) # => ["foo", "bar"]
+      #    docs.css('d').map(&:text) # => ["foo", "bar"]
       #
       # See Nokogiri::XML::Node#content for more information.
       def inner_text
@@ -288,7 +288,7 @@ module Nokogiri
       #
       # *Example* with a +String+ argument:
       #
-      #   doc = Nokogiri::HTML5(<<~HTML)
+      #   docs = Nokogiri::HTML5(<<~HTML)
       #     <html><body>
       #       <a>a</a>
       #       <a>b</a>
@@ -296,8 +296,8 @@ module Nokogiri
       #       <a>d</a>
       #     </body></html>
       #   HTML
-      #   doc.css("a").wrap("<div></div>")
-      #   doc.to_html
+      #   docs.css("a").wrap("<div></div>")
+      #   docs.to_html
       #   # => <html><head></head><body>
       #   #      <div><a>a</a></div>
       #   #      <div><a>b</a></div>
@@ -310,7 +310,7 @@ module Nokogiri
       # 💡 Note that this is faster than the equivalent call passing a +String+ because it avoids
       # having to reparse the wrapper markup for each node.
       #
-      #   doc = Nokogiri::HTML5(<<~HTML)
+      #   docs = Nokogiri::HTML5(<<~HTML)
       #     <html><body>
       #       <a>a</a>
       #       <a>b</a>
@@ -318,8 +318,8 @@ module Nokogiri
       #       <a>d</a>
       #     </body></html>
       #   HTML
-      #   doc.css("a").wrap(doc.create_element("div"))
-      #   doc.to_html
+      #   docs.css("a").wrap(docs.create_element("div"))
+      #   docs.to_html
       #   # => <html><head></head><body>
       #   #      <div><a>a</a></div>
       #   #      <div><a>b</a></div>

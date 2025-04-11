@@ -257,13 +257,13 @@ class RDoc::RubyGemsHook
 
 end
 
-# This class is referenced by RubyGems to create documents.
+# This class is referenced by RubyGems to create docs.
 # All implementations are moved to the above RubyGemsHook.
 #
 # This class does nothing when this RDoc is installed as a normal gem
 # or a bundled gem.
 #
-# This class does generate/remove documents for compatibility when
+# This class does generate/remove docs for compatibility when
 # this RDoc is installed as a default gem.
 #
 # We can remove this when all maintained RubyGems remove

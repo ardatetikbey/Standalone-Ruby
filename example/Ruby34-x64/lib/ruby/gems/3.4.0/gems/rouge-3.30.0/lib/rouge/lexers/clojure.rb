@@ -32,9 +32,9 @@ module Rouge
           class clear-agent-errors comment commute comp comparator
           complement concat conj cons constantly construct-proxy
           contains? count create-ns create-struct cycle dec  deref
-          difference disj dissoc distinct doall doc dorun doseq dosync
+          difference disj dissoc distinct doall docs dorun doseq dosync
           dotimes doto double down drop drop-while edit end? ensure eval
-          every? false? ffirst file-seq filter find find-doc find-ns
+          every? false? ffirst file-seq filter find find-docs find-ns
           find-var first float flush fnseq frest gensym get-proxy-class
           get hash-map hash-set identical? identity if-let import in-ns
           inc index insert-child insert-left insert-right inspect-table

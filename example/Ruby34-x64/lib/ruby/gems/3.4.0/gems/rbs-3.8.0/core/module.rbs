@@ -1227,7 +1227,7 @@ class Module < Object
   #     end
   #     Mod.private_instance_methods   #=> [:a, :c]
   #
-  # Note that to show a private method on RDoc, use `:doc:`.
+  # Note that to show a private method on RDoc, use `:docs:`.
   #
   def private: () -> nil
              | (Symbol method_name) -> Symbol
@@ -1335,7 +1335,7 @@ class Module < Object
   #
   # Note that a protected method is slow because it can't use inline cache.
   #
-  # To show a private method on RDoc, use `:doc:` instead of this.
+  # To show a private method on RDoc, use `:docs:` instead of this.
   #
   def protected: () -> nil
                | (Symbol method_name) -> Symbol

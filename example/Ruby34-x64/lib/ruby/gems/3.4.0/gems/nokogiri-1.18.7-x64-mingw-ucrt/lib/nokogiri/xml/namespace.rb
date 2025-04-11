@@ -18,7 +18,7 @@ module Nokogiri
       #
       #  *Example*
       #
-      #    doc = Nokogiri::XML.parse(<<~XML)
+      #    docs = Nokogiri::XML.parse(<<~XML)
       #      <?xml version="1.0"?>
       #      <root xmlns="http://nokogiri.org/ns/default" xmlns:noko="http://nokogiri.org/ns/noko">
       #        <child1 foo="abc" noko:bar="def"/>
@@ -26,19 +26,19 @@ module Nokogiri
       #      </root>
       #    XML
       #
-      #    doc.root.elements.first.namespace
+      #    docs.root.elements.first.namespace
       #    # => #(Namespace:0x35c { href = "http://nokogiri.org/ns/default" })
       #
-      #    doc.root.elements.first.namespace.deconstruct_keys([:prefix, :href])
+      #    docs.root.elements.first.namespace.deconstruct_keys([:prefix, :href])
       #    # => {:prefix=>nil, :href=>"http://nokogiri.org/ns/default"}
       #
-      #    doc.root.elements.last.namespace
+      #    docs.root.elements.last.namespace
       #    # => #(Namespace:0x370 {
       #    #      prefix = "noko",
       #    #      href = "http://nokogiri.org/ns/noko"
       #    #      })
       #
-      #    doc.root.elements.last.namespace.deconstruct_keys([:prefix, :href])
+      #    docs.root.elements.last.namespace.deconstruct_keys([:prefix, :href])
       #    # => {:prefix=>"noko", :href=>"http://nokogiri.org/ns/noko"}
       #
       #  Since v1.14.0

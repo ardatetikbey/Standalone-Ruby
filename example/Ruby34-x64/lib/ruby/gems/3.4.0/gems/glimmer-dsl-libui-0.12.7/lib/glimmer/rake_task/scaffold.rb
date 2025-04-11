@@ -74,7 +74,7 @@ module Glimmer
           ## Documentation cache and generated files:
           /.yardoc/
           /_yardoc/
-          /doc/
+          /docs/
           /rdoc/
           
           ## Environment normalization:

@@ -15,7 +15,7 @@ module Nokogiri
 
     # Nokogiri::XML::RelaxNG is used for validating \XML against a RELAX NG schema definition.
     #
-    # 🛡 <b>Do not use this class for untrusted schema documents.</b> RELAX NG input is always
+    # 🛡 <b>Do not use this class for untrusted schema docs.</b> RELAX NG input is always
     # treated as *trusted*, meaning that the underlying parsing libraries <b>will access network
     # resources</b>. This is counter to Nokogiri's "untrusted by default" security policy, but is an
     # unfortunate limitation of the underlying libraries.
@@ -23,21 +23,21 @@ module Nokogiri
     # *Example:* Determine whether an \XML document is valid.
     #
     #   schema = Nokogiri::XML::RelaxNG.new(File.read(RELAX_NG_FILE))
-    #   doc = Nokogiri::XML::Document.parse(File.read(XML_FILE))
-    #   schema.valid?(doc) # Boolean
+    #   docs = Nokogiri::XML::Document.parse(File.read(XML_FILE))
+    #   schema.valid?(docs) # Boolean
     #
     # *Example:* Validate an \XML document against a \RelaxNG schema, and capture any errors that are found.
     #
     #   schema = Nokogiri::XML::RelaxNG.new(File.open(RELAX_NG_FILE))
-    #   doc = Nokogiri::XML::Document.parse(File.open(XML_FILE))
-    #   errors = schema.validate(doc) # Array<SyntaxError>
+    #   docs = Nokogiri::XML::Document.parse(File.open(XML_FILE))
+    #   errors = schema.validate(docs) # Array<SyntaxError>
     #
     # *Example:* Validate an \XML document using a Document containing a RELAX NG schema definition.
     #
     #   schema_doc = Nokogiri::XML::Document.parse(File.read(RELAX_NG_FILE))
     #   schema = Nokogiri::XML::RelaxNG.from_document(schema_doc)
-    #   doc = Nokogiri::XML::Document.parse(File.open(XML_FILE))
-    #   schema.valid?(doc) # Boolean
+    #   docs = Nokogiri::XML::Document.parse(File.open(XML_FILE))
+    #   schema.valid?(docs) # Boolean
     #
     class RelaxNG < Nokogiri::XML::Schema
       # :call-seq:

@@ -7,23 +7,23 @@ module Nokogiri
     # is done through Nokogiri.XSLT.  Here is an example of transforming
     # an XML::Document with a Stylesheet:
     #
-    #   doc   = Nokogiri::XML(File.read('some_file.xml'))
+    #   docs   = Nokogiri::XML(File.read('some_file.xml'))
     #   xslt  = Nokogiri::XSLT(File.read('some_transformer.xslt'))
     #
-    #   xslt.transform(doc) # => Nokogiri::XML::Document
+    #   xslt.transform(docs) # => Nokogiri::XML::Document
     #
     # Many XSLT transformations include serialization behavior to emit a non-XML document. For these
     # cases, please take care to invoke the #serialize method on the result of the transformation:
     #
-    #   doc   = Nokogiri::XML(File.read('some_file.xml'))
+    #   docs   = Nokogiri::XML(File.read('some_file.xml'))
     #   xslt  = Nokogiri::XSLT(File.read('some_transformer.xslt'))
-    #   xslt.serialize(xslt.transform(doc)) # => String
+    #   xslt.serialize(xslt.transform(docs)) # => String
     #
     # or use the #apply_to method, which is a shortcut for `serialize(transform(document))`:
     #
-    #   doc   = Nokogiri::XML(File.read('some_file.xml'))
+    #   docs   = Nokogiri::XML(File.read('some_file.xml'))
     #   xslt  = Nokogiri::XSLT(File.read('some_transformer.xslt'))
-    #   xslt.apply_to(doc) # => String
+    #   xslt.apply_to(docs) # => String
     #
     # See Nokogiri::XSLT::Stylesheet#transform for more information and examples.
     class Stylesheet

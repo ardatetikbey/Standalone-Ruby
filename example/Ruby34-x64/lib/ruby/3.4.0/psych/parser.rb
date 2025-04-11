@@ -4,7 +4,7 @@ module Psych
   # YAML event parser class.  This class parses a YAML document and calls
   # events on the handler that is passed to the constructor.  The events can
   # be used for things such as constructing a YAML AST or deserializing YAML
-  # documents.  It can even be fed back to Psych::Emitter to emit the same
+  # docs.  It can even be fed back to Psych::Emitter to emit the same
   # document that was parsed.
   #
   # See Psych::Handler for documentation on the events that Psych::Parser emits.

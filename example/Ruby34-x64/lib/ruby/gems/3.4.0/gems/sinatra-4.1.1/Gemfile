@@ -29,7 +29,7 @@ gem 'zeitwerk', zeitwerk_version
 gem 'minitest', '~> 5.0'
 gem 'rack-test'
 gem 'rubocop', '~> 1.32.0', require: false
-gem 'yard' # used by rake doc
+gem 'yard' # used by rake docs
 
 gem 'rack-protection', path: 'rack-protection'
 gem 'sinatra-contrib', path: 'sinatra-contrib'

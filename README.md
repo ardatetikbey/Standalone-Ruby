@@ -4,9 +4,9 @@
 
 ## Overview
 
-- This program takes the Ruby interpreter directory, the project folder, and the path to the project's main file. The project uses the Ruby interpreter to create an exe file that opens the main project file.
-- For a program output example you can take a look at in the [example](https://github.com/ardatetikbey/Standalone-Ruby/tree/main/example) folder. 
-  
+- Convert your Ruby projects to exe files!
+- For a program output example you can take a look at in the [example](https://github.com/ardatetikbey/Standalone-Ruby/tree/main/example) folder.
+
 ---
 
 ## Installation
@@ -21,75 +21,113 @@ gem install standalone-ruby
 
 ```
 C:\Users\ardat>standalone-ruby -h
-Standalone-Ruby v1.4.2 - Package your Ruby projects as exe!
+Standalone-Ruby - Convert your Ruby projects to exe files!
 
-Usage: standalone-ruby [-h] [-p PROJECT_PATH] [-r RUBY_PATH] [-m MAIN_FILE] [-l LAUNCHER] [-t TEMPLATE] [-e EXE_FILE] [-c THREADS] [-g] [-v]
+Usage: standalone-ruby [--help] [--project-path PROJECT_PATH] [--ruby-path RUBY_PATH] [--main-file MAIN_FILE] [--launcher LAUNCHER] [--gui]
+                       [--template TEMPLATE] [--exe-file EXE_FILE] [--threads THREADS] [--resource-file resource_file] [--gcc] [--version]
 
-Options:
-  -p, --project PROJECT_PATH  Target Ruby project path.
-      Ensures that the given project path exists. If not, an error is displayed.
+Required Options:
+  --project-path PROJECT_PATH
+      Target Ruby project path.
 
-  -r, --ruby RUBY_PATH        Path to the Ruby interpreter.
-      Ensures that the given Ruby path exists and contains a 'bin' directory.
+  --ruby RUBY_PATH
+      Path to the Ruby interpreter.
 
-  -m, --main MAIN_FILE        Path to the main Ruby file of the project.
-      Ensures that the specified Ruby file exists.
+  --main-file MAIN_FILE
+      Path to the main Ruby file of the project.
 
-  -l, --launcher LAUNCHER     Launcher file name (either .vbs or .bat-cmd).
-      Ensure the launcher file exists and is of the correct type (either .vbs or .bat-cmd).
+Extra Options:
+  --exe-file EXE_FILE
+      Name of the exe file to be used for output (default is program.exe).
 
-  -t, --template TEMPLATE     Template file for launcher.
-      Ensures that the specified template file exists.
+  --threads THREADS
+      Number of threads to use (default is 5). Determines the number of threads used during the Ruby interpreter
+      copy process and for Robocopy operations. A higher number of threads can speed up the process, but requires more system resources.
 
-  -e, --exe EXE_FILE           Name of the exe file to be used for output
+  --resource-file RESOURCE_FILE
+      Resource file (.rc) for the exe file to be created. Only possible with MinGW.
 
-  -c, --threads THREADS       Number of threads to use (default is 5).
-      Determines the number of threads used during the Ruby interpreter copy process and for Rubocopy operations.
-      A higher number of threads can speed up the process, but requires more system resources.
+  --help
+      Show this help message and exit.
 
-  -g, --gui                   This option allows the rubyw.exe file in the bin folder to be used.
+  --version
+      Show program version and exit.
+
+  --gcc
+      Use GCC compiler for exe file.
+      
+  --gui
+      This option allows the rubyw.exe file in the bin folder to be used.
       You can choose it for projects that include GUI.
-
-  -h, --help                  Show this help message.
-
-  -v, --version               Show program version.
-
-Notes:
-  - Make sure that the Ruby interpreter you are using includes all the gems required for the target project.
-  - The Ruby interpreter uses Robocopy for copying, and the number of threads given affects the speed of this operation.
-
-For more details, please visit the documentation at:
-  https://github.com/ardatetikbey/Standalone-Ruby
 ```
 
 ---
 
-## Examples
+## Usage
+
+### Basic Usage
+You can obtain an .exe file with the following command:
 
 ```bash
-standalone-ruby -p "C:/Users/ardatetik/Desktop/project" -e "launcher.exe" -r "C:/Users/ardatetik/Documents/Ruby34-x64" -m "C:/Users/ardatetik/Desktop/myproject/main.rb" -l launcher1.exe -c 7 --gcc
-standalone-ruby -p "C:/Users/ardatetik/Desktop/project" -e "launcher.exe" -r "C:/Users/ardatetik/Documents/Ruby34-x64" -m "C:/Users/ardatetik/Desktop/myproject/main.rb" -l launcher2.exe -c 8 --gui
+standalone-ruby --ruby-path C:\Ruby34-x64 --main-file C:\Users\ardat\Desktop\example\main.rb --project-path C:\Users\ardat\Desktop\example
 ```
-  
+
+### Detailed Usage
+We will use the GCC compiler in detailed usage. Please make sure that MinGW is installed on your computer.
+
+```bash
+standalone-ruby --ruby-path C:\Ruby34-x64 --main-file C:\Users\ardat\Desktop\example\main.rb --project-path C:\Users\ardat\Desktop\example --exe-file program.exe --gcc --resource-file C:\Users\ardat\Desktop\C\program.rc
+```
+
+To generate an .exe file with a custom icon, you need to use GCC.
+Add the following line at the top of the .rc file defined by the --resource-file parameter:
+
+1 ICON "C:\\Users\\ardat\\Desktop\\C\\icon.ico"
+
+Example:
+
+```
+#include <windows.h>
+
+1 ICON "C:\\Users\\arda\\Desktop\\test.ico"  // Your ICON path
+
+1 VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ BEGIN
+   BLOCK "StringFileInfo"
+   BEGIN
+     BLOCK "040904B0"
+     BEGIN
+       VALUE "CompanyName", "ArdaTetik\0"
+       VALUE "FileDescription", "MyProgram\0"
+       VALUE "FileVersion", "1.0.0.0\0"
+       VALUE "ProductName", "MyProgram\0"
+     END
+   END
+ END
+
+```
+
 ---
 
 ## Notes
 
-  - Make sure that the provided paths are valid and accessible from your system.  
-  - The `threads` option can significantly impact performance during the copying process, so use it wisely based on your system’s capabilities.
-  - Make sure that the Ruby interpreter you are using includes all the gem files for the project you will be running.
-  - For more details, refer to the official [GitHub Repository](https://github.com/ardatetikbey/Standalone-Ruby).  
-  - The location changes of the project directories might prevent the program from working.
+- Make sure that the Ruby interpreter you are using includes all the gem files for the project you will be running.
+- Make sure that the provided paths are valid and accessible from your system.
+- The `threads` option can significantly impact performance during the copying process, so use it wisely based on your system’s capabilities.
+- The location changes of the project directories might prevent the program from working.
+- Although it is very rare, some antiviruses can detect the exe files as viruses. This is not my fault,
+  you may encounter such results when converting dynamic languages ​​to exe. I have solved most of this problem.
 
 ---
 
 ## To Do List
 
-  - Packaged One-File Exe Support - The output of the exe file will be able to used as a single file.
-  - Exe Icon Support - Support for using icons in created exe files.
-  - CLI Support - Support will be added for the programs that take parametres from the command line.
-  - Zip Packaging - Zip packaging support will be added to decrease the size of the output.
-  - Encrypted Ruby Execution - Ruby scripts will be encrypted for protection and will have an option to be decrypted and executed.
+- Packaged One-File Exe Support - The output of the exe file will be able to used as a single file.
+- CLI Support - Support will be added for the programs that take parametres from the command line.
+- Zip Packaging - Zip packaging support will be added to decrease the size of the output.
+- Encrypted Ruby Execution - Ruby scripts will be encrypted for protection and will have an option to be decrypted and executed.
 
 ---
 
@@ -99,7 +137,5 @@ standalone-ruby -p "C:/Users/ardatetik/Desktop/project" -e "launcher.exe" -r "C:
 
 ---
 
-## Document Translator
-- TrueHalo aka Ahmet Bahadır Bakır
-- Email: truesthalo@gmail.com
-- Github: https://github.com/TrueHalo
+## Thanks!
+- https://github.com/TrueHalo - I would like to thank Ahmet Bahadır Bakır for his help in translating the documents.

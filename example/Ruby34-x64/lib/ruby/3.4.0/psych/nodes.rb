@@ -29,13 +29,13 @@ module Psych
   #
   #   # Create our nodes
   #   stream = Psych::Nodes::Stream.new
-  #   doc    = Psych::Nodes::Document.new
+  #   docs    = Psych::Nodes::Document.new
   #   seq    = Psych::Nodes::Sequence.new
   #   scalar = Psych::Nodes::Scalar.new('foo')
   #
   #   # Build up our tree
-  #   stream.children << doc
-  #   doc.children    << seq
+  #   stream.children << docs
+  #   docs.children    << seq
   #   seq.children    << scalar
   #
   # The stream is the root of the tree.  We can then convert the tree to YAML:

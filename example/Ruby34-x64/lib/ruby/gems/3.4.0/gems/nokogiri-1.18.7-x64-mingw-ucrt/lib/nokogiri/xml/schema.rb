@@ -20,27 +20,27 @@ module Nokogiri
     # caller may turn off the +NONET+ option via the ParseOptions to (re-)enable external entity
     # resolution over a network connection.
     #
-    # 🛡 Before v1.11.0, documents were "trusted" by default during schema parsing which was counter
+    # 🛡 Before v1.11.0, docs were "trusted" by default during schema parsing which was counter
     # to Nokogiri's "untrusted by default" security policy.
     #
     # *Example:* Determine whether an \XML document is valid.
     #
     #   schema = Nokogiri::XML::Schema.new(File.read(XSD_FILE))
-    #   doc = Nokogiri::XML::Document.parse(File.read(XML_FILE))
-    #   schema.valid?(doc) # Boolean
+    #   docs = Nokogiri::XML::Document.parse(File.read(XML_FILE))
+    #   schema.valid?(docs) # Boolean
     #
     # *Example:* Validate an \XML document against an \XSD schema, and capture any errors that are found.
     #
     #   schema = Nokogiri::XML::Schema.new(File.read(XSD_FILE))
-    #   doc = Nokogiri::XML::Document.parse(File.read(XML_FILE))
-    #   errors = schema.validate(doc) # Array<SyntaxError>
+    #   docs = Nokogiri::XML::Document.parse(File.read(XML_FILE))
+    #   errors = schema.validate(docs) # Array<SyntaxError>
     #
     # *Example:* Validate an \XML document using a Document containing an \XSD schema definition.
     #
     #   schema_doc = Nokogiri::XML::Document.parse(File.read(RELAX_NG_FILE))
     #   schema = Nokogiri::XML::Schema.from_document(schema_doc)
-    #   doc = Nokogiri::XML::Document.parse(File.read(XML_FILE))
-    #   schema.valid?(doc) # Boolean
+    #   docs = Nokogiri::XML::Document.parse(File.read(XML_FILE))
+    #   schema.valid?(docs) # Boolean
     #
     class Schema
       # The errors found while parsing the \XSD

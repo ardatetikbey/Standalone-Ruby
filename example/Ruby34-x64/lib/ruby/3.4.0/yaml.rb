@@ -44,7 +44,7 @@ YAML = Psych # :nodoc:
 #
 # Do not use YAML to load untrusted data. Doing so is unsafe and could allow
 # malicious input to execute arbitrary code inside your application. Please see
-# doc/security.rdoc for more information.
+# docs/security.rdoc for more information.
 #
 # == History
 #

@@ -30,7 +30,7 @@ module Nokogiri
         attr_accessor :document
 
         ###
-        # Create a new PushParser with +doc+ as the SAX Document, providing
+        # Create a new PushParser with +docs+ as the SAX Document, providing
         # an optional +file_name+ and +encoding+
         def initialize(doc = XML::SAX::Document.new, file_name = nil, encoding = "UTF-8")
           @document = doc
@@ -53,7 +53,7 @@ module Nokogiri
         # Finish the parsing.  This method is only necessary for
         # Nokogiri::XML::SAX::Document#end_document to be called.
         #
-        # ⚠ Note that empty documents are treated as an error when using the libxml2-based
+        # ⚠ Note that empty docs are treated as an error when using the libxml2-based
         # implementation (CRuby), but are fine when using the Xerces-based implementation (JRuby).
         def finish
           write("", true)

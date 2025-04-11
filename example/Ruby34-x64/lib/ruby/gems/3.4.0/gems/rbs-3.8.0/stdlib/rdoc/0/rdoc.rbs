@@ -50,13 +50,13 @@
 #     for irb and the rtags package.
 #
 # <!-- rdoc-file=lib/rdoc/rubygems_hook.rb -->
-# This class is referenced by RubyGems to create documents. All implementations
+# This class is referenced by RubyGems to create docs. All implementations
 # are moved to the above RubyGemsHook.
 #
 # This class does nothing when this RDoc is installed as a normal gem or a
 # bundled gem.
 #
-# This class does generate/remove documents for compatibility when this RDoc is
+# This class does generate/remove docs for compatibility when this RDoc is
 # installed as a default gem.
 #
 # We can remove this when all maintained RubyGems remove `rubygems/rdoc.rb`.

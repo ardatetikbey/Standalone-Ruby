@@ -232,26 +232,26 @@ module Nokogiri
       #
       # *Example* with a +String+ argument:
       #
-      #   doc = Nokogiri::HTML5(<<~HTML)
+      #   docs = Nokogiri::HTML5(<<~HTML)
       #     <html><body>
       #       <a>asdf</a>
       #     </body></html>
       #   HTML
-      #   doc.at_css("a").wrap("<div></div>")
-      #   doc.to_html
+      #   docs.at_css("a").wrap("<div></div>")
+      #   docs.to_html
       #   # => <html><head></head><body>
       #   #      <div><a>asdf</a></div>
       #   #    </body></html>
       #
       # *Example* with a +Node+ argument:
       #
-      #   doc = Nokogiri::HTML5(<<~HTML)
+      #   docs = Nokogiri::HTML5(<<~HTML)
       #     <html><body>
       #       <a>asdf</a>
       #     </body></html>
       #   HTML
-      #   doc.at_css("a").wrap(doc.create_element("div"))
-      #   doc.to_html
+      #   docs.at_css("a").wrap(docs.create_element("div"))
+      #   docs.to_html
       #   # <html><head></head><body>
       #   #   <div><a>asdf</a></div>
       #   # </body></html>
@@ -454,22 +454,22 @@ module Nokogiri
       # [Example]
       # Note how entities are handled:
       #
-      #   doc = Nokogiri::HTML::Document.parse(<<~HTML)
+      #   docs = Nokogiri::HTML::Document.parse(<<~HTML)
       #     <html>
       #       <body>
       #         <div id="first">asdf</div>
       #         <div id="second">asdf</div>
       #   HTML
       #
-      #   text_node = doc.at_css("div#first").children.first
-      #   div_node = doc.at_css("div#second")
+      #   text_node = docs.at_css("div#first").children.first
+      #   div_node = docs.at_css("div#second")
       #
       #   value = "You &amp; Me"
       #
       #   text_node.content = value
       #   div_node.content = value
       #
-      #   doc.css("div").to_html
+      #   docs.css("div").to_html
       #   # => "<div id=\"first\">You &amp;amp; Me</div>
       #   #     <div id=\"second\">You &amp;amp; Me</div>"
       #
@@ -478,7 +478,7 @@ module Nokogiri
       #   text_node.content = CGI::unescapeHTML(value)
       #   div_node.content = CGI::unescapeHTML(value)
       #
-      #   doc.css("div").to_html
+      #   docs.css("div").to_html
       #   # => "<div id=\"first\">You &amp; Me</div>
       #   #     <div id=\"second\">You &amp; Me</div>"
       #
@@ -565,8 +565,8 @@ module Nokogiri
       #
       # *Example*
       #
-      #   doc = Nokogiri::XML("<root><child size='large' class='big wide tall'/></root>")
-      #   child = doc.at_css("child")
+      #   docs = Nokogiri::XML("<root><child size='large' class='big wide tall'/></root>")
+      #   child = docs.at_css("child")
       #   child["size"] # => "large"
       #   child["class"] # => "big wide tall"
       #
@@ -574,14 +574,14 @@ module Nokogiri
       #
       # ⚠ Note namespaced attributes may be accessed with #attribute or #attribute_with_ns
       #
-      #   doc = Nokogiri::XML(<<~EOF)
+      #   docs = Nokogiri::XML(<<~EOF)
       #     <root xmlns:width='http://example.com/widths'>
       #       <child width:size='broad'/>
       #     </root>
       #   EOF
-      #   doc.at_css("child")["size"] # => nil
-      #   doc.at_css("child").attribute("size").value # => "broad"
-      #   doc.at_css("child").attribute_with_ns("size", "http://example.com/widths").value
+      #   docs.at_css("child")["size"] # => nil
+      #   docs.at_css("child").attribute("size").value # => "broad"
+      #   docs.at_css("child").attribute_with_ns("size", "http://example.com/widths").value
       #   # => "broad"
       #
       def [](name)
@@ -600,24 +600,24 @@ module Nokogiri
       #
       # *Example*
       #
-      #   doc = Nokogiri::XML("<root><child/></root>")
-      #   child = doc.at_css("child")
+      #   docs = Nokogiri::XML("<root><child/></root>")
+      #   child = docs.at_css("child")
       #   child["size"] = "broad"
       #   child.to_html
       #   # => "<child size=\"broad\"></child>"
       #
       # *Example:* Add a namespaced attribute.
       #
-      #   doc = Nokogiri::XML(<<~EOF)
+      #   docs = Nokogiri::XML(<<~EOF)
       #     <root xmlns:width='http://example.com/widths'>
       #       <child/>
       #     </root>
       #   EOF
-      #   child = doc.at_css("child")
+      #   child = docs.at_css("child")
       #   child["size"] = "broad"
-      #   ns = doc.root.namespace_definitions.find { |ns| ns.prefix == "width" }
+      #   ns = docs.root.namespace_definitions.find { |ns| ns.prefix == "width" }
       #   child.attribute("size").namespace = ns
-      #   doc.to_html
+      #   docs.to_html
       #   # => "<root xmlns:width=\"http://example.com/widths\">\n" +
       #   #    "  <child width:size=\"broad\"></child>\n" +
       #   #    "</root>\n"
@@ -641,15 +641,15 @@ module Nokogiri
       #
       # *Example* with no namespaces:
       #
-      #   doc = Nokogiri::XML("<root><child size='large' class='big wide tall'/></root>")
-      #   doc.at_css("child").attributes
+      #   docs = Nokogiri::XML("<root><child size='large' class='big wide tall'/></root>")
+      #   docs.at_css("child").attributes
       #   # => {"size"=>#(Attr:0x550 { name = "size", value = "large" }),
       #   #     "class"=>#(Attr:0x564 { name = "class", value = "big wide tall" })}
       #
       # *Example* with a namespace:
       #
-      #   doc = Nokogiri::XML("<root xmlns:desc='http://example.com/sizes'><child desc:size='large'/></root>")
-      #   doc.at_css("child").attributes
+      #   docs = Nokogiri::XML("<root xmlns:desc='http://example.com/sizes'><child desc:size='large'/></root>")
+      #   docs.at_css("child").attributes
       #   # => {"size"=>
       #   #      #(Attr:0x550 {
       #   #        name = "size",
@@ -664,13 +664,13 @@ module Nokogiri
       #
       # ⚠ Note that only one of the attributes is returned in the Hash.
       #
-      #   doc = Nokogiri::XML(<<~EOF)
+      #   docs = Nokogiri::XML(<<~EOF)
       #     <root xmlns:width='http://example.com/widths'
       #           xmlns:height='http://example.com/heights'>
       #       <child width:size='broad' height:size='tall'/>
       #     </root>
       #   EOF
-      #   doc.at_css("child").attributes
+      #   docs.at_css("child").attributes
       #   # => {"size"=>
       #   #      #(Attr:0x550 {
       #   #        name = "size",
@@ -1179,20 +1179,20 @@ module Nokogiri
       #
       # *Example:*
       #
-      #   doc = Nokogiri::XML(<<~EOF)
+      #   docs = Nokogiri::XML(<<~EOF)
       #     <root xmlns="http://example.com/root" xmlns:in_scope="http://example.com/in_scope">
       #       <first/>
       #       <second xmlns="http://example.com/child"/>
       #       <third xmlns:foo="http://example.com/foo"/>
       #     </root>
       #   EOF
-      #   doc.at_xpath("//root:first", "root" => "http://example.com/root").namespaces
+      #   docs.at_xpath("//root:first", "root" => "http://example.com/root").namespaces
       #   # => {"xmlns"=>"http://example.com/root",
       #   #     "xmlns:in_scope"=>"http://example.com/in_scope"}
-      #   doc.at_xpath("//child:second", "child" => "http://example.com/child").namespaces
+      #   docs.at_xpath("//child:second", "child" => "http://example.com/child").namespaces
       #   # => {"xmlns"=>"http://example.com/child",
       #   #     "xmlns:in_scope"=>"http://example.com/in_scope"}
-      #   doc.at_xpath("//root:third", "root" => "http://example.com/root").namespaces
+      #   docs.at_xpath("//root:third", "root" => "http://example.com/root").namespaces
       #   # => {"xmlns:foo"=>"http://example.com/foo",
       #   #     "xmlns"=>"http://example.com/root",
       #   #     "xmlns:in_scope"=>"http://example.com/in_scope"}
@@ -1247,7 +1247,7 @@ module Nokogiri
 
       ###
       # Fetch the Nokogiri::HTML4::ElementDescription for this node.  Returns
-      # nil on XML documents and on unknown tags.
+      # nil on XML docs and on unknown tags.
       def description
         return if document.xml?
 
@@ -1336,7 +1336,7 @@ module Nokogiri
 
       ###
       # Compare two Node objects with respect to their Document.  Nodes from
-      # different documents cannot be compared.
+      # different docs cannot be compared.
       def <=>(other)
         return unless other.is_a?(Nokogiri::XML::Node)
         return unless document == other.document
@@ -1384,7 +1384,7 @@ module Nokogiri
       ###
       # Serialize this Node to HTML
       #
-      #   doc.to_html
+      #   docs.to_html
       #
       # See Node#write_to for a list of +options+.  For formatted output,
       # use Node#to_xhtml instead.
@@ -1395,7 +1395,7 @@ module Nokogiri
       ###
       # Serialize this Node to XML using +options+
       #
-      #   doc.to_xml(indent: 5, encoding: 'UTF-8')
+      #   docs.to_xml(indent: 5, encoding: 'UTF-8')
       #
       # See Node#write_to for a list of +options+
       def to_xml(options = {})
@@ -1406,7 +1406,7 @@ module Nokogiri
       ###
       # Serialize this Node to XHTML using +options+
       #
-      #   doc.to_xhtml(indent: 5, encoding: 'UTF-8')
+      #   docs.to_xhtml(indent: 5, encoding: 'UTF-8')
       #
       # See Node#write_to for a list of +options+
       def to_xhtml(options = {})
@@ -1481,7 +1481,7 @@ module Nokogiri
       ###
       # Write Node as XML to +io+ with +options+
       #
-      #   doc.write_xml_to io, :encoding => 'UTF-8'
+      #   docs.write_xml_to io, :encoding => 'UTF-8'
       #
       # See Node#write_to for a list of options
       def write_xml_to(io, options = {})
@@ -1516,7 +1516,7 @@ module Nokogiri
       #
       #  *Example*
       #
-      #    doc = Nokogiri::XML.parse(<<~XML)
+      #    docs = Nokogiri::XML.parse(<<~XML)
       #      <?xml version="1.0"?>
       #      <parent xmlns="http://nokogiri.org/ns/default" xmlns:noko="http://nokogiri.org/ns/noko">
       #        <child1 foo="abc" noko:bar="def">First</child1>
@@ -1524,19 +1524,19 @@ module Nokogiri
       #      </parent>
       #    XML
       #
-      #    doc.root.deconstruct_keys([:name, :namespace])
+      #    docs.root.deconstruct_keys([:name, :namespace])
       #    # => {:name=>"parent",
       #    #     :namespace=>
       #    #      #(Namespace:0x35c { href = "http://nokogiri.org/ns/default" })}
       #
-      #    doc.root.deconstruct_keys([:inner_html, :content])
+      #    docs.root.deconstruct_keys([:inner_html, :content])
       #    # => {:content=>"\n" + "  First\n" + "  Second\n",
       #    #     :inner_html=>
       #    #      "\n" +
       #    #      "  <child1 foo=\"abc\" noko:bar=\"def\">First</child1>\n" +
       #    #      "  <noko:child2 foo=\"qwe\" noko:bar=\"rty\">Second</noko:child2>\n"}
       #
-      #    doc.root.elements.first.deconstruct_keys([:attributes])
+      #    docs.root.elements.first.deconstruct_keys([:attributes])
       #    # => {:attributes=>
       #    #      [#(Attr:0x370 { name = "foo", value = "abc" }),
       #    #       #(Attr:0x384 {

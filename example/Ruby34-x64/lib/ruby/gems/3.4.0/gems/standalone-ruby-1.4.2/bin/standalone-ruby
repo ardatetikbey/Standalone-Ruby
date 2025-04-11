@@ -1,0 +1,4 @@
+require File.expand_path('../lib/standalone_ruby', __dir__)
+
+standalone_ruby = Program.new
+standalone_ruby.run

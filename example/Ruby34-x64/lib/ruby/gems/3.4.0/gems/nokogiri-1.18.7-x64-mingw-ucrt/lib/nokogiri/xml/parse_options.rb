@@ -26,7 +26,7 @@ module Nokogiri
     #
     #     # Set the HUGE & PEDANTIC options
     #     po = Nokogiri::XML::ParseOptions.new.huge.pedantic
-    #     doc = Nokogiri::XML::Document.parse(xml, nil, nil, po)
+    #     docs = Nokogiri::XML::Document.parse(xml, nil, nil, po)
     #
     #   Every option has an equivalent <code>no{option}</code> method in lowercase. You can call these
     #   methods on an instance of ParseOptions to unset the option.
@@ -53,7 +53,7 @@ module Nokogiri
     #   Most parsing methods will accept a block for configuration of parse options, and we
     #   recommend chaining the setter methods:
     #
-    #     doc = Nokogiri::XML::Document.parse(xml) { |config| config.huge.pedantic }
+    #     docs = Nokogiri::XML::Document.parse(xml) { |config| config.huge.pedantic }
     #
     #
     # [ParseOptions constants]
@@ -62,7 +62,7 @@ module Nokogiri
     #   combinations. They are bits in a bitmask, and so can be combined with bitwise operators:
     #
     #     po = Nokogiri::XML::ParseOptions.new(Nokogiri::XML::ParseOptions::HUGE | Nokogiri::XML::ParseOptions::PEDANTIC)
-    #     doc = Nokogiri::XML::Document.parse(xml, nil, nil, po)
+    #     docs = Nokogiri::XML::Document.parse(xml, nil, nil, po)
     #
     class ParseOptions
       # Strict parsing
@@ -76,12 +76,12 @@ module Nokogiri
       #
       # ⚠ This option enables entity substitution, contrary to what the name implies.
       #
-      # ⚠ <b>It is UNSAFE to set this option</b> when parsing untrusted documents.
+      # ⚠ <b>It is UNSAFE to set this option</b> when parsing untrusted docs.
       NOENT       = 1 << 1
 
       # Load external subsets. On by default for XSLT::Stylesheet.
       #
-      # ⚠ <b>It is UNSAFE to set this option</b> when parsing untrusted documents.
+      # ⚠ <b>It is UNSAFE to set this option</b> when parsing untrusted docs.
       DTDLOAD     = 1 << 2
 
       # Default DTD attributes. On by default for XSLT::Stylesheet.
@@ -111,7 +111,7 @@ module Nokogiri
       # Forbid network access. On by default for XML::Document, XML::DocumentFragment,
       # HTML4::Document, HTML4::DocumentFragment, XSLT::Stylesheet, and XML::Schema.
       #
-      # ⚠ <b>It is UNSAFE to unset this option</b> when parsing untrusted documents.
+      # ⚠ <b>It is UNSAFE to unset this option</b> when parsing untrusted docs.
       NONET       = 1 << 11
 
       # Do not reuse the context dictionary. Off by default.
@@ -140,7 +140,7 @@ module Nokogiri
 
       # Relax any hardcoded limit from the parser. Off by default.
       #
-      # ⚠ <b>It is UNSAFE to set this option</b> when parsing untrusted documents.
+      # ⚠ <b>It is UNSAFE to set this option</b> when parsing untrusted docs.
       HUGE        = 1 << 19
 
       # Support line numbers up to <code>long int</code> (default is a <code>short int</code>). On

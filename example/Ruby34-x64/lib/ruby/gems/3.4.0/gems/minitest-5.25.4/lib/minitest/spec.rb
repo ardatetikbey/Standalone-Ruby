@@ -79,7 +79,7 @@ module Kernel
   #
   # For more information about expectations, see Minitest::Expectations.
 
-  def describe desc, *additional_desc, &block # :doc:
+  def describe desc, *additional_desc, &block # :docs:
     stack = Minitest::Spec.describe_stack
     is_spec_class = Class === self && kind_of?(Minitest::Spec::DSL)
     name  = [stack.last, desc, *additional_desc]

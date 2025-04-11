@@ -3,7 +3,7 @@
 module Nokogiri
   module XML
     ###
-    # Nokogiri builder can be used for building XML and HTML documents.
+    # Nokogiri builder can be used for building XML and HTML docs.
     #
     # == Synopsis:
     #
@@ -207,7 +207,7 @@ module Nokogiri
     #       xml.Header
     #     end
     #   end
-    #   result.doc.to_xml
+    #   result.docs.to_xml
     #   # => <?xml version="1.0" encoding="utf-8"?>
     #   #    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     #   #      <soapenv:Header/>
@@ -222,7 +222,7 @@ module Nokogiri
     #       xml["soapenv"].Body # users may explicitly opt into the namespace
     #     end
     #   end
-    #   result.doc.to_xml
+    #   result.docs.to_xml
     #   # => <?xml version="1.0" encoding="utf-8"?>
     #   #    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
     #   #      <Header/>
@@ -234,14 +234,14 @@ module Nokogiri
     #
     # == Document Types
     #
-    # To create a document type (DTD), use the Builder#doc method to get
+    # To create a document type (DTD), use the Builder#docs method to get
     # the current context document.  Then call Node#create_internal_subset to
     # create the DTD node.
     #
     # For example, this Ruby:
     #
     #   builder = Nokogiri::XML::Builder.new do |xml|
-    #     xml.doc.create_internal_subset(
+    #     xml.docs.create_internal_subset(
     #       'html',
     #       "-//W3C//DTD HTML 4.01 Transitional//EN",
     #       "http://www.w3.org/TR/html4/loose.dtd"
@@ -285,8 +285,8 @@ module Nokogiri
       #
       # For example:
       #
-      #   doc = Nokogiri::XML(File.read('somedoc.xml'))
-      #   Nokogiri::XML::Builder.with(doc.at_css('some_tag')) do |xml|
+      #   docs = Nokogiri::XML(File.read('somedoc.xml'))
+      #   Nokogiri::XML::Builder.with(docs.at_css('some_tag')) do |xml|
       #     # ... Use normal builder methods here ...
       #     xml.awesome # add the "awesome" tag below "some_tag"
       #   end

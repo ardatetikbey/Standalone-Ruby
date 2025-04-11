@@ -11,7 +11,7 @@ module Rouge
       mimetypes 'text/slice'
 
       title "Slice"
-      desc "Specification Language for Ice (doc.zeroc.com)"
+      desc "Specification Language for Ice (docs.zeroc.com)"
 
       def self.keywords
         @keywords ||= Set.new %w(

@@ -55,7 +55,7 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.default_formatter = 'doc' if config.files_to_run.one?
+  config.default_formatter = 'docs' if config.files_to_run.one?
 
   # Run before all examples. Using suite or all will not work as stubs are
   # killed after each example ends.

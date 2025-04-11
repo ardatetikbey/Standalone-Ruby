@@ -161,9 +161,9 @@ containing punctuation:
 
 To see the default directories #{opt.program_name} will search, run:
 
-    #{opt.program_name} --list-doc-dirs
+    #{opt.program_name} --list-docs-dirs
 
-Specifying the --system, --site, --home, --gems, or --doc-dir options
+Specifying the --system, --site, --home, --gems, or --docs-dir options
 will limit ri to searching only the specified directories.
 
 ri options may be set in the RI environment variable.
@@ -270,7 +270,7 @@ or the PAGER environment variable.
       opt.separator "Data source options:"
       opt.separator nil
 
-      opt.on("--[no-]list-doc-dirs",
+      opt.on("--[no-]list-docs-dirs",
              "List the directories from which ri will",
              "source documentation on stdout and exit.") do |list_doc_dirs|
         options[:list_doc_dirs] = list_doc_dirs
@@ -278,7 +278,7 @@ or the PAGER environment variable.
 
       opt.separator nil
 
-      opt.on("--doc-dir=DIRNAME", "-d", Array,
+      opt.on("--docs-dir=DIRNAME", "-d", Array,
              "List of directories from which to source",
              "documentation in addition to the standard",
              "directories.  May be repeated.") do |value|
@@ -297,7 +297,7 @@ or the PAGER environment variable.
              "Do not include documentation from",
              "the Ruby standard library, site_lib,",
              "installed gems, or ~/.rdoc.",
-             "Use with --doc-dir.") do
+             "Use with --docs-dir.") do
         options[:use_system] = false
         options[:use_site] = false
         options[:use_gems] = false

@@ -21,13 +21,13 @@ require_relative "nokogiri/extension"
 #
 #     # Get a Nokogiri::HTML4::Document for the page we’re interested in...
 #
-#     doc = Nokogiri::HTML4(URI.open('http://www.google.com/search?q=tenderlove'))
+#     docs = Nokogiri::HTML4(URI.open('http://www.google.com/search?q=tenderlove'))
 #
 #     # Do funky things with it using Nokogiri::XML::Node methods...
 #
 #     ####
 #     # Search for nodes by css
-#     doc.css('h3.r a.l').each do |link|
+#     docs.css('h3.r a.l').each do |link|
 #       puts link.content
 #     end
 #
@@ -78,7 +78,7 @@ module Nokogiri
     # implements method_missing such that methods may be used instead of CSS
     # or XPath.  For example:
     #
-    #   doc = Nokogiri::Slop(<<-eohtml)
+    #   docs = Nokogiri::Slop(<<-eohtml)
     #     <html>
     #       <body>
     #         <p>first</p>
@@ -86,7 +86,7 @@ module Nokogiri
     #       </body>
     #     </html>
     #   eohtml
-    #   assert_equal('second', doc.html.body.p[1].text)
+    #   assert_equal('second', docs.html.body.p[1].text)
     #
     def Slop(*args, &block)
       Nokogiri(*args, &block).slop!

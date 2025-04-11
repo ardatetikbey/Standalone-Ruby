@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.date = "2025-02-15"
   s.description = "The CSV library provides a complete interface to CSV files and data. It offers tools to enable you to read and write to and from Strings or IO objects, as needed.".freeze
   s.email = [nil, "kou@cozmixng.org".freeze]
-  s.extra_rdoc_files = ["LICENSE.txt".freeze, "NEWS.md".freeze, "README.md".freeze, "doc/csv/recipes/filtering.rdoc".freeze, "doc/csv/recipes/generating.rdoc".freeze, "doc/csv/recipes/parsing.rdoc".freeze, "doc/csv/recipes/recipes.rdoc".freeze]
-  s.files = ["LICENSE.txt".freeze, "NEWS.md".freeze, "README.md".freeze, "doc/csv/recipes/filtering.rdoc".freeze, "doc/csv/recipes/generating.rdoc".freeze, "doc/csv/recipes/parsing.rdoc".freeze, "doc/csv/recipes/recipes.rdoc".freeze]
+  s.extra_rdoc_files = ["LICENSE.txt".freeze, "NEWS.md".freeze, "README.md".freeze, "docs/csv/recipes/filtering.rdoc".freeze, "docs/csv/recipes/generating.rdoc".freeze, "docs/csv/recipes/parsing.rdoc".freeze, "docs/csv/recipes/recipes.rdoc".freeze]
+  s.files = ["LICENSE.txt".freeze, "NEWS.md".freeze, "README.md".freeze, "docs/csv/recipes/filtering.rdoc".freeze, "docs/csv/recipes/generating.rdoc".freeze, "docs/csv/recipes/parsing.rdoc".freeze, "docs/csv/recipes/recipes.rdoc".freeze]
   s.homepage = "https://github.com/ruby/csv".freeze
   s.licenses = ["Ruby".freeze, "BSD-2-Clause".freeze]
   s.rdoc_options = ["--main".freeze, "README.md".freeze]

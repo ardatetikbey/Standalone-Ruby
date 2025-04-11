@@ -12,7 +12,7 @@ module Rake
   #
   #   import ".depends.mf"
   #
-  # See {Importing Dependencies}[link:doc/rakefile_rdoc.html#label-Importing+Dependencies]
+  # See {Importing Dependencies}[link:docs/rakefile_rdoc.html#label-Importing+Dependencies]
   # for further details.
 
   class MakefileLoader

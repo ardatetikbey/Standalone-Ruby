@@ -8,9 +8,9 @@ class Bundler::Thor
     # empty directory is found, it's copied and all .empty_directory files are
     # ignored. If any file name is wrapped within % signs, the text within
     # the % signs will be executed as a method and replaced with the returned
-    # value. Let's suppose a doc directory with the following files:
+    # value. Let's suppose a docs directory with the following files:
     #
-    #   doc/
+    #   docs/
     #     components/.empty_directory
     #     README
     #     rdoc.rb.tt
@@ -18,12 +18,12 @@ class Bundler::Thor
     #
     # When invoked as:
     #
-    #   directory "doc"
+    #   directory "docs"
     #
-    # It will create a doc directory in the destination with the following
+    # It will create a docs directory in the destination with the following
     # files (assuming that the `app_name` method returns the value "blog"):
     #
-    #   doc/
+    #   docs/
     #     components/
     #     README
     #     rdoc.rb
@@ -43,8 +43,8 @@ class Bundler::Thor
     #
     # ==== Examples
     #
-    #   directory "doc"
-    #   directory "doc", "docs", :recursive => false
+    #   directory "docs"
+    #   directory "docs", "docs", :recursive => false
     #
     def directory(source, *args, &block)
       config = args.last.is_a?(Hash) ? args.pop : {}

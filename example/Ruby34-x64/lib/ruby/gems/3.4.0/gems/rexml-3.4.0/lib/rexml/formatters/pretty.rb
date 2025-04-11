@@ -105,7 +105,7 @@ module REXML
       end
 
       def write_document( node, output )
-        # Ok, this is a bit odd.  All XML documents have an XML declaration,
+        # Ok, this is a bit odd.  All XML docs have an XML declaration,
         # but it may not write itself if the user didn't specifically add it,
         # either through the API or in the input document.  If it doesn't write
         # itself, then we don't need a carriage return... which makes this

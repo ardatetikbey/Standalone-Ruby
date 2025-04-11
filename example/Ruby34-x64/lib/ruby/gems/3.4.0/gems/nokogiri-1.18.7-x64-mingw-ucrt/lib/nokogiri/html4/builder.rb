@@ -3,7 +3,7 @@
 module Nokogiri
   module HTML4
     ###
-    # Nokogiri HTML builder is used for building HTML documents.  It is very
+    # Nokogiri HTML builder is used for building HTML docs.  It is very
     # similar to the Nokogiri::XML::Builder.  In fact, you should go read the
     # documentation for Nokogiri::XML::Builder before reading this
     # documentation.
@@ -13,11 +13,11 @@ module Nokogiri
     # Create an HTML document with a body that has an onload attribute, and a
     # span tag with a class of "bold" that has content of "Hello world".
     #
-    #   builder = Nokogiri::HTML4::Builder.new do |doc|
-    #     doc.html {
-    #       doc.body(:onload => 'some_func();') {
-    #         doc.span.bold {
-    #           doc.text "Hello world"
+    #   builder = Nokogiri::HTML4::Builder.new do |docs|
+    #     docs.html {
+    #       docs.body(:onload => 'some_func();') {
+    #         docs.span.bold {
+    #           docs.text "Hello world"
     #         }
     #       }
     #     }

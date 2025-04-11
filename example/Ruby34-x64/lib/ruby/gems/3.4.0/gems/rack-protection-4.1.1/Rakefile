@@ -19,8 +19,8 @@ namespace :doc do
       next if excluded_files.include?(file)
 
       doc  = File.read(file)[/^  module Protection(\n)+(    #[^\n]*\n)*/m].scan(/^ *#(?!#) ?(.*)\n/).join("\n")
-      file = "doc/#{file[4..-4].tr('/_', '-')}.rdoc"
-      Dir.mkdir 'doc' unless File.directory? 'doc'
+      file = "docs/#{file[4..-4].tr('/_', '-')}.rdoc"
+      Dir.mkdir 'docs' unless File.directory? 'docs'
       puts "writing #{file}"
       File.open(file, 'w') { |f| f << doc }
     end
@@ -28,8 +28,8 @@ namespace :doc do
 
   task :index do
     doc = File.read('README.md')
-    file = 'doc/rack-protection-readme.md'
-    Dir.mkdir 'doc' unless File.directory? 'doc'
+    file = 'docs/rack-protection-readme.md'
+    Dir.mkdir 'docs' unless File.directory? 'docs'
     puts "writing #{file}"
     File.open(file, 'w') { |f| f << doc }
   end
@@ -38,7 +38,7 @@ namespace :doc do
 end
 
 desc 'generate documentation'
-task doc: 'doc:all'
+task doc: 'docs:all'
 
 desc 'generate gemspec'
 task 'rack-protection.gemspec' do

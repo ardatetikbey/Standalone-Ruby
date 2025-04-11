@@ -103,7 +103,7 @@ module Rouge
           push :tag_directive
         end
 
-        # doc-start and doc-end indicators
+        # docs-start and docs-end indicators
         rule %r/^(?:---|\.\.\.)(?= |$)/ do
           token Name::Namespace
           reset_indent
@@ -333,7 +333,7 @@ module Rouge
         rule %r/[ ]*:\S+/, Str
         rule %r/[ ]+(?=#)/, Text, :pop!
         rule %r/[ ]+$/, Text
-        # check for new documents or dedents at the new line
+        # check for new docs or dedents at the new line
         rule %r/\n+/ do
           token Text
           push :plain_scalar_in_block_context_new_line

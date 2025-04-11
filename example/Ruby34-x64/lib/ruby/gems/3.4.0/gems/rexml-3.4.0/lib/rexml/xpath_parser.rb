@@ -655,7 +655,7 @@ module REXML
     # interpreter functions as a filter, which means that we lose context going
     # in and out of function calls.  If I knew what the index of the nodes was,
     # I wouldn't have to do this.  Maybe add a document IDX for each node?
-    # Problems with mutable documents.  Or, rewrite everything.
+    # Problems with mutable docs.  Or, rewrite everything.
     def sort(array_of_nodes, order)
       new_arry = []
       array_of_nodes.each { |node|

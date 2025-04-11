@@ -13,9 +13,9 @@ class Bundler::Thor
     #
     # ==== Examples
     #
-    #   copy_file "README", "doc/README"
+    #   copy_file "README", "docs/README"
     #
-    #   copy_file "doc/README"
+    #   copy_file "docs/README"
     #
     def copy_file(source, *args, &block)
       config = args.last.is_a?(Hash) ? args.pop : {}
@@ -43,9 +43,9 @@ class Bundler::Thor
     #
     # ==== Examples
     #
-    #   link_file "README", "doc/README"
+    #   link_file "README", "docs/README"
     #
-    #   link_file "doc/README"
+    #   link_file "docs/README"
     #
     def link_file(source, *args)
       config = args.last.is_a?(Hash) ? args.pop : {}
@@ -70,9 +70,9 @@ class Bundler::Thor
     #
     # ==== Examples
     #
-    #   get "http://gist.github.com/103208", "doc/README"
+    #   get "http://gist.github.com/103208", "docs/README"
     #
-    #   get "http://gist.github.com/103208", "doc/README", :http_headers => {"Content-Type" => "application/json"}
+    #   get "http://gist.github.com/103208", "docs/README", :http_headers => {"Content-Type" => "application/json"}
     #
     #   get "http://gist.github.com/103208" do |content|
     #     content.split("\n").first
@@ -110,9 +110,9 @@ class Bundler::Thor
     #
     # ==== Examples
     #
-    #   template "README", "doc/README"
+    #   template "README", "docs/README"
     #
-    #   template "doc/README"
+    #   template "docs/README"
     #
     def template(source, *args, &block)
       config = args.last.is_a?(Hash) ? args.pop : {}

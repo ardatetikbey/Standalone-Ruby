@@ -97,7 +97,7 @@ module RDoc
   # RDoc modifiers for methods
 
   METHOD_MODIFIERS = GENERAL_MODIFIERS +
-    %w[arg args yield yields notnew not-new not_new doc]
+    %w[arg args yield yields notnew not-new not_new docs]
 
   ##
   # Loads the best available YAML library.

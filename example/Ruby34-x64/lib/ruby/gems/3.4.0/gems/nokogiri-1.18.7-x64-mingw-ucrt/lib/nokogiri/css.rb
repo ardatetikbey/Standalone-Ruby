@@ -21,7 +21,7 @@ module Nokogiri
       # 💡 Note that translated queries are cached by default for performance concerns.
       #
       # ⚠ Users should prefer Nokogiri::XML::Searchable#css, which is mixed into all document and
-      # node classes, for querying documents with CSS selectors. This method is the underlying
+      # node classes, for querying docs with CSS selectors. This method is the underlying
       # mechanism used by XML::Searchable and is provided solely for advanced users to translate
       # \CSS selectors to XPath directly.
       #

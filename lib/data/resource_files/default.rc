@@ -1,0 +1,17 @@
+#include <windows.h>
+
+1 VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ BEGIN
+   BLOCK "StringFileInfo"
+   BEGIN
+     BLOCK "040904B0"
+     BEGIN
+       VALUE "CompanyName", "Developer\0"
+       VALUE "FileDescription", "MyProgram\0"
+       VALUE "FileVersion", "1.0.0.0\0"
+       VALUE "ProductName", "MyProgram\0"
+     END
+   END
+ END

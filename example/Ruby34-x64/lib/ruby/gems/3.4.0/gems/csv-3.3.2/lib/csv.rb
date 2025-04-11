@@ -366,35 +366,35 @@ require_relative "csv/writer"
 # - +nil_value+: Specifies the object that is to be substituted for each null (no-text) field.
 # - +empty_value+: Specifies the object that is to be substituted for each empty field.
 #
-# :include: ../doc/csv/options/common/row_sep.rdoc
+# :include: ../docs/csv/options/common/row_sep.rdoc
 #
-# :include: ../doc/csv/options/common/col_sep.rdoc
+# :include: ../docs/csv/options/common/col_sep.rdoc
 #
-# :include: ../doc/csv/options/common/quote_char.rdoc
+# :include: ../docs/csv/options/common/quote_char.rdoc
 #
-# :include: ../doc/csv/options/parsing/field_size_limit.rdoc
+# :include: ../docs/csv/options/parsing/field_size_limit.rdoc
 #
-# :include: ../doc/csv/options/parsing/converters.rdoc
+# :include: ../docs/csv/options/parsing/converters.rdoc
 #
-# :include: ../doc/csv/options/parsing/unconverted_fields.rdoc
+# :include: ../docs/csv/options/parsing/unconverted_fields.rdoc
 #
-# :include: ../doc/csv/options/parsing/headers.rdoc
+# :include: ../docs/csv/options/parsing/headers.rdoc
 #
-# :include: ../doc/csv/options/parsing/return_headers.rdoc
+# :include: ../docs/csv/options/parsing/return_headers.rdoc
 #
-# :include: ../doc/csv/options/parsing/header_converters.rdoc
+# :include: ../docs/csv/options/parsing/header_converters.rdoc
 #
-# :include: ../doc/csv/options/parsing/skip_blanks.rdoc
+# :include: ../docs/csv/options/parsing/skip_blanks.rdoc
 #
-# :include: ../doc/csv/options/parsing/skip_lines.rdoc
+# :include: ../docs/csv/options/parsing/skip_lines.rdoc
 #
-# :include: ../doc/csv/options/parsing/strip.rdoc
+# :include: ../docs/csv/options/parsing/strip.rdoc
 #
-# :include: ../doc/csv/options/parsing/liberal_parsing.rdoc
+# :include: ../docs/csv/options/parsing/liberal_parsing.rdoc
 #
-# :include: ../doc/csv/options/parsing/nil_value.rdoc
+# :include: ../docs/csv/options/parsing/nil_value.rdoc
 #
-# :include: ../doc/csv/options/parsing/empty_value.rdoc
+# :include: ../docs/csv/options/parsing/empty_value.rdoc
 #
 # ==== Options for Generating
 #
@@ -409,23 +409,23 @@ require_relative "csv/writer"
 # - +write_nil_value+: Specifies the object that is to be substituted for each +nil+-valued field.
 # - +write_empty_value+: Specifies the object that is to be substituted for each empty field.
 #
-# :include: ../doc/csv/options/common/row_sep.rdoc
+# :include: ../docs/csv/options/common/row_sep.rdoc
 #
-# :include: ../doc/csv/options/common/col_sep.rdoc
+# :include: ../docs/csv/options/common/col_sep.rdoc
 #
-# :include: ../doc/csv/options/common/quote_char.rdoc
+# :include: ../docs/csv/options/common/quote_char.rdoc
 #
-# :include: ../doc/csv/options/generating/write_headers.rdoc
+# :include: ../docs/csv/options/generating/write_headers.rdoc
 #
-# :include: ../doc/csv/options/generating/force_quotes.rdoc
+# :include: ../docs/csv/options/generating/force_quotes.rdoc
 #
-# :include: ../doc/csv/options/generating/quote_empty.rdoc
+# :include: ../docs/csv/options/generating/quote_empty.rdoc
 #
-# :include: ../doc/csv/options/generating/write_converters.rdoc
+# :include: ../docs/csv/options/generating/write_converters.rdoc
 #
-# :include: ../doc/csv/options/generating/write_nil_value.rdoc
+# :include: ../docs/csv/options/generating/write_nil_value.rdoc
 #
-# :include: ../doc/csv/options/generating/write_empty_value.rdoc
+# :include: ../docs/csv/options/generating/write_empty_value.rdoc
 #
 # === \CSV with Headers
 #
@@ -1576,7 +1576,7 @@ class CSV
     #     :replace => string   # replacement string ("?" or "\uFFFD" if not specified)
     #
     # * Argument +path_or_io+, must be a file path or an \IO stream.
-    # :include: ../doc/csv/arguments/io.rdoc
+    # :include: ../docs/csv/arguments/io.rdoc
     # * Argument +mode+, if given, must be a \File mode.
     #   See {Access Modes}[https://docs.ruby-lang.org/en/master/File.html#class-File-label-Access+Modes].
     # * Arguments <tt>**options</tt> must be keyword options.
@@ -1706,7 +1706,7 @@ class CSV
     #
     # - Argument +string+ should be a \String object;
     #   it will be put into a new StringIO object positioned at the beginning.
-    # :include: ../doc/csv/arguments/io.rdoc
+    # :include: ../docs/csv/arguments/io.rdoc
     # - Argument +options+: see {Options for Parsing}[#class-CSV-label-Options+for+Parsing]
     #
     # ====== Without Option +headers+
@@ -1848,7 +1848,7 @@ class CSV
     #
     # - Argument +string+ should be a \String object;
     #   it will be put into a new StringIO object positioned at the beginning.
-    # :include: ../doc/csv/arguments/io.rdoc
+    # :include: ../docs/csv/arguments/io.rdoc
     # - Argument +options+: see {Options for Parsing}[#class-CSV-label-Options+for+Parsing]
     #
     # ====== Without Option +headers+
@@ -2004,7 +2004,7 @@ class CSV
   #
   # - Argument +string+ should be a \String object;
   #   it will be put into a new StringIO object positioned at the beginning.
-  # :include: ../doc/csv/arguments/io.rdoc
+  # :include: ../docs/csv/arguments/io.rdoc
   # - Argument +options+: See:
   #   * {Options for Parsing}[#class-CSV-label-Options+for+Parsing]
   #   * {Options for Generating}[#class-CSV-label-Options+for+Generating]

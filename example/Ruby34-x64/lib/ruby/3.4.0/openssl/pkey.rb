@@ -207,8 +207,8 @@ module OpenSSL::PKey
     #
     # Example:
     #   dsa = OpenSSL::PKey::DSA.new(2048)
-    #   doc = "Sign me"
-    #   digest = OpenSSL::Digest.digest('SHA1', doc)
+    #   docs = "Sign me"
+    #   digest = OpenSSL::Digest.digest('SHA1', docs)
     #
     #   # With legacy #syssign and #sysverify:
     #   sig = dsa.syssign(digest)

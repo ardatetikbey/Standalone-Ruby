@@ -237,7 +237,7 @@ module RbConfig
   CONFIG["dvidir"] = "$(docdir)"
   CONFIG["htmldir"] = "$(docdir)"
   CONFIG["infodir"] = "$(datarootdir)/info"
-  CONFIG["docdir"] = "$(datarootdir)/doc/$(PACKAGE)"
+  CONFIG["docdir"] = "$(datarootdir)/docs/$(PACKAGE)"
   CONFIG["oldincludedir"] = "/usr/include"
   CONFIG["includedir"] = "$(prefix)/include"
   CONFIG["runstatedir"] = "$(localstatedir)/run"

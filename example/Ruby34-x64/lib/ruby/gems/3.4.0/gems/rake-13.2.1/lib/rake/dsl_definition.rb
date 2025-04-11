@@ -56,7 +56,7 @@ module Rake
     #
     #   $ rake package[1.2.3]
     #
-    def task(*args, &block) # :doc:
+    def task(*args, &block) # :docs:
       Rake::Task.define_task(*args, &block)
     end
 
@@ -73,7 +73,7 @@ module Rake
     #     end
     #  end
     #
-    def file(*args, &block) # :doc:
+    def file(*args, &block) # :docs:
       Rake::FileTask.define_task(*args, &block)
     end
 
@@ -87,9 +87,9 @@ module Rake
     # demand.
     #
     # Example:
-    #   directory "testdata/doc"
+    #   directory "testdata/docs"
     #
-    def directory(*args, &block) # :doc:
+    def directory(*args, &block) # :docs:
       args = args.flat_map { |arg| arg.is_a?(FileList) ? arg.to_a.flatten : arg }
       result = file_create(*args, &block)
       dir, _ = *Rake.application.resolve_args(args)
@@ -110,7 +110,7 @@ module Rake
     # Example:
     #   multitask deploy: %w[deploy_gem deploy_rdoc]
     #
-    def multitask(*args, &block) # :doc:
+    def multitask(*args, &block) # :docs:
       Rake::MultiTask.define_task(*args, &block)
     end
 
@@ -133,7 +133,7 @@ module Rake
     #     # ...
     #   end
     #
-    def namespace(name=nil, &block) # :doc:
+    def namespace(name=nil, &block) # :docs:
       name = name.to_s if name.kind_of?(Symbol)
       name = name.to_str if name.respond_to?(:to_str)
       unless name.kind_of?(String) || name.nil?
@@ -149,7 +149,7 @@ module Rake
     #    sh 'cc', '-c', '-o', t.name, t.source
     #  end
     #
-    def rule(*args, &block) # :doc:
+    def rule(*args, &block) # :docs:
       Rake::Task.create_rule(*args, &block)
     end
 
@@ -163,7 +163,7 @@ module Rake
     #     # ... run tests
     #   end
     #
-    def desc(description) # :doc:
+    def desc(description) # :docs:
       Rake.application.last_description = description
     end
 
@@ -181,7 +181,7 @@ module Rake
     # Example:
     #   import ".depend", "my_rules"
     #
-    def import(*fns) # :doc:
+    def import(*fns) # :docs:
       fns.each do |fn|
         Rake.application.add_import(fn)
       end

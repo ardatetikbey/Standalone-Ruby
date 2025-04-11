@@ -7,7 +7,7 @@ module Rouge
 
     class JSONDOC < JSON
       desc "JavaScript Object Notation with extensions for documentation"
-      tag 'json-doc'
+      tag 'json-docs'
       aliases 'jsonc'
 
       prepend :name do

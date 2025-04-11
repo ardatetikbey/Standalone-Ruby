@@ -571,7 +571,7 @@ class Gem::Command
   ##
   # Wraps +text+ to +width+
 
-  def wrap(text, width) # :doc:
+  def wrap(text, width) # :docs:
     text.gsub(/(.{1,#{width}})( +|$\n?)|(.{1,#{width}})/, "\\1\\3\n")
   end
 

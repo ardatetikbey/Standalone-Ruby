@@ -41,7 +41,7 @@ module Psych
 
     ###
     # Called with +encoding+ when the YAML stream starts.  This method is
-    # called once per stream.  A stream may contain multiple documents.
+    # called once per stream.  A stream may contain multiple docs.
     #
     # See the constants in Psych::Parser for the possible values of +encoding+.
     def start_stream encoding

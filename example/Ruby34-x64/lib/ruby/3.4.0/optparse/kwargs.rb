@@ -5,7 +5,7 @@ class OptionParser
   # :call-seq:
   #   define_by_keywords(options, method, **params)
   #
-  # :include: ../../doc/optparse/creates_option.rdoc
+  # :include: ../../docs/optparse/creates_option.rdoc
   #
   # Defines options which set in to _options_ for keyword parameters
   # of _method_.

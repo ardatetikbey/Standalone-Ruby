@@ -28,7 +28,7 @@
 # ## YAML Emitting
 #
 # Psych provides a range of interfaces ranging from low to high level for
-# producing YAML documents.  Very similar to the YAML parsing interfaces, Psych
+# producing YAML docs.  Very similar to the YAML parsing interfaces, Psych
 # provides at the lowest level, an event based system, mid-level is building a
 # YAML AST, and the highest level is converting a Ruby object straight to a YAML
 # document.
@@ -267,7 +267,7 @@ module Psych
   #   rdoc-file=ext/psych/lib/psych.rb
   #   - load(yaml, permitted_classes: [Symbol], permitted_symbols: [], aliases: false, filename: nil, fallback: nil, symbolize_names: false, freeze: false, strict_integer: false)
   # -->
-  # Load `yaml` in to a Ruby data structure.  If multiple documents are provided,
+  # Load `yaml` in to a Ruby data structure.  If multiple docs are provided,
   # the object contained in the first document will be returned. `filename` will
   # be used in the exception message if any exception is raised while parsing.  If
   # `yaml` is empty, it returns the specified `fallback` return value, which
@@ -365,7 +365,7 @@ module Psych
   #   rdoc-file=ext/psych/lib/psych.rb
   #   - unsafe_load(yaml, filename: nil, fallback: false, symbolize_names: false, freeze: false, strict_integer: false)
   # -->
-  # Load `yaml` in to a Ruby data structure.  If multiple documents are provided,
+  # Load `yaml` in to a Ruby data structure.  If multiple docs are provided,
   # the object contained in the first document will be returned. `filename` will
   # be used in the exception message if any exception is raised while parsing.  If
   # `yaml` is empty, it returns the specified `fallback` return value, which
@@ -393,8 +393,8 @@ module Psych
   #
   # Raises a TypeError when `yaml` parameter is NilClass
   #
-  # NOTE: This method *should not* be used to parse untrusted documents, such as
-  # YAML documents that are supplied via user input.  Instead, please use the load
+  # NOTE: This method *should not* be used to parse untrusted docs, such as
+  # YAML docs that are supplied via user input.  Instead, please use the load
   # method or the safe_load method.
   #
   %a{annotate:rdoc:copy:Psych.unsafe_load}

@@ -310,7 +310,7 @@ module IRB # :nodoc:
         end
 
         @CONF[:USE_MULTILINE] = false
-      when /^--extra-doc-dir(?:=(.+))?/
+      when /^--extra-docs-dir(?:=(.+))?/
         opt = $1 || argv.shift
         @CONF[:EXTRA_DOC_DIRS] << opt
       when "--echo"

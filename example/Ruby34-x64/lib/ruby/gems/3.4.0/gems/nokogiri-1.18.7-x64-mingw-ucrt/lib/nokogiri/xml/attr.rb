@@ -20,14 +20,14 @@ module Nokogiri
       #
       #  *Example*
       #
-      #    doc = Nokogiri::XML.parse(<<~XML)
+      #    docs = Nokogiri::XML.parse(<<~XML)
       #      <?xml version="1.0"?>
       #      <root xmlns="http://nokogiri.org/ns/default" xmlns:noko="http://nokogiri.org/ns/noko">
       #        <child1 foo="abc" noko:bar="def"/>
       #      </root>
       #    XML
       #
-      #    attributes = doc.root.elements.first.attribute_nodes
+      #    attributes = docs.root.elements.first.attribute_nodes
       #    # => [#(Attr:0x35c { name = "foo", value = "abc" }),
       #    #     #(Attr:0x370 {
       #    #       name = "bar",

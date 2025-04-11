@@ -43,7 +43,7 @@ class Gem::Licenses
     ASWF-Digital-Assets-1.0
     ASWF-Digital-Assets-1.1
     Abstyles
-    AdaCore-doc
+    AdaCore-docs
     Adobe-2006
     Adobe-Display-PostScript
     Adobe-Glyph
@@ -292,8 +292,8 @@ class Gem::Licenses
     HPND-Pbmplus
     HPND-UC
     HPND-UC-export-US
-    HPND-doc
-    HPND-doc-sell
+    HPND-docs
+    HPND-docs-sell
     HPND-export-US
     HPND-export-US-acknowledgement
     HPND-export-US-modify

@@ -18,7 +18,7 @@
 #
 # If you're somewhat familiar with XML
 # and have a particular task in mind,
-# you may want to see {the tasks pages}[doc/rexml/tasks/tocs/master_toc_rdoc.html].
+# you may want to see {the tasks pages}[docs/rexml/tasks/tocs/master_toc_rdoc.html].
 #
 # == API
 #
@@ -26,7 +26,7 @@
 # - REXML::Document.
 # - REXML::Element.
 #
-# There's also an {REXML tutorial}[doc/rexml/tutorial_rdoc.html].
+# There's also an {REXML tutorial}[docs/rexml/tutorial_rdoc.html].
 #
 module REXML
   COPYRIGHT = "Copyright © 2001-2008 Sean Russell <ser@germane-software.com>"

@@ -590,7 +590,7 @@ class Gem::Specification < Gem::BasicSpecification
   end
 
   ##
-  # Extra files to add to RDoc such as README or doc/examples.txt
+  # Extra files to add to RDoc such as README or docs/examples.txt
   #
   # When the user elects to generate the RDoc documentation for a gem (typically
   # at install time), all the library files are sent to RDoc for processing.
@@ -599,7 +599,7 @@ class Gem::Specification < Gem::BasicSpecification
   #
   # Usage:
   #
-  #  spec.extra_rdoc_files = ['README', 'doc/user-guide.txt']
+  #  spec.extra_rdoc_files = ['README', 'docs/user-guide.txt']
 
   def extra_rdoc_files
     @extra_rdoc_files ||= []
@@ -1800,12 +1800,12 @@ class Gem::Specification < Gem::BasicSpecification
   # Returns the full path to this spec's documentation directory.  If +type+
   # is given it will be appended to the end.  For example:
   #
-  #   spec.doc_dir      # => "/path/to/gem_repo/doc/a-1"
+  #   spec.doc_dir      # => "/path/to/gem_repo/docs/a-1"
   #
-  #   spec.doc_dir 'ri' # => "/path/to/gem_repo/doc/a-1/ri"
+  #   spec.doc_dir 'ri' # => "/path/to/gem_repo/docs/a-1/ri"
 
   def doc_dir(type = nil)
-    @doc_dir ||= File.join base_dir, "doc", full_name
+    @doc_dir ||= File.join base_dir, "docs", full_name
 
     if type
       File.join @doc_dir, type

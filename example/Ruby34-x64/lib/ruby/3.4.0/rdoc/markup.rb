@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 ##
-# RDoc::Markup parses plain text documents and attempts to decompose them into
+# RDoc::Markup parses plain text docs and attempts to decompose them into
 # their constituent parts.  Some of these parts are high-level: paragraphs,
 # chunks of verbatim text, list entries and the like.  Other parts happen at
 # the character level: a piece of bold text, a word in code font.  This markup
@@ -49,7 +49,7 @@
 # = RDoc::Markup
 #
 # RDoc::Markup is extensible at runtime: you can add \new markup elements to
-# be recognized in the documents that RDoc::Markup parses.
+# be recognized in the docs that RDoc::Markup parses.
 #
 # RDoc::Markup is intended to be the basis for a family of tools which share
 # the common requirement that simple, plain-text should be rendered in a
@@ -97,7 +97,7 @@
 # == Encoding
 #
 # Where Encoding support is available, RDoc will automatically convert all
-# documents to the same output encoding.  The output encoding can be set via
+# docs to the same output encoding.  The output encoding can be set via
 # RDoc::Options#encoding and defaults to Encoding.default_external.
 #
 # = \RDoc Markup Reference

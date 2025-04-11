@@ -104,10 +104,10 @@ class RDoc::Markup::Document
   end
 
   ##
-  # When this is a collection of documents (#file is not set and this document
-  # contains only other documents as its direct children) #merge replaces
-  # documents in this class with documents from +other+ when the file matches
-  # and adds documents from +other+ when the files do not.
+  # When this is a collection of docs (#file is not set and this document
+  # contains only other docs as its direct children) #merge replaces
+  # docs in this class with docs from +other+ when the file matches
+  # and adds docs from +other+ when the files do not.
   #
   # The information in +other+ is preferred over the receiver
 
@@ -136,7 +136,7 @@ class RDoc::Markup::Document
   end
 
   def pretty_print q # :nodoc:
-    start = @file ? "[doc (#{@file}): " : '[doc: '
+    start = @file ? "[docs (#{@file}): " : '[docs: '
 
     q.group 2, start, ']' do
       q.seplist @parts do |part|

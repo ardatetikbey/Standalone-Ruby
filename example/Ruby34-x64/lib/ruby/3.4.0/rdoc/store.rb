@@ -308,7 +308,7 @@ class RDoc::Store
       if item.empty? then
         collection.delete name
       else
-        # HACK mongrel-1.1.5 documents its files twice
+        # HACK mongrel-1.1.5 docs its files twice
         item.uniq!
         item.sort!
       end

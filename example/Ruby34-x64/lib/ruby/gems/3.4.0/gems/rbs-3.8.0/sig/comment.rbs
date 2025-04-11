@@ -3,7 +3,7 @@ module RBS
     # RBS allows writing documentation of declarations and members.
     #
     # ```
-    # # This is a doc for class.
+    # # This is a docs for class.
     # class Hello
     # end
     # ```

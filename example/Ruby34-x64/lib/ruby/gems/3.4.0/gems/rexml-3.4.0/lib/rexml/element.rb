@@ -24,9 +24,9 @@ module REXML
   # If you're somewhat familiar with XML
   # and have a particular task in mind,
   # you may want to see the
-  # {tasks pages}[../doc/rexml/tasks/tocs/master_toc_rdoc.html],
+  # {tasks pages}[../docs/rexml/tasks/tocs/master_toc_rdoc.html],
   # and in particular, the
-  # {tasks page for elements}[../doc/rexml/tasks/tocs/element_toc_rdoc.html].
+  # {tasks page for elements}[../docs/rexml/tasks/tocs/element_toc_rdoc.html].
   #
   # === Name
   #
@@ -311,7 +311,7 @@ module REXML
     #
     # When argument +context+ is also given, it must be a hash
     # representing the context for the element;
-    # see {Element Context}[../doc/rexml/context_rdoc.html]:
+    # see {Element Context}[../docs/rexml/context_rdoc.html]:
     #
     #   e = REXML::Element.new('foo', nil, {raw: :all})
     #   e.context # => {:raw=>:all}
@@ -483,7 +483,7 @@ module REXML
     # Returns +true+ if whitespace is respected for this element,
     # +false+ otherwise.
     #
-    # See {Element Context}[../doc/rexml/context_rdoc.html].
+    # See {Element Context}[../docs/rexml/context_rdoc.html].
     #
     # The evaluation is tested against the element's +expanded_name+,
     # and so is namespace-sensitive.
@@ -508,7 +508,7 @@ module REXML
     #
     # Returns +true+ if whitespace nodes are ignored for the element.
     #
-    # See {Element Context}[../doc/rexml/context_rdoc.html].
+    # See {Element Context}[../docs/rexml/context_rdoc.html].
     #
     def ignore_whitespace_nodes
       @ignore_whitespace_nodes = false
@@ -526,7 +526,7 @@ module REXML
     #
     # Returns +true+ if raw mode is set for the element.
     #
-    # See {Element Context}[../doc/rexml/context_rdoc.html].
+    # See {Element Context}[../docs/rexml/context_rdoc.html].
     #
     # The evaluation is tested against +expanded_name+, and so is namespace
     # sensitive.
@@ -1499,8 +1499,8 @@ module REXML
     #   a limitation of Internet Explorer.  Defaults to false
     #
     #  out = ''
-    #  doc.write( out )     #-> doc is written to the string 'out'
-    #  doc.write( $stdout ) #-> doc written to the console
+    #  docs.write( out )     #-> docs is written to the string 'out'
+    #  docs.write( $stdout ) #-> docs written to the console
     def write(output=$stdout, indent=-1, transitive=false, ie_hack=false)
       Kernel.warn("#{self.class.name}.write is deprecated.  See REXML::Formatters", uplevel: 1)
       formatter = if indent > -1

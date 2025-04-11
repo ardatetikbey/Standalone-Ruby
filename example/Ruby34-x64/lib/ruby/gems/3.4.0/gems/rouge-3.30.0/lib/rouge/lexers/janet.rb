@@ -40,8 +40,8 @@ module Rouge
           debug/stack debug/stacktrace debug/step debug/unbreak
           debug/unfbreak debugger-env dec deep-not= deep= default
           default-peg-grammar def- defer defmacro defmacro- defn defn-
-          defglobal describe dictionary? disasm distinct doc doc*
-          doc-format dofile drop drop-until drop-while dyn each eachk
+          defglobal describe dictionary? disasm distinct docs docs*
+          docs-format dofile drop drop-until drop-while dyn each eachk
           eachp eachy edefer eflush empty? env-lookup eprin eprinf
           eprint eprintf error errorf eval eval-string even? every?
           extreme false? fiber/can-resume? fiber/current fiber/getenv

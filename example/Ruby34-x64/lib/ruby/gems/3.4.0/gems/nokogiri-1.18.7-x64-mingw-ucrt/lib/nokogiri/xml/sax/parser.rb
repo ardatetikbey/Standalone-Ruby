@@ -33,7 +33,7 @@ module Nokogiri
       #
       # Also see Nokogiri::XML::SAX::Document for the available events.
       #
-      # For \HTML documents, use the subclass Nokogiri::HTML4::SAX::Parser.
+      # For \HTML docs, use the subclass Nokogiri::HTML4::SAX::Parser.
       #
       class Parser
         # to dynamically resolve ParserContext in inherited methods

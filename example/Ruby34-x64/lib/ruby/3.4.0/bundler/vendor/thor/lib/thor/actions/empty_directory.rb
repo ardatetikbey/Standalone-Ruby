@@ -8,7 +8,7 @@ class Bundler::Thor
     #
     # ==== Examples
     #
-    #   empty_directory "doc"
+    #   empty_directory "docs"
     #
     def empty_directory(destination, config = {})
       action EmptyDirectory.new(self, destination, config)

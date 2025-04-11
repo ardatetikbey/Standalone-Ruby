@@ -126,6 +126,6 @@ elsif @script
     raise e
   end
 else
-  puts "Your document is stored in @doc..."
+  puts "Your document is stored in @docs..."
   Nokogiri::CLI.console.start
 end

@@ -61,7 +61,7 @@ require_relative 'psych/class_loader'
 # == YAML Emitting
 #
 # Psych provides a range of interfaces ranging from low to high level for
-# producing YAML documents.  Very similar to the YAML parsing interfaces, Psych
+# producing YAML docs.  Very similar to the YAML parsing interfaces, Psych
 # provides at the lowest level, an event based system, mid-level is building
 # a YAML AST, and the highest level is converting a Ruby object straight to
 # a YAML document.
@@ -238,7 +238,7 @@ module Psych
   LIBYAML_VERSION = Psych.libyaml_version.join('.').freeze
 
   ###
-  # Load +yaml+ in to a Ruby data structure.  If multiple documents are
+  # Load +yaml+ in to a Ruby data structure.  If multiple docs are
   # provided, the object contained in the first document will be returned.
   # +filename+ will be used in the exception message if any exception
   # is raised while parsing.  If +yaml+ is empty, it returns
@@ -266,8 +266,8 @@ module Psych
   #
   # Raises a TypeError when `yaml` parameter is NilClass
   #
-  # NOTE: This method *should not* be used to parse untrusted documents, such as
-  # YAML documents that are supplied via user input.  Instead, please use the
+  # NOTE: This method *should not* be used to parse untrusted docs, such as
+  # YAML docs that are supplied via user input.  Instead, please use the
   # load method or the safe_load method.
   #
   def self.unsafe_load yaml, filename: nil, fallback: false, symbolize_names: false, freeze: false, strict_integer: false
@@ -338,7 +338,7 @@ module Psych
   end
 
   ###
-  # Load +yaml+ in to a Ruby data structure.  If multiple documents are
+  # Load +yaml+ in to a Ruby data structure.  If multiple docs are
   # provided, the object contained in the first document will be returned.
   # +filename+ will be used in the exception message if any exception
   # is raised while parsing.  If +yaml+ is empty, it returns
@@ -424,7 +424,7 @@ module Psych
 
   ###
   # Parse a YAML string in +yaml+.  Returns the Psych::Nodes::Stream.
-  # This method can handle multiple YAML documents contained in +yaml+.
+  # This method can handle multiple YAML docs contained in +yaml+.
   # +filename+ is used in the exception message if a Psych::SyntaxError is
   # raised.
   #
@@ -605,7 +605,7 @@ module Psych
   end
 
   ###
-  # Dump a list of objects as separate documents to a document stream.
+  # Dump a list of objects as separate docs to a document stream.
   #
   # Example:
   #
@@ -627,7 +627,7 @@ module Psych
   end
 
   ###
-  # Load multiple documents given in +yaml+.  Returns the parsed documents
+  # Load multiple docs given in +yaml+.  Returns the parsed docs
   # as a list.  If a block is given, each document will be converted to Ruby
   # and passed to the block during parsing
   #
@@ -659,8 +659,8 @@ module Psych
   # +filename+ as a Ruby object, or if the file is empty, it returns
   # the specified +fallback+ return value, which defaults to +false+.
   #
-  # NOTE: This method *should not* be used to parse untrusted documents, such as
-  # YAML documents that are supplied via user input.  Instead, please use the
+  # NOTE: This method *should not* be used to parse untrusted docs, such as
+  # YAML docs that are supplied via user input.  Instead, please use the
   # safe_load_file method.
   def self.unsafe_load_file filename, **kwargs
     File.open(filename, 'r:bom|utf-8') { |f|

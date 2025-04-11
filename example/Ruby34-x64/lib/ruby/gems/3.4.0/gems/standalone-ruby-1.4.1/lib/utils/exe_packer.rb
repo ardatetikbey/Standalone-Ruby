@@ -8,7 +8,7 @@ class ExePacker
 
   def pack
     begin
-      stub_path = File.join(File.expand_path("../data/exe_template", __dir__), "launcher_stub.c")
+      stub_path = File.join(File.expand_path("../data/exe_templates", __dir__), "launcher_stub.c")
       @logger.info("Reading stub template from: #{stub_path}")
 
       stub_content = File.read(stub_path)

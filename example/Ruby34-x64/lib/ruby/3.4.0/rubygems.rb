@@ -141,7 +141,7 @@ module Gem
   REPOSITORY_SUBDIRECTORIES = %w[
     build_info
     cache
-    doc
+    docs
     extensions
     gems
     plugins

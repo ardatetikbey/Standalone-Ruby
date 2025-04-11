@@ -48,10 +48,10 @@ CLEAN.include('coverage')
 
 # Website =============================================================
 
-desc 'Generate RDoc under doc/api'
-task 'doc' => ['doc:api']
-task('doc:api') { sh 'yardoc -o doc/api' }
-CLEAN.include 'doc/api'
+desc 'Generate RDoc under docs/api'
+task 'docs' => ['docs:api']
+task('docs:api') { sh 'yardoc -o docs/api' }
+CLEAN.include 'docs/api'
 
 # README ===============================================================
 

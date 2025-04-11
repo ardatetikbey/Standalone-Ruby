@@ -757,25 +757,25 @@ class RDoc::Parser::C < RDoc::Parser
   def gen_const_table file_content
     table = {}
     @content.scan(%r{
-      (?<doc>(?>^\s*/\*.*?\*/\s+))
+      (?<docs>(?>^\s*/\*.*?\*/\s+))
         rb_define_(?<type>\w+)\(\s*(?:\w+),\s*
                            "(?<name>\w+)"\s*,
                            .*?\)\s*;
-    | (?<doc>(?>^\s*/\*.*?\*/\s+))
+    | (?<docs>(?>^\s*/\*.*?\*/\s+))
         rb_define_global_(?<type>const)\(\s*
                            "(?<name>\w+)"\s*,
                            .*?\)\s*;
-    |  (?<doc>(?>^\s*/\*.*?\*/\s+))
+    |  (?<docs>(?>^\s*/\*.*?\*/\s+))
         rb_file_(?<type>const)\(\s*
                            "(?<name>\w+)"\s*,
                            .*?\)\s*;
-    |  (?<doc>(?>^\s*/\*.*?\*/\s+))
+    |  (?<docs>(?>^\s*/\*.*?\*/\s+))
         rb_curses_define_(?<type>const)\(\s*
                            (?<name>\w+)
                            \s*\)\s*;
     | Document-(?:const|global|variable):\s
         (?<name>(?:\w+::)*\w+)
-        \s*?\n(?<doc>(?>.*?\*/))
+        \s*?\n(?<docs>(?>.*?\*/))
     }mxi) do
       name, doc, type = $~.values_at(:name, :doc, :type)
       if type

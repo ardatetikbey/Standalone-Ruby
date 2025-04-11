@@ -3,12 +3,12 @@
 # = RSS reading and writing
 #
 # Really Simple Syndication (RSS) is a family of formats that describe 'feeds,'
-# specially constructed XML documents that allow an interested person to
+# specially constructed XML docs that allow an interested person to
 # subscribe and receive updates from a particular web service. This portion of
 # the standard library provides tooling to read and create these feeds.
 #
 # The standard library supports RSS 0.91, 1.0, 2.0, and Atom, a related format.
-# Here are some links to the standards documents for these formats:
+# Here are some links to the standards docs for these formats:
 #
 # * RSS
 #   * 0.9.1[http://www.rssboard.org/rss-0-9-1-netscape]

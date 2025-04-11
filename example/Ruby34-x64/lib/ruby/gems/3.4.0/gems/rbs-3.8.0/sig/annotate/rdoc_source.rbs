@@ -14,7 +14,7 @@ module RBS
 
       def load: () -> void
 
-      # Extract documents from `CodeObject`s
+      # Extract docs from `CodeObject`s
       def docs: () { () -> Array[RDoc::CodeObject]? } -> Array[RDoc::Markup::Document]?
 
       def find_class: (TypeName) -> Array[RDoc::ClassModule]?

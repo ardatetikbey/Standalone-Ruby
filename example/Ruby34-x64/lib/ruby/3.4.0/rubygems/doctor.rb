@@ -23,7 +23,7 @@ class Gem::Doctor
     ["specifications", ".gemspec"],
     ["build_info",     ".info"],
     ["cache",          ".gem"],
-    ["doc",            ""],
+    ["docs",            ""],
     ["extensions",     ""],
     ["gems",           ""],
     ["plugins",        ""],

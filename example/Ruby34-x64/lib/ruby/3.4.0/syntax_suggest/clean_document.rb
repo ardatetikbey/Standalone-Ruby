@@ -130,7 +130,7 @@ module SyntaxSuggest
     # Important: This must be done before lexing.
     #
     # After this change is made, we lex the document because
-    # removing comments can change how the doc is parsed.
+    # removing comments can change how the docs is parsed.
     #
     # For example:
     #

@@ -171,7 +171,7 @@ class RDoc::Markup::PreProcess
       end
 
       blankline # ignore category if we're not on an RDoc::Context
-    when 'doc' then
+    when 'docs' then
       return blankline unless code_object
       code_object.document_self = true
       code_object.force_documentation = true

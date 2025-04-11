@@ -353,7 +353,7 @@ version.  If you're viewing Ruby's documentation, include the version of ruby.
 
       case type
       when :gem
-        gemspec = path.gsub(%r%/doc/([^/]*?)/ri$%,
+        gemspec = path.gsub(%r%/docs/([^/]*?)/ri$%,
                             '/specifications/\1.gemspec')
 
         spec = Gem::Specification.load gemspec

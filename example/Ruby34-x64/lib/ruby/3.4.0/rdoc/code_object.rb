@@ -207,7 +207,7 @@ class RDoc::CodeObject
   #
   # Once documentation has been turned off (by +:enddoc:+),
   # the object will refuse to turn #document_self or
-  # #document_children on, so +:doc:+ and +:start_doc:+ directives
+  # #document_children on, so +:docs:+ and +:start_doc:+ directives
   # will have no effect in the current file.
 
   def done_documenting=(value)

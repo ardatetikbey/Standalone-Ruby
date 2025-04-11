@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = ["optionparser.rb".freeze, "optparse.rb".freeze, "optparse/ac.rb".freeze, "optparse/date.rb".freeze, "optparse/kwargs.rb".freeze, "optparse/shellwords.rb".freeze, "optparse/time.rb".freeze, "optparse/uri.rb".freeze, "optparse/version.rb".freeze]
   s.homepage = "https://github.com/ruby/optparse".freeze
   s.licenses = ["Ruby".freeze, "BSD-2-Clause".freeze]
-  s.rdoc_options = ["--main=README.md".freeze, "--op=rdoc".freeze, "--page-dir=doc".freeze]
+  s.rdoc_options = ["--main=README.md".freeze, "--op=rdoc".freeze, "--page-dir=docs".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.5.0".freeze)
   s.rubygems_version = "3.6.2".freeze
   s.summary = "OptionParser is a class for command-line option analysis.".freeze

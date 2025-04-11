@@ -16,7 +16,7 @@ module Rouge
       end
   
       # Note: If you add a tag in the lines below, you also need to modify "disambiguate '*.m'" in file disambiguation.rb
-      TEXT_BLOCKS = %w(text doc)
+      TEXT_BLOCKS = %w(text docs)
       PERL_BLOCKS = %w(args flags attr init once shared perl cleanup filter)
       COMPONENTS = %w(def method)
   
@@ -60,7 +60,7 @@ module Rouge
         # fallback to HTML until a mason tag is encountered
         rule(/(.+?)(?=(<\/?&|<\/?%|^%|^#))/m) { delegate parent }
 
-        # if we get here, there's no more mason tags, so we parse the rest of the doc as HTML
+        # if we get here, there's no more mason tags, so we parse the rest of the docs as HTML
         rule(/.+/m) { delegate parent }
       end
 

@@ -28,9 +28,9 @@ module REXML
   # If you're somewhat familiar with XML
   # and have a particular task in mind,
   # you may want to see the
-  # {tasks pages}[../doc/rexml/tasks/tocs/master_toc_rdoc.html],
+  # {tasks pages}[../docs/rexml/tasks/tocs/master_toc_rdoc.html],
   # and in particular, the
-  # {tasks page for documents}[../doc/rexml/tasks/tocs/document_toc_rdoc.html].
+  # {tasks page for docs}[../docs/rexml/tasks/tocs/document_toc_rdoc.html].
   #
   class Document < Element
     # A convenient default XML declaration. Use:
@@ -83,7 +83,7 @@ module REXML
     #
     # When argument +context+ is given, it must be a hash
     # containing context entries for the document;
-    # see {Element Context}[../doc/rexml/context_rdoc.html]:
+    # see {Element Context}[../docs/rexml/context_rdoc.html]:
     #
     #   context = {raw: :all, compress_whitespace: :all}
     #   d = REXML::Document.new(xml_string, context)
@@ -309,8 +309,8 @@ module REXML
     end
 
     # :call-seq:
-    #    doc.write(output=$stdout, indent=-1, transtive=false, ie_hack=false, encoding=nil)
-    #    doc.write(options={:output => $stdout, :indent => -1, :transtive => false, :ie_hack => false, :encoding => nil})
+    #    docs.write(output=$stdout, indent=-1, transtive=false, ie_hack=false, encoding=nil)
+    #    docs.write(options={:output => $stdout, :indent => -1, :transtive => false, :ie_hack => false, :encoding => nil})
     #
     # Write the XML tree out, optionally with indent.  This writes out the
     # entire XML document, including XML declarations, doctype declarations,

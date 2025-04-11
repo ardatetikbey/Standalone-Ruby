@@ -29,7 +29,7 @@ module RBS
 
       # Returns the formatted document of given method.
       #
-      # Expands attribute documents, or alias documents if needed.
+      # Expands attribute docs, or alias docs if needed.
       #
       def doc_for_method: (TypeName, instance_method: Symbol, tester: _PathTester) -> String?
                         | (TypeName, singleton_method: Symbol, tester: _PathTester) -> String?

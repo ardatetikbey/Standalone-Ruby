@@ -1037,7 +1037,7 @@ SRC
     install_files(mfile, [["lib/**/*.rb", dest, "lib"]], nil, srcdir)
   end
 
-  def append_library(libs, lib) # :no-doc:
+  def append_library(libs, lib) # :no-docs:
     format(LIBARG, lib) + " " + libs
   end
 

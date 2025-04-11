@@ -88,7 +88,7 @@ module Rouge
         next Mathematica if contains?('(*')
         next Mathematica if contains?(':=')
 
-        next Mason if matches?(/<%(def|method|text|doc|args|flags|attr|init|once|shared|perl|cleanup|filter)([^>]*)(>)/)
+        next Mason if matches?(/<%(def|method|text|docs|args|flags|attr|init|once|shared|perl|cleanup|filter)([^>]*)(>)/)
 
         next Matlab if matches?(/^\s*?%/)
 

@@ -33,7 +33,7 @@ module Nokogiri
   #
   # Parse an HTML5 document:
   #
-  #   doc = Nokogiri.HTML5(input)
+  #   docs = Nokogiri.HTML5(input)
   #
   # Parse an HTML5 fragment:
   #
@@ -69,8 +69,8 @@ module Nokogiri
   #
   # For example, this script:
   #
-  #   doc = Nokogiri::HTML5.parse('<span/>Hi there!</span foo=bar />', max_errors: 10)
-  #   doc.errors.each do |err|
+  #   docs = Nokogiri::HTML5.parse('<span/>Hi there!</span foo=bar />', max_errors: 10)
+  #   docs.errors.each do |err|
   #     puts(err)
   #   end
   #
@@ -101,11 +101,11 @@ module Nokogiri
   # As a convenience to Nokogiri users, the defined error codes are available
   # via Nokogiri::XML::SyntaxError#str1 method.
   #
-  #   doc = Nokogiri::HTML5.parse('<span/>Hi there!</span foo=bar />', max_errors: 10)
-  #   doc.errors.each do |err|
+  #   docs = Nokogiri::HTML5.parse('<span/>Hi there!</span foo=bar />', max_errors: 10)
+  #   docs.errors.each do |err|
   #     puts("#{err.line}:#{err.column}: #{err.str1}")
   #   end
-  #   doc = Nokogiri::HTML5.parse('<span/>Hi there!</span foo=bar />',
+  #   docs = Nokogiri::HTML5.parse('<span/>Hi there!</span foo=bar />',
   #   # => 1:1: generic-parser
   #   #    1:1: non-void-html-element-start-tag-with-trailing-solidus
   #   #    1:17: end-tag-with-trailing-solidus
@@ -128,9 +128,9 @@ module Nokogiri
   # giving the option <tt>max_tree_depth: -1</tt>.
   #
   #   html = '<!DOCTYPE html>' + '<div>' * 1000
-  #   doc = Nokogiri.HTML5(html)
+  #   docs = Nokogiri.HTML5(html)
   #   # raises ArgumentError: Document tree depth limit exceeded
-  #   doc = Nokogiri.HTML5(html, max_tree_depth: -1)
+  #   docs = Nokogiri.HTML5(html, max_tree_depth: -1)
   #
   # === Attribute limit per element: +max_attributes:+
   #
@@ -142,10 +142,10 @@ module Nokogiri
   #
   #   html = '<!DOCTYPE html><div ' + (1..1000).map { |x| "attr-#{x}" }.join(' # ') + '>'
   #   # "<!DOCTYPE html><div attr-1 attr-2 attr-3 ... attr-1000>"
-  #   doc = Nokogiri.HTML5(html)
+  #   docs = Nokogiri.HTML5(html)
   #   # raises ArgumentError: Attributes per element limit exceeded
   #
-  #   doc = Nokogiri.HTML5(html, max_attributes: -1)
+  #   docs = Nokogiri.HTML5(html, max_attributes: -1)
   #   # parses successfully
   #
   # === Parse +noscript+ elements' content as text: +parse_noscript_content_as_text:+
@@ -157,8 +157,8 @@ module Nokogiri
   # elements as a single text node.
   #
   #   html = "<!DOCTYPE html><noscript><meta charset='UTF-8'><link rel=stylesheet href=!></noscript>"
-  #   doc = Nokogiri::HTML5.parse(html, parse_noscript_content_as_text: true)
-  #   pp doc.at_xpath("/html/head/noscript")
+  #   docs = Nokogiri::HTML5.parse(html, parse_noscript_content_as_text: true)
+  #   pp docs.at_xpath("/html/head/noscript")
   #   # => #(Element:0x878c {
   #   #        name = "noscript",
   #   #        children = [ #(Text "<meta charset='UTF-8'><link rel=stylesheet href=!>")]
@@ -167,8 +167,8 @@ module Nokogiri
   # In contrast, <tt>parse_noscript_content_as_text: false</tt> (the default) causes the +noscript+
   # element in the previous example to have two children, a +meta+ element and a +link+ element.
   #
-  #   doc = Nokogiri::HTML5.parse(html)
-  #   puts doc.at_xpath("/html/head/noscript")
+  #   docs = Nokogiri::HTML5.parse(html)
+  #   puts docs.at_xpath("/html/head/noscript")
   #   # => #(Element:0x96b4 {
   #   #      name = "noscript",
   #   #      children = [
@@ -189,8 +189,8 @@ module Nokogiri
   # +Element.outerHTML+.) Similarly, XML::Node#inner_html will serialize the children of a given
   # node. (This is the equivalent of JavaScript's +Element.innerHTML+.)
   #
-  #   doc = Nokogiri::HTML5("<!DOCTYPE html><span>Hello world!</span>")
-  #   puts doc.serialize
+  #   docs = Nokogiri::HTML5("<!DOCTYPE html><span>Hello world!</span>")
+  #   puts docs.serialize
   #   # => <!DOCTYPE html><html><head></head><body><span>Hello world!</span></body></html>
   #
   # Due to quirks in how HTML is parsed and serialized, it's possible for a DOM tree to be
@@ -201,12 +201,12 @@ module Nokogiri
   # In particular, a newline at the start of +pre+, +listing+, and +textarea+
   # elements is ignored by the parser.
   #
-  #   doc = Nokogiri::HTML5(<<-EOF)
+  #   docs = Nokogiri::HTML5(<<-EOF)
   #   <!DOCTYPE html>
   #   <pre>
   #   Content</pre>
   #   EOF
-  #   puts doc.at('/html/body/pre').serialize
+  #   puts docs.at('/html/body/pre').serialize
   #   # => <pre>Content</pre>
   #
   # In this case, the original HTML is semantically equivalent to the serialized version. If the
@@ -215,13 +215,13 @@ module Nokogiri
   # semantically different DOMs. Passing the parameter <tt>preserve_newline: true</tt> will cause
   # two or more newlines to be preserved. (A single leading newline will still be removed.)
   #
-  #   doc = Nokogiri::HTML5(<<-EOF)
+  #   docs = Nokogiri::HTML5(<<-EOF)
   #   <!DOCTYPE html>
   #   <listing>
   #
   #   Content</listing>
   #   EOF
-  #   puts doc.at('/html/body/listing').serialize(preserve_newline: true)
+  #   puts docs.at('/html/body/listing').serialize(preserve_newline: true)
   #   # => <listing>
   #   #
   #   #    Content</listing>

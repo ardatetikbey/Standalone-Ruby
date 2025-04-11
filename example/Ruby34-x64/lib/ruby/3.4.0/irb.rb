@@ -103,7 +103,7 @@ require_relative "irb/pager"
 # which is also displayed if you use command-line option `--help`.
 #
 # If you are interested in a specific option, consult the
-# [index](rdoc-ref:doc/irb/indexes.md@Index+of+Command-Line+Options).
+# [index](rdoc-ref:docs/irb/indexes.md@Index+of+Command-Line+Options).
 #
 # #### Command-Line Arguments
 #
@@ -175,7 +175,7 @@ require_relative "irb/pager"
 # below.
 #
 # If you are interested in a specific entry, consult the
-# [index](rdoc-ref:doc/irb/indexes.md@Index+of+IRB.conf+Entries).
+# [index](rdoc-ref:docs/irb/indexes.md@Index+of+IRB.conf+Entries).
 #
 # ### Notes on Initialization Precedence
 #
@@ -773,7 +773,7 @@ require_relative "irb/pager"
 #
 # *   Command-line option `--extra_doc_dir`
 #
-#         $ irb --extra-doc-dir your_doc_dir --extra-doc-dir my_doc_dir
+#         $ irb --extra-docs-dir your_doc_dir --extra-docs-dir my_doc_dir
 #         irb(main):001> conf.extra_doc_dirs
 #         => ["your_doc_dir", "my_doc_dir"]
 #

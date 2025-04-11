@@ -33,7 +33,7 @@ module Kernel
   # The normal <tt>require</tt> functionality of returning false if
   # that file has already been loaded is preserved.
 
-  def require(path) # :doc:
+  def require(path) # :docs:
     return gem_original_require(path) unless Gem.discover_gems_on_require
 
     RUBYGEMS_ACTIVATION_MONITOR.synchronize do

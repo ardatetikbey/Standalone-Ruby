@@ -40,7 +40,7 @@ module Nokogiri
       # ParserContext#replace_entities is `false`.)
       #
       # ⚠ <b>It is UNSAFE to set ParserContext#replace_entities to `true`</b> when parsing untrusted
-      # documents.
+      # docs.
       #
       # 💡 For more information on entity types, see [Wikipedia's page on
       # DTDs](https://en.wikipedia.org/wiki/Document_type_definition#Entity_declarations).

@@ -38,7 +38,7 @@ module Rouge
         end
 
         # if we get here, there's no more mustache tags, so we eat
-        # the rest of the doc
+        # the rest of the docs
         rule(/.+/m) { delegate parent }
       end
 

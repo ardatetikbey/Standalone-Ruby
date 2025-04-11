@@ -25,7 +25,7 @@ module REXML
     #   or to automatically handle escaping string values.
     #
     #  XPath.first( node )
-    #  XPath.first( doc, "//b"} )
+    #  XPath.first( docs, "//b"} )
     #  XPath.first( node, "a/x:b", { "x"=>"http://doofus" } )
     #  XPath.first( node, '/book/publisher/text()=$publisher', {}, {"publisher"=>"O'Reilly"})
     def XPath::first(element, path=nil, namespaces=nil, variables={}, options={})

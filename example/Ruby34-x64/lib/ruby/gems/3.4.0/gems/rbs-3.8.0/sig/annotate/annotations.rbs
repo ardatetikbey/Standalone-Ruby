@@ -38,12 +38,12 @@ module RBS
         alias eql? ==
       end
 
-      # Source annotation allows where the documents are copied from.
+      # Source annotation allows where the docs are copied from.
       #
       # It allows specifying two directions: the source to read from, and the source to skip.
       #
       #     %a{annotate:rdoc:source:from=ext/pathname}
-      #     %a{annotate:rdoc:source:skip=ext/pathname/doc}
+      #     %a{annotate:rdoc:source:skip=ext/pathname/docs}
       #
       # When you want to specify several paths, repeat writing the Source annotation.
       #
@@ -63,7 +63,7 @@ module RBS
         alias eql? ==
       end
 
-      # Copy annotation allows copying the doc from another subject.
+      # Copy annotation allows copying the docs from another subject.
       # This helps working with incorrect RDoc annotations.
       #
       #     %a{annotate:rdoc:copy:Bar#baz}

@@ -7,7 +7,7 @@ require 'asciidoctor'
 # http://asciidoctor.github.com/
 #
 # Asciidoctor is an open source, pure-Ruby processor for
-# converting AsciiDoc documents or strings into HTML 5,
+# converting AsciiDoc docs or strings into HTML 5,
 # DocBook 4.5 and other formats.
 Tilt::AsciidoctorTemplate = Tilt::StaticTemplate.subclass do
   @options[:header_footer] = false if @options[:header_footer].nil?

@@ -341,7 +341,7 @@ class RDoc::Options
   # +:private+ or +:nodoc+.
   #
   # The +:nodoc+ visibility ignores all directives related to visibility.  The
-  # other visibilities may be overridden on a per-method basis with the :doc:
+  # other visibilities may be overridden on a per-method basis with the :docs:
   # directive.
 
   attr_reader :visibility
@@ -582,7 +582,7 @@ class RDoc::Options
       exit
     end
 
-    @op_dir ||= 'doc'
+    @op_dir ||= 'docs'
 
     root = @root.to_s
     if @rdoc_include.empty? || !@rdoc_include.include?(root)

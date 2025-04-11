@@ -3094,7 +3094,7 @@ module OpenSSL
   # with the fact that every message digest algorithm has a fixed-length output of
   # just a few bytes, digests are often used to create unique identifiers for
   # arbitrary data. A common example is the creation of a unique id for binary
-  # documents that are stored in a database.
+  # docs that are stored in a database.
   #
   # Another useful characteristic of one-way functions (and thus the name) is that
   # given a digest there is no indication about the original data that produced
@@ -6016,8 +6016,8 @@ module OpenSSL
       #
       # Example:
       #     dsa = OpenSSL::PKey::DSA.new(2048)
-      #     doc = "Sign me"
-      #     digest = OpenSSL::Digest.digest('SHA1', doc)
+      #     docs = "Sign me"
+      #     digest = OpenSSL::Digest.digest('SHA1', docs)
       #
       #     # With legacy #syssign and #sysverify:
       #     sig = dsa.syssign(digest)

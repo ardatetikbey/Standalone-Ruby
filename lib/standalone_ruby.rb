@@ -1,4 +1,4 @@
-require_relative 'utils/launcher'
+require_relative 'launcher'
 
 class Program
   def run

@@ -21,7 +21,7 @@ module Rouge
         mixin :whitespace
 
         rule %r((shared|abstract|formal|default|actual|variable|deprecated|small|
-          late|literal|doc|by|see|throws|optional|license|tagged|final|native|
+          late|literal|docs|by|see|throws|optional|license|tagged|final|native|
           annotation|sealed)\b), Name::Decorator
 
         rule %r((break|case|catch|continue|else|finally|for|in|

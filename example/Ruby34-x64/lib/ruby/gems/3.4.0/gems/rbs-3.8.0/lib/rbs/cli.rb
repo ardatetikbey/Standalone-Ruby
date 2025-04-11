@@ -943,7 +943,7 @@ Options:
         opts.banner = <<-EOB
 Usage: rbs annotate [options...] [files...]
 
-Import documents from RDoc and update RBS files.
+Import docs from RDoc and update RBS files.
 
 Examples:
 

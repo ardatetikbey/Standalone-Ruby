@@ -152,7 +152,7 @@ module Rack
       ".dll"       => "application/x-msdownload",
       ".dmg"       => "application/octet-stream",
       ".dna"       => "application/vnd.dna",
-      ".doc"       => "application/msword",
+      ".docs"       => "application/msword",
       ".docm"      => "application/vnd.ms-word.document.macroEnabled.12",
       ".docx"      => "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       ".dot"       => "application/msword",

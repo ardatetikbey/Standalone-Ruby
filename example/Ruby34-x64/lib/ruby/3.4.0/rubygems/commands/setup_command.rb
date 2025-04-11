@@ -305,7 +305,7 @@ By default, this RubyGems will install gem as:
   end
 
   def install_rdoc
-    gem_doc_dir = File.join Gem.dir, "doc"
+    gem_doc_dir = File.join Gem.dir, "docs"
     rubygems_name = "rubygems-#{Gem::VERSION}"
     rubygems_doc_dir = File.join gem_doc_dir, rubygems_name
 
@@ -319,7 +319,7 @@ By default, this RubyGems will install gem as:
        (!File.exist?(rubygems_doc_dir) ||
         File.writable?(rubygems_doc_dir))
       say "Removing old RubyGems RDoc and ri" if @verbose
-      Dir[File.join(Gem.dir, "doc", "rubygems-[0-9]*")].each do |dir|
+      Dir[File.join(Gem.dir, "docs", "rubygems-[0-9]*")].each do |dir|
         rm_rf dir
       end
 

@@ -1457,7 +1457,7 @@ XXX
   # :call-seq:
   #   make_switch(params, block = nil)
   #
-  # :include: ../doc/optparse/creates_option.rdoc
+  # :include: ../docs/optparse/creates_option.rdoc
   #
   def make_switch(opts, block = nil)
     short, long, nolong, style, pattern, conv, not_pattern, not_conv, not_style = [], [], []
@@ -1601,7 +1601,7 @@ XXX
   # :call-seq:
   #   define(*params, &block)
   #
-  # :include: ../doc/optparse/creates_option.rdoc
+  # :include: ../docs/optparse/creates_option.rdoc
   #
   def define(*opts, &block)
     top.append(*(sw = make_switch(opts, block)))
@@ -1611,7 +1611,7 @@ XXX
   # :call-seq:
   #   on(*params, &block)
   #
-  # :include: ../doc/optparse/creates_option.rdoc
+  # :include: ../docs/optparse/creates_option.rdoc
   #
   def on(*opts, &block)
     define(*opts, &block)
@@ -1622,7 +1622,7 @@ XXX
   # :call-seq:
   #   define_head(*params, &block)
   #
-  # :include: ../doc/optparse/creates_option.rdoc
+  # :include: ../docs/optparse/creates_option.rdoc
   #
   def define_head(*opts, &block)
     top.prepend(*(sw = make_switch(opts, block)))
@@ -1632,7 +1632,7 @@ XXX
   # :call-seq:
   #   on_head(*params, &block)
   #
-  # :include: ../doc/optparse/creates_option.rdoc
+  # :include: ../docs/optparse/creates_option.rdoc
   #
   # The new option is added at the head of the summary.
   #
@@ -1645,7 +1645,7 @@ XXX
   # :call-seq:
   #   define_tail(*params, &block)
   #
-  # :include: ../doc/optparse/creates_option.rdoc
+  # :include: ../docs/optparse/creates_option.rdoc
   #
   def define_tail(*opts, &block)
     base.append(*(sw = make_switch(opts, block)))
@@ -1656,7 +1656,7 @@ XXX
   # :call-seq:
   #   on_tail(*params, &block)
   #
-  # :include: ../doc/optparse/creates_option.rdoc
+  # :include: ../docs/optparse/creates_option.rdoc
   #
   # The new option is added at the tail of the summary.
   #

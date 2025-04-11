@@ -10,22 +10,22 @@
 #
 #   % rdoc --format pot
 #
-# It generates doc/rdoc.pot.
+# It generates docs/rdoc.pot.
 #
 # == Create .po
 #
-# You create .po file from doc/rdoc.pot. This operation is needed only
+# You create .po file from docs/rdoc.pot. This operation is needed only
 # the first time. This work flow assumes that you are a translator
 # for Japanese.
 #
-# You create locale/ja/rdoc.po from doc/rdoc.pot. You can use msginit
+# You create locale/ja/rdoc.po from docs/rdoc.pot. You can use msginit
 # provided by GNU gettext or rmsginit provided by gettext gem. This
 # work flow uses gettext gem because it is more portable than GNU
 # gettext for Rubyists. Gettext gem is implemented by pure Ruby.
 #
 #   % gem install gettext
 #   % mkdir -p locale/ja
-#   % rmsginit --input doc/rdoc.pot --output locale/ja/rdoc.po --locale ja
+#   % rmsginit --input docs/rdoc.pot --output locale/ja/rdoc.po --locale ja
 #
 # Translate messages in .po
 #
@@ -39,7 +39,7 @@
 #
 #   % rdoc --locale ja
 #
-# You can find documentation in Japanese in doc/. Yay!
+# You can find documentation in Japanese in docs/. Yay!
 #
 # == Update translation
 #
@@ -49,7 +49,7 @@
 # You can update .po by the following command lines:
 #
 #   % rdoc --format pot
-#   % rmsgmerge --update locale/ja/rdoc.po doc/rdoc.pot
+#   % rmsgmerge --update locale/ja/rdoc.po docs/rdoc.pot
 #
 # You edit locale/ja/rdoc.po to translate new messages.
 

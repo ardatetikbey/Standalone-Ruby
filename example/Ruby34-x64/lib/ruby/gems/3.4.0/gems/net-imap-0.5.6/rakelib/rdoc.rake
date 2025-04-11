@@ -63,8 +63,8 @@ end
 RDoc::Task.new do |doc|
   doc.main       = "README.md"
   doc.title      = "net-imap #{Net::IMAP::VERSION}"
-  doc.rdoc_dir   = "doc"
+  doc.rdoc_dir   = "docs"
   doc.rdoc_files = FileList.new %w[lib/**/*.rb *.rdoc *.md]
   doc.options << "--template-stylesheets" << "docs/styles.css"
-  # doc.generator  = "hanna"
+  # docs.generator  = "hanna"
 end

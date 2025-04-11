@@ -25,14 +25,14 @@ module Nokogiri
         if Nokogiri.jruby?
           # Save builder created document
           AS_BUILDER = 128
-          # the default for XML documents
+          # the default for XML docs
           DEFAULT_XML  = AS_XML # https://github.com/sparklemotion/nokogiri/issues/#issue/415
           # the default for HTML document
           DEFAULT_HTML = NO_DECLARATION | NO_EMPTY_TAGS | AS_HTML
           # the default for XHTML document
           DEFAULT_XHTML = NO_DECLARATION | AS_XHTML
         else
-          # the default for XML documents
+          # the default for XML docs
           DEFAULT_XML  = FORMAT | AS_XML
           # the default for HTML document
           DEFAULT_HTML = FORMAT | NO_DECLARATION | NO_EMPTY_TAGS | AS_HTML
