@@ -2,3 +2,5 @@
 
 lib/** -linguist-vendored
 lib/** linguist-language=Ruby
+
+example/ export-ignore
