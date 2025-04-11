@@ -1,4 +1,4 @@
 * linguist-vendored
 
-lib/** linguist-language=Ruby
+lib/** linguist-documentation
 lib/** -linguist-vendored
