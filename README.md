@@ -79,10 +79,9 @@ We will use the GCC compiler in detailed usage. Please make sure that MinGW is i
 standalone-ruby --ruby-path C:\Ruby34-x64 --main-file C:\Users\ardat\Desktop\example\main.rb --project-path C:\Users\ardat\Desktop\example --exe-file program.exe --gcc --resource-file C:\Users\ardat\Desktop\C\program.rc
 ```
 
-To generate an .exe file with a custom icon, you need to use GCC.
-Add the following line at the top of the .rc file defined by the --resource-file parameter:
+To create a .exe file with a custom icon, you need to use GCC.
 
-1 ICON "C:\\Users\\ardat\\Desktop\\C\\icon.ico"
+Add the value defined by the --resource-file parameter to the top of the .rc file, as in the example:
 
 Example:
 
