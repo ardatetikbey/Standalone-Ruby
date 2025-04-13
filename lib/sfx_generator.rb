@@ -1,5 +1,3 @@
-require_relative 'logger_helper'
-
 class SFXGenerator
   def initialize(params)
     @params = params

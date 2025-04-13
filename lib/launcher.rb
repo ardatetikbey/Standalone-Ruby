@@ -3,20 +3,19 @@ require 'optparse'
 require_relative 'displayer'
 require_relative 'parameter_parser'
 require_relative 'ruby_copy'
-require_relative 'logger_helper'
 require_relative 'exe_packer'
 require_relative 'launcher_handler'
 
-
 class Launcher
   def initialize
+    platform_analysis
+
     @parser = ParameterParser.new
     @parser.parse
     @params = @parser.params
 
     @displayer = Displayer.new(@params)
     @ruby_copy = RubyCopy.new(@params)
-    @logger = LoggerHelper.instance
     @exe_packer = ExePacker.new(@params)
     @launcher_handler = LauncherHandler.new(@params)
   end
@@ -24,36 +23,26 @@ class Launcher
   def platform_analysis
     case RUBY_PLATFORM
     when /win32|mingw|cygwin/
-      @params[:platform] = 'Windows'
-      @logger.info("Working on windows platform.")
+      $platform = 'win32'
     else
       print("Error: ".red); puts("This platform is not supported! Exiting...")
-      @logger.error("This platform is not supported! Exiting...")
       exit!
     end
   end
 
+
   def run
     begin
       Signal.trap("INT") do
-        @logger.info("The program was closed because an interrupt command was detected.")
         puts "\nProgram interrupted. Shutting down..."
         exit(0)
       end
 
-      platform_analysis
-
-      @logger.info("the executor function is started.")
       @displayer.banner
-      @logger.info("Banner display was made.")
       @displayer.display_params
-      @logger.info("The parameters entered by the user are reflected on the screen.")
       @ruby_copy.robocopy_interpreter
-      @logger.info("Ruby interpreter copy function completed.")
       @launcher_handler.handle
-      @logger.info("Launcher handler finished.")
       @exe_packer.pack
-      @logger.info("Exe pack finished.")
 
       if @params[:one_file_exe]
         require_relative 'sfx_generator'
@@ -65,9 +54,7 @@ class Launcher
 
       puts("\nThis project is under development. If you encounter any errors, you can open an issue on Github.\nIf you want to make a suggestion, you can contact me.")
       puts "Thanks for using Standalone-Ruby! Don't forget to star the project on Github."
-      @logger.info("Program finished.")
     rescue Exception => e
-      @logger.error("Launcher Error: #{e.message}")
       print("Launcher Error: "); puts("#{e.message}".red)
     end
   end

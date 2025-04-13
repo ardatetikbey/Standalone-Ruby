@@ -1,17 +1,16 @@
-require_relative 'logger_helper'
 require_relative 'version/version'
 
 class Displayer
   def initialize(params)
     @params = params
-    @logger = LoggerHelper.instance
   end
 
   def display_params
     begin
-      puts("Working With:")
+      puts("Parameters:")
 
       display_map = {
+        "Platform" => $platform,
         "Project Path"   => @params[:project_path],
         "Resource File" => @params[:resource_file],
         "Exe File"       => @params[:exe],
@@ -30,7 +29,6 @@ class Displayer
 
     rescue => e
       print("Display Error: ".red); puts(e.message.red)
-      @logger.error("Display Error: #{e.message}")
     end
   end
 

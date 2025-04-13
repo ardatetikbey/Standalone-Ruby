@@ -2,7 +2,6 @@ require 'fileutils'
 require 'tmpdir'
 require 'optparse'
 
-require_relative 'logger_helper'
 require_relative 'version/version'
 
 class ParameterParser
@@ -17,7 +16,6 @@ class ParameterParser
       launcher_type: "vbs"
     }
 
-    @logger = LoggerHelper.instance
   end
 
   def normalize_paths!
@@ -94,7 +92,6 @@ class ParameterParser
             @params[:resource_file] = resource_file
           else
             print("Parser Error: ".red); puts("The specified resource file #{resource_file} could not be found!")
-            @logger.error("Parser Error: The specified resource file #{resource_file} could not be found!")
             exit!
           end
         end
@@ -111,7 +108,6 @@ class ParameterParser
             end
           else
             print("Parser Error: ".red); puts("The specified Ruby path #{ruby_path} could not be found!")
-            @logger.error("Parser Error: The specified Ruby path #{ruby_path} could not be found!")
             exit!
           end
         end
@@ -122,7 +118,6 @@ class ParameterParser
             @params[:project_path] = project_path
           else
             print("Parser Error: ".red); puts("The specified project path #{project_path} could not be found!")
-            @logger.error("Parser Error: The project path #{project_path} could not be found!")
             exit!
           end
         end
@@ -141,7 +136,6 @@ class ParameterParser
             @params[:main_file] = main_file
           else
             print("Parser Error: ".red); puts("The specified file #{main_file} could not be found!")
-            @logger.error("Parser Error: The specified file #{main_file} could not be found!")
             exit!
           end
         end
@@ -151,7 +145,6 @@ class ParameterParser
             @params[:threads] = threads
           else
             print("Parser Error: ".red); puts("Invalid value for threads. Please provide an integer.")
-            @logger.error("Parser Error: Invalid value for threads.")
             exit!
           end
         end
@@ -175,13 +168,11 @@ class ParameterParser
 
       if @params[:project_path].nil? || @params[:ruby_path].nil? || @params[:main_file].nil?
         print("Error: ".red); puts("Missing required parameters. Please provide the necessary parameters:\n  -p, -r, -m.\nYou can use the -h parameter for the help menu.")
-        @logger.error("Parser Error: Missing required parameters.")
         exit!
       end
 
     rescue Exception => e
       print("Parser Error: ".red); puts("#{e.message}".red)
-      @logger.error("Parser Error: #{e.message}")
       exit!
     end
   end

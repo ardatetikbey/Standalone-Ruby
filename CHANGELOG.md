@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.5.1] - 2025-04-13
+- Logger support removed
+- Platform analysis process fixed
+
 ## [1.5.0] - 2025-04-11
 - Added support for .rc files in exe compilation
 - Changes were made to the file structure
