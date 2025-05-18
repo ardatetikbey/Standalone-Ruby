@@ -135,6 +135,3 @@ Example:
 - This project is licensed under the MIT License.
 
 ---
-
-## Thanks!
-- https://github.com/TrueHalo - I would like to thank Ahmet Bahadır Bakır for his help in translating the documents.
