@@ -1,22 +1,38 @@
 require 'fileutils'
 require 'tmpdir'
 require 'optparse'
+require 'rbconfig'
 
 require_relative 'version/version'
 
 class ParameterParser
   def initialize
+    platform =
+      case RUBY_PLATFORM
+      when /win32|mingw|cygwin/
+        'windows'
+      when /linux/
+        puts "Linux support is on the way!"
+        exit!
+      else
+        print("Error: ".red); puts("unsupported platform")
+        exit!
+      end
+
     @params = {
+      platform: platform,
       threads: 5,
-      sfx_path: Dir.tmpdir,
-      exe: "program.exe",
       resource_file: File.join(File.expand_path("data/resource_files", __dir__), "default.rc"),
       launcher: "launcher.vbs",
       launcher_name: "launcher.vbs",
       launcher_type: "vbs"
     }
 
+    if platform == 'windows'
+      @params[:ruby_path] = RbConfig::CONFIG['prefix']
+    end
   end
+
 
   def normalize_paths!
     @params.each do |key, value|
@@ -25,26 +41,25 @@ class ParameterParser
   end
 
   def display_help
-    help_text = <<~EOT
-      Standalone-Ruby v#{StandaloneRuby::VERSION} - Convert your Ruby projects to exe files!
+    windows_help_text = <<~EOT
+      Standalone-Ruby v#{StandaloneRuby::VERSION} - Make Ruby independent!
 
       Usage: standalone-ruby [--help] [--project-path PROJECT_PATH] [--ruby-path RUBY_PATH] [--main-file MAIN_FILE] [--launcher LAUNCHER] [--gui] 
                              [--template TEMPLATE] [--exe-file EXE_FILE] [--threads THREADS] [--resource-file resource_file] [--gcc] [--version]
+
+      Example: standalone-ruby --main-file MAIN_FILE_PATH --project-path PROJECT_PATH
 
       Required Options:
         --project-path PROJECT_PATH
             Target Ruby project path.
       
-        --ruby RUBY_PATH
-            Path to the Ruby interpreter.
-      
         --main-file MAIN_FILE
             Path to the main Ruby file of the project.
 
       Extra Options:
-        --exe-file EXE_FILE
-            Name of the exe file to be used for output (default is program.exe).
-      
+        --ruby RUBY_PATH
+            Path to the Ruby interpreter.
+
         --threads THREADS
             Number of threads to use (default is 5). Determines the number of threads used during the Ruby interpreter
             copy process and for Robocopy operations. A higher number of threads can speed up the process, but requires more system resources.
@@ -71,10 +86,17 @@ class ParameterParser
 
       For more details, please visit the documentation at:
         https://github.com/ardatetikbey/Standalone-Ruby
-
     EOT
 
-    puts help_text
+    linux_help_text = <<~EOT
+
+EOT
+
+    if @params[:platform] == 'windows'
+      puts windows_help_text
+    else
+      puts linux_help_text
+    end
   end
 
   def parse
@@ -94,10 +116,6 @@ class ParameterParser
             print("Parser Error: ".red); puts("The specified resource file #{resource_file} could not be found!")
             exit!
           end
-        end
-
-        opts.on("--one-file-exe") do
-          @params[:one_file_exe] = true
         end
 
         opts.on("--ruby-path RUBY_PATH") do |ruby_path|
@@ -120,10 +138,6 @@ class ParameterParser
             print("Parser Error: ".red); puts("The specified project path #{project_path} could not be found!")
             exit!
           end
-        end
-
-        opts.on("--exe-file EXE_FILE") do |exe|
-          @params[:exe] = exe
         end
 
         opts.on("--gcc") do
@@ -167,7 +181,7 @@ class ParameterParser
       normalize_paths!
 
       if @params[:project_path].nil? || @params[:ruby_path].nil? || @params[:main_file].nil?
-        print("Error: ".red); puts("Missing required parameters. Please provide the necessary parameters:\n  -p, -r, -m.\nYou can use the -h parameter for the help menu.")
+        print("Error: ".red); puts("Missing required parameters. Please provide the necessary parameters:\n  --project-path, --main-file.\nYou can use the -h parameter for the help menu.")
         exit!
       end
 

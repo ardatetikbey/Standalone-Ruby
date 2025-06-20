@@ -3,13 +3,17 @@ class ExePacker
     @params = params
   end
 
-  def pack
+  def pack_linux
+    puts
+  end
+
+  def pack_windows
     begin
       stub_path = File.join(File.expand_path("data/exe_templates", __dir__), "launcher_stub.c")
       stub_content = File.read(stub_path)
 
       stub_output = "#{File.join(@params[:project_path].to_s, "launcher_stub.c")}"
-      exe_path = "#{File.join(@params[:project_path].to_s, @params[:exe].to_s)}"
+      exe_path = "#{File.join(@params[:project_path].to_s, "program.exe")}"
 
       File.open(stub_output, 'w') { |f| f.write(stub_content) }
 

@@ -3,18 +3,46 @@ class RubyCopy
     @params = params
   end
 
-  def robocopy_interpreter
+  def rsync_interpreter
     begin
-      puts("\nThe Ruby interpreter copying process has been started.")
-      print("WARNING: ".yellow); puts("If you are using a development kit, the copying process may take a long time.")
+      puts("\nRuby interpreter copying process started using rsync.")
 
-      copy_output = `robocopy "#{@params[:ruby_path]}" "#{File.join(@params[:project_path].to_s, File.basename(@params[:ruby_path].to_s))}" /E /MT:#{@params[:threads].to_i} /V /ETA /NFL /NDL /R:1000000 /W:30 /NP`
-      puts "Robocopy Command: robocopy \"#{@params[:ruby_path]}\" \"#{File.join(@params[:project_path], File.basename(@params[:ruby_path]))}\" /E /MT:#{@params[:threads].to_i} /V /ETA /NFL /NDL /R:1000000 /W:30 /NP"
+      source = @params[:ruby_path]
+      dest = File.join(@params[:project_path].to_s, File.basename(source.to_s))
 
+      rsync_command = "rsync -avh --progress \"#{source}/\" \"#{dest}/\""
+      puts "Rsync Command: #{rsync_command}"
+
+      `#{rsync_command}`
 
       puts("The Ruby interpreter copying process has been completed.")
     rescue Exception => e
-      print("Copy Error: ".red); puts("#{e.message}".red)
+      print("Copy Error: ".red)
+      puts("#{e.message}".red)
+    end
+  end
+
+  def robocopy_interpreter
+    begin
+      puts("\nThe Ruby interpreter copying process has been started.")
+      print("WARNING: ".yellow)
+      puts("If you are using a development kit, the copying process may take a long time.")
+
+      source = @params[:ruby_path]
+      dest = File.join(@params[:project_path].to_s, File.basename(source.to_s))
+
+      robocopy_command = <<~CMD.strip
+  robocopy "#{source}" "#{dest}" /E /MT:#{@params[:threads].to_i} /R:2 /W:2 /NP /NFL /NDL
+CMD
+
+      puts "Robocopy Command: #{robocopy_command}"
+
+      `#{robocopy_command}`
+
+      puts("The Ruby interpreter copying process has been completed.")
+    rescue Exception => e
+      print("Copy Error: ".red)
+      puts("#{e.message}".red)
     end
   end
 end

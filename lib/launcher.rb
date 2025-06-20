@@ -8,8 +8,6 @@ require_relative 'launcher_handler'
 
 class Launcher
   def initialize
-    platform_analysis
-
     @parser = ParameterParser.new
     @parser.parse
     @params = @parser.params
@@ -20,17 +18,6 @@ class Launcher
     @launcher_handler = LauncherHandler.new(@params)
   end
 
-  def platform_analysis
-    case RUBY_PLATFORM
-    when /win32|mingw|cygwin/
-      $platform = 'win32'
-    else
-      print("Error: ".red); puts("This platform is not supported! Exiting...")
-      exit!
-    end
-  end
-
-
   def run
     begin
       Signal.trap("INT") do
@@ -40,14 +27,14 @@ class Launcher
 
       @displayer.banner
       @displayer.display_params
-      @ruby_copy.robocopy_interpreter
-      @launcher_handler.handle
-      @exe_packer.pack
 
-      if @params[:one_file_exe]
-        require_relative 'sfx_generator'
-        @sfx_generator = SFXGenerator.new(@params)
-        @sfx_generator.generate_sfx
+      if @params[:platform] == 'windows'
+        @ruby_copy.robocopy_interpreter
+        @launcher_handler.handle
+        @exe_packer.pack_windows
+      elsif @params[:platform] == 'linux'
+        @ruby_copy.rsync_interpreter
+        @exe_packer.pack_linux
       end
 
       print("\nWARNING: ".yellow); puts("Instead of changing the path of the created exe file, create a shortcut. The same applies here as in every application.")

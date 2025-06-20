@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    standalone-ruby (1.5.1)
+    standalone-ruby (1.5.2)
 
 GEM
   remote: https://rubygems.org/
@@ -9,9 +9,10 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux-gnu
 
 DEPENDENCIES
   standalone-ruby!
 
 BUNDLED WITH
-   2.6.2
+   2.6.7

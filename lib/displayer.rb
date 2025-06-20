@@ -10,7 +10,7 @@ class Displayer
       puts("Parameters:")
 
       display_map = {
-        "Platform" => $platform,
+        "Platform" => @params[:platform],
         "Project Path"   => @params[:project_path],
         "Resource File" => @params[:resource_file],
         "Exe File"       => @params[:exe],
@@ -35,7 +35,7 @@ class Displayer
 
   def banner
     banner = -<<"BANNER"
-Standalone-Ruby v#{StandaloneRuby::VERSION} - Package your Ruby projects as exe!
+Standalone-Ruby v#{StandaloneRuby::VERSION} - Make Ruby independent!
   # Github: https://github.com/ardatetikbey/Standalone-Ruby
   # RubyGems: https://rubygems.org/gems/standalone-ruby
 

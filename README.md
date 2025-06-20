@@ -20,25 +20,23 @@ gem install standalone-ruby
 ## Parameters
 
 ```
-C:\Users\ardat>standalone-ruby -h
-Standalone-Ruby - Convert your Ruby projects to exe files!
+Standalone-Ruby - Make Ruby independent!
 
 Usage: standalone-ruby [--help] [--project-path PROJECT_PATH] [--ruby-path RUBY_PATH] [--main-file MAIN_FILE] [--launcher LAUNCHER] [--gui]
                        [--template TEMPLATE] [--exe-file EXE_FILE] [--threads THREADS] [--resource-file resource_file] [--gcc] [--version]
+
+Example: standalone-ruby --main-file MAIN_FILE_PATH --project-path PROJECT_PATH
 
 Required Options:
   --project-path PROJECT_PATH
       Target Ruby project path.
 
-  --ruby RUBY_PATH
-      Path to the Ruby interpreter.
-
   --main-file MAIN_FILE
       Path to the main Ruby file of the project.
 
 Extra Options:
-  --exe-file EXE_FILE
-      Name of the exe file to be used for output (default is program.exe).
+  --ruby RUBY_PATH
+      Path to the Ruby interpreter.
 
   --threads THREADS
       Number of threads to use (default is 5). Determines the number of threads used during the Ruby interpreter
@@ -55,10 +53,17 @@ Extra Options:
 
   --gcc
       Use GCC compiler for exe file.
-      
+
   --gui
       This option allows the rubyw.exe file in the bin folder to be used.
       You can choose it for projects that include GUI.
+
+Notes:
+  - Make sure that the Ruby interpreter you are using includes all the gems required for the target project.
+  - The Ruby interpreter uses Robocopy for copying, and the number of threads given affects the speed of this operation.
+
+For more details, please visit the documentation at:
+  https://github.com/ardatetikbey/Standalone-Ruby
 ```
 
 ---
@@ -69,14 +74,14 @@ Extra Options:
 You can obtain an .exe file with the following command:
 
 ```bash
-standalone-ruby --ruby-path C:\Ruby34-x64 --main-file C:\Users\ardat\Desktop\example\main.rb --project-path C:\Users\ardat\Desktop\example
+standalone-ruby --project-path C:\Users\ardat\Desktop\example --main-file C:\Users\ardat\Desktop\example\main.rb
 ```
 
 ### Detailed Usage
 We will use the GCC compiler in detailed usage. Please make sure that MinGW is installed on your computer.
 
 ```bash
-standalone-ruby --ruby-path C:\Ruby34-x64 --main-file C:\Users\ardat\Desktop\example\main.rb --project-path C:\Users\ardat\Desktop\example --exe-file program.exe --gcc --resource-file C:\Users\ardat\Desktop\C\program.rc
+standalone-ruby --ruby-path C:\Ruby34-x64 --project-path C:\Users\ardat\Desktop\example --main-file C:\Users\ardat\Desktop\example\main.rb --gcc --resource-file C:\Users\ardat\Desktop\C\program.rc
 ```
 
 To create a .exe file with a custom icon, you need to use GCC.
