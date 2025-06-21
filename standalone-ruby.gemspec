@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ardatetik1881@gmail.com"]
 
   spec.summary       = "Standalone Ruby application packager"
-  spec.description   = "Convert your Ruby projects to exe files!"
+  spec.description   = "Make Ruby independent!"
   spec.homepage      = "https://github.com/ardatetikbey/Standalone-Ruby"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 3.1.0"

@@ -33,8 +33,7 @@ class Launcher
         @launcher_handler.handle
         @exe_packer.pack_windows
       elsif @params[:platform] == 'linux'
-        @ruby_copy.rsync_interpreter
-        @exe_packer.pack_linux
+        # Version 2.0.0
       end
 
       print("\nWARNING: ".yellow); puts("Instead of changing the path of the created exe file, create a shortcut. The same applies here as in every application.")

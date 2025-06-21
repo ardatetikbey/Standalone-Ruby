@@ -7,20 +7,17 @@ class Displayer
 
   def display_params
     begin
-      puts("Parameters:")
+      puts("Working with:")
 
       display_map = {
         "Platform" => @params[:platform],
         "Project Path"   => @params[:project_path],
         "Resource File" => @params[:resource_file],
-        "Exe File"       => @params[:exe],
-        "Ruby Path"      => @params[:ruby_path],
-        "Ruby Folder"    => @params[:ruby_path] ? File.basename(@params[:ruby_path]) : nil,
+        "Exe File"       => "program.exe",
+        "Prefix"      => @params[:ruby][:prefix],
         "Main File"      => @params[:main_file],
-        "Launcher"       => @params[:launcher],
-        "Launcher Type"  => @params[:launcher_type],
-        "Template"       => @params[:template] || "Default Template",
-        "Log Path"       => "Users Documents Directory"
+        "Launcher"       => "launcher.vbs",
+        "Template"       => "Default Template",
       }
 
       display_text = display_map.map { |key, value| "  - #{key}: #{value}" if value }.compact

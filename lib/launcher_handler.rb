@@ -22,10 +22,10 @@ class LauncherHandler
       if File.exist?(vbs_template)
         content = File.read(vbs_template)
 
-        content.gsub!("STANDALONE_RUBY_PATH", "#{File.join(File.basename(@params[:ruby_path].to_s), "bin", "#{ruby_file}")}")
+        content.gsub!("STANDALONE_RUBY_PATH", "#{File.join(File.basename(@params[:ruby][:prefix].to_s), "bin", "#{ruby_file}")}")
         content.gsub!("STANDALONE_MAIN_FILE", "#{File.basename(@params[:main_file].to_s)}")
 
-        new_launcher_path = File.join(@params[:project_path].to_s, @params[:launcher_name].to_s)
+        new_launcher_path = File.join(@params[:project_path].to_s, "launcher.vbs")
         File.open(new_launcher_path, "w") do |f_man|
           f_man.puts content
         end

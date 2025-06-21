@@ -1,5 +1,9 @@
 # Changelog
 
+# [1.5.3] - 2025-06-21
+- Minor changes to the code structure
+- Removed sfx support which in development
+
 ## [1.5.2] - 2025-06-20
 - Changes have been made to the parser
 - Added automatic detection for Ruby interpreter path

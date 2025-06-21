@@ -21,16 +21,23 @@ class ParameterParser
 
     @params = {
       platform: platform,
+      ruby: {
+        version:      RUBY_VERSION,
+        host_os:      RbConfig::CONFIG['host_os'],
+        arch:         RbConfig::CONFIG['arch'],
+        bindir:       RbConfig::CONFIG['bindir'],
+        exe_path:     File.join(RbConfig::CONFIG['bindir'], RbConfig::CONFIG['ruby_install_name']),
+        install_name: RbConfig::CONFIG['ruby_install_name'],
+        libdir:       RbConfig::CONFIG['libdir'],
+        rubylibdir:   RbConfig::CONFIG['rubylibdir'],
+        sitelibdir:   RbConfig::CONFIG['sitelibdir'],
+        vendordir:    RbConfig::CONFIG['vendordir'],
+        prefix:       RbConfig::CONFIG['prefix'],
+      },
+
       threads: 5,
       resource_file: File.join(File.expand_path("data/resource_files", __dir__), "default.rc"),
-      launcher: "launcher.vbs",
-      launcher_name: "launcher.vbs",
-      launcher_type: "vbs"
     }
-
-    if platform == 'windows'
-      @params[:ruby_path] = RbConfig::CONFIG['prefix']
-    end
   end
 
 
@@ -89,7 +96,7 @@ class ParameterParser
     EOT
 
     linux_help_text = <<~EOT
-
+Version 2.0.0
 EOT
 
     if @params[:platform] == 'windows'
@@ -104,10 +111,6 @@ EOT
       OptionParser.new do |opts|
         note = "Note: https://github.com/ardatetikbey/Standalone-Ruby Don't forget to review my github document to get the best results."
         opts.banner = "Usage: ruby #{$0} [options]\n#{note}"
-
-        opts.on("--sfx-path SFX_PATH") do |sfx_path|
-          @params[:sfx_path] = sfx_path
-        end
 
         opts.on("--resource-file RESOURCE_FILE") do |resource_file|
           if File.exist?(resource_file)
@@ -180,7 +183,7 @@ EOT
 
       normalize_paths!
 
-      if @params[:project_path].nil? || @params[:ruby_path].nil? || @params[:main_file].nil?
+      if @params[:project_path].nil? || @params[:ruby][:prefix].nil? || @params[:main_file].nil?
         print("Error: ".red); puts("Missing required parameters. Please provide the necessary parameters:\n  --project-path, --main-file.\nYou can use the -h parameter for the help menu.")
         exit!
       end

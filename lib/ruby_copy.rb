@@ -7,7 +7,7 @@ class RubyCopy
     begin
       puts("\nRuby interpreter copying process started using rsync.")
 
-      source = @params[:ruby_path]
+      source = @params[:ruby][:prefix]
       dest = File.join(@params[:project_path].to_s, File.basename(source.to_s))
 
       rsync_command = "rsync -avh --progress \"#{source}/\" \"#{dest}/\""
@@ -28,7 +28,7 @@ class RubyCopy
       print("WARNING: ".yellow)
       puts("If you are using a development kit, the copying process may take a long time.")
 
-      source = @params[:ruby_path]
+      source = @params[:ruby][:prefix]
       dest = File.join(@params[:project_path].to_s, File.basename(source.to_s))
 
       robocopy_command = <<~CMD.strip

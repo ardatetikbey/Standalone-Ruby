@@ -4,7 +4,7 @@ class ExePacker
   end
 
   def pack_linux
-    puts
+    # Version 2.0.0
   end
 
   def pack_windows
