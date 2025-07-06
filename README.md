@@ -23,7 +23,7 @@ gem install standalone-ruby
 Standalone-Ruby - Make Ruby independent!
 
 Usage: standalone-ruby [--help] [--project-path PROJECT_PATH] [--ruby-path RUBY_PATH] [--main-file MAIN_FILE] [--launcher LAUNCHER] [--gui]
-                       [--template TEMPLATE] [--exe-file EXE_FILE] [--threads THREADS] [--resource-file resource_file] [--gcc] [--version]
+                       [--threads THREADS] [--resource-file resource_file] [--gcc] [--version]
 
 Example: standalone-ruby --main-file MAIN_FILE_PATH --project-path PROJECT_PATH
 
