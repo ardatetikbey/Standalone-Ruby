@@ -1,5 +1,8 @@
 # Project: Standalone Ruby
 
+<img width="1800" height="650" alt="standalone-ruby-v0-s0b5t02y3fse1" src="https://github.com/user-attachments/assets/8d470ff6-ce63-473e-8a93-1c4cd5d1fca1" />
+
+
 ---
 
 ## Overview
